@@ -11,13 +11,13 @@
 
 <body>
     <?php
-    require_once('Modal/Database.php');
-    // Gọi đến kết nối mysql
-    $db = new Database;
-    $db->connect();
+    // require_once('Modal/Database.php');
+    // // Gọi đến kết nối mysql
+    // $db = new Database;
+    // $db->connect();
 
-    require('View/SharedAdmin/HeaderAdmin.php');
-    require('View/SharedAdmin/MenuAdmin.php');
+    require('View/SharedUser/HeaderUser.php');
+    require('View/SharedUser/MenuUser.php');
     ?>
     <div class="wrapper">
         <div class="wrapper-container">
