@@ -148,3 +148,40 @@ ul {
   position: relative;
   margin-left: 30px;
 }
+
+.admin-login{
+  color: white;
+  line-height: 42px;
+  font-size: 25px;
+  margin-left: 30px;
+z-index: 10;
+position: relative;
+}
+.admin-sub{
+  width: 125px;
+  height: 70px;
+  background-color: rgb(35 155 134);
+position: absolute;
+display: none;
+
+}
+.admin-sub ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  margin-left: 10px;
+  margin-top: 4px;
+  
+}
+.admin-sub li{
+font-size: 13px;
+line-height: 20px;
+
+}
+.admin-sub a{
+ text-decoration: none;
+ color: white;
+  }
+  .admin-sub a:hover{
+    color: #c8c6c6;
+  }
