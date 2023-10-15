@@ -31,6 +31,11 @@
                     </ul>
                 </div>
             </div>
+            <div class="card-shop">
+                <a href="http://" class="card-shop-header">
+                    <i class="bi bi bi-cart iconuser" style="color: #8f8f8f;"></i>
+                </a>
+            </div>
         </div>
     </div>
 
