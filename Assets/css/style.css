@@ -145,4 +145,6 @@ ul {
 .seach-product{
   width: 220px;
   height: 38px;
+  position: relative;
+  margin-left: 30px;
 }
