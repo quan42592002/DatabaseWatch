@@ -7,6 +7,10 @@
     <title>Quản lý đồng hồ</title>
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/style.css">
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/main.css">
+    <!-- css của trang chủ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    
 </head>
 
 <body>
@@ -23,7 +27,7 @@
         <div class="wrapper-container">
             <div class="row">
                 <?php
-                require('View/Admin/Login.php');
+                require('View/Client/TrangChu.html');
                 ?>
             </div>
         </div>
