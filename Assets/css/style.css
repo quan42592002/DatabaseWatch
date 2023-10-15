@@ -139,3 +139,10 @@ ul {
   bottom: 0px;
   width: 100%;
 }
+
+/* begin menu css */
+
+.seach-product{
+  width: 220px;
+  height: 38px;
+}
