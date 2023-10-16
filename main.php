@@ -9,18 +9,11 @@
         <div class="wrapper-container">
             <div class="row">
                 <?php
-
                 if (isset($_GET['controller'])) {
-                    require 'Route/user/web.php'; /*xử lý các request trong Route/web.php*/
+                    require 'Route/user/web.php'; 
                 } else {
-                    require('View/Client/TrangChu.html'); /*require giao diện trang chủ*/
+                    require('View/Client/TrangChu.html'); 
                 }
-
-                // if (isset($_SESSION['username'])) {
-                //     require('View/Admin/Login.php');
-                // } else {
-                //     require('View/Client/TrangChu.html');
-                // }
                 ?>
             </div>
         </div>
