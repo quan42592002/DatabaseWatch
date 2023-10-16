@@ -33,7 +33,7 @@
   }
  /*END BANNER */
 
-
+  /* BEGIN treatment */
  .treatment{ 
   display: flex;
   width: 1200px;
@@ -76,3 +76,38 @@
   font-size: 12px;
 
 }
+  /* END treatment */
+
+
+/* BEGIN flashsale css */
+.flashsale{
+  width: 1200px;
+  height: 588px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 20px;
+  background-color: rgb(63, 147, 219);
+}
+.banner-flashsale{
+  width: 100%;
+  height: 120px;
+
+}
+.banner-flashsale img{
+  width: 100%;
+  height: 100%;
+}
+.flashsale-main{
+  width: 300px;
+  height: 200px;
+  border: 1px solid white;
+  background-color: antiquewhite;
+}
+.flashsale-product{
+  width: 100px;
+  height: 200px;
+  background-color: aqua;
+  border: 1px solid black;
+}
+/* END flashsale css */
+
