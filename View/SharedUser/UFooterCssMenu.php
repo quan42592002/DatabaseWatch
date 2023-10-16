@@ -1,3 +1,4 @@
+<div style="background-color: white;text-align:center;font-size:10px;height: 30px;line-height: 30px;margin-top:30px;">© 2020 - 2023 bản quyền thuộc WatchStore Việt Nam. Hotline: 093.189.2222 - 097.189.3333 - 096.139.5555. Email: info@watchstore.vn</div>
 <script src="jquery-3.7.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!-- link js slick-swiper -->
