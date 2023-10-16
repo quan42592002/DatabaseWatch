@@ -12,13 +12,6 @@
                 </ul>
             </div>
         </nav>
-        <!--Begin search-product -->
-        <div class="seach-product">
-        <input style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid white" type="text" placeholder="Tìm đồng hồ theo tên,hãng...">
-        <i style="position:absolute;top:10px;font-size: 18px;right:0px;" class="bi bi-search"></i>
-        </div>
-
-        <!--End search-product -->
 
         <div class="admin-login"><i class="bi bi-person-circle iconuser"></i>
         <div class="admin-sub">
@@ -34,5 +27,10 @@
        
     </div>
 
-   
-  
+
+    <script>
+        $(".iconuser").click(function() {
+            $(".admin-sub").slideToggle();
+        });
+    </script>
+
