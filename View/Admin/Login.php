@@ -6,26 +6,36 @@
                 <h3 style="color: white;">Đăng nhập</h3>
             </div>
             <div class="card-body">
+                <?php
+                if (isset($_GET["message"])) {
+                    echo "<bold style='color: red;
+                    text-align: center;
+                    display: block;
+                    padding: 9px;'>Tài khoản hoặc mật khẩu không chính xác</bold>";
+                } else {
+                    echo "";
+                }
+                ?>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Tài khoản</label>
                     <input type="text" class="form-control" name="username">
                     <?php
-                        if (isset($_GET["username"])) {
-                          echo "Tài khoản không được để trống";
-                        }else{
-                            echo "";
-                        }
+                    if (isset($_GET["username"])) {
+                        echo "<small style='color:red'>Tài khoản không được để trống</small>";
+                    } else {
+                        echo "";
+                    }
                     ?>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Mật khẩu</label>
                     <input type="password" class="form-control" name="password">
                     <?php
-                        if (isset($_GET["password"])) {
-                          echo "Mật khẩu không được để trống";
-                        }else{
-                            echo "";
-                        }
+                    if (isset($_GET["password"])) {
+                        echo "<small style='color:red'>Mật khẩu không được để trống</small>";
+                    } else {
+                        echo "";
+                    }
                     ?>
                 </div>
                 <div class="form-group p-1">

@@ -1,5 +1,6 @@
  /* BEGIN BANNER */
  .banner{
+
     width: 100%;
     height: 393px;
     background-color: aqua;
@@ -11,19 +12,54 @@
     margin: 0;
     padding: 0;
 }
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
+.swiper {
+  width: 100%;
+  object-fit: cover;
+}
+/*END BANNER */
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
+.treatment{ 
+display: flex;
+width: 1200px;
+height: 64px;
+margin: auto;
+margin-top: 20px;
+}
+.treatment-info{
+width: 230px;
+margin-right: 20px; 
+height: 64px;
+background-color: rgb(236, 251, 229);
+border-radius: 10px;
+display: flex;
+}
+.treatment-info-left{
+
+height: 64px;
+  width: 60px;
+  background-color: rgb(253, 175, 23);
+  border-radius: 0px 10px 10px 0px;
+}
+.treatment-info-left i{
+color: white;
+font-size: 35px;
+line-height: 64px;
+  margin-left: 6px;
+}
+.treatment-info-right{
+padding-left: 7px;
+}
+.treatment-info-right h4{
+margin: 0px;
+margin-top: 2px;
+color: rgb(51, 51, 51);
+}
+.treatment-info-right p{
+margin: 0px;
+color: rgb(192, 203, 188);
+font-size: 12px;
+}
 
   .swiper-slide img {
     display: block;
@@ -110,4 +146,3 @@
   border: 1px solid black;
 }
 /* END flashsale css */
-
