@@ -1,12 +1,17 @@
 
 <?php
-include __DIR__ . '../../Modal/Helper/GetUser.php';
-include __DIR__ . '../../Modal/Helper/SetUser.php';
-include __DIR__ . '../../Modal/Database.php';
-session_start();
+// include __DIR__ . '../../Modal/Helper/GetUser.php';
+// include __DIR__ . '../../Modal/Helper/SetUser.php';
+// include __DIR__ . '../../Modal/Database.php';
+// session_start();
 // Gọi đến kết nối mysql
 class LoginController
 {
+
+    public function __construct()
+	{
+		require('View/Admin/Login.php');
+	}
 
     public function Login()
     {
@@ -60,9 +65,9 @@ class LoginController
     }
 }
 
-// Tạo một đối tượng của controller
-$loginController = new LoginController();
+// // Tạo một đối tượng của controller
+// $loginController = new LoginController();
 
-// Gọi phương thức Login nếu form được gửi đi
-$loginController->Login();
+// // Gọi phương thức Login nếu form được gửi đi
+// $loginController->Login();
 ?>

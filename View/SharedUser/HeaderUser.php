@@ -1,6 +1,6 @@
 <header class="header-wrapper">
     <div class="header-container align-center header-flex">
-        <a href="/">
+        <a href="?controller=TrangChuController">
             <picture class="logo_header">
                 <source type="image/webp" srcset="https://www.watchstore.vn/upload/image/logo-watchstore.webp">
                 <source type="image/jpeg" srcset="https://www.watchstore.vn/upload/original-image/logo-watchstore.png">
@@ -24,8 +24,8 @@
                             <h3 style="margin-top: -4px;line-height: 40px;">Admin</h3>
                         </li>
                         <li><a href="#">Thông tin</a></li>
-                        <li><a href="#">Đăng kí</a></li>
-                        <li><a href="#">Đăng nhập</a></li>
+                        <li><a href="">Đăng kí</a></li>
+                        <li><a href="?controller=LoginController">Đăng nhập</a></li>
                         <li><a href="#">Đăng xuất</a></li>
                         <li><a href="#">Yêu thích</a></li>
                     </ul>

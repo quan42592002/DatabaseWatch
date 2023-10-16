@@ -39,6 +39,17 @@
                     ?>
                 </div>
                 <div class="form-group p-1">
+                    <label for="" class="form-label">Xác nhận mật khẩu</label>
+                    <input type="password" class="form-control" name="password">
+                    <?php
+                    if (isset($_GET["password"])) {
+                        echo "<small style='color:red'>Mật khẩu không được để trống</small>";
+                    } else {
+                        echo "";
+                    }
+                    ?>
+                </div>
+                <div class="form-group p-1">
                     <button class="btn btn-primary" style="display: flex;">Đăng nhập</button>
                     <div class="foget-login"><a href="?controller=FogetController">Quên mật khẩu ?</a></div>
                 </div>
