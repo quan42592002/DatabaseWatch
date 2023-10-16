@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group p-1">
                     <button class="btn btn-primary" style="display: flex;">Đăng nhập</button>
-                    <div class="foget-login"><a href="">Quên mật khẩu ?</a></div>
+                    <div class="foget-login"><a href="?controller=FogetController">Quên mật khẩu ?</a></div>
                 </div>
             </div>
         </div>
