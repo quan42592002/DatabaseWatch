@@ -1,4 +1,4 @@
-    <div class="navbar-wrapper">
+    <!-- <div class="navbar-wrapper">
         <nav class="navbar header-navbar">
             <div id="cssmenu" class="menu-navbar">
                 <ul>
@@ -13,4 +13,4 @@
             </div>
         </nav>
     </div>
-
+ -->
