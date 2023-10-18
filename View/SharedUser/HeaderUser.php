@@ -7,6 +7,20 @@
                 <img class="lazyload_none" width="160" height="35" src="https://www.watchstore.vn/upload/original-image/logo-watchstore.png" alt="Đồng hồ Watchstore">
             </picture>
         </a>
+        <nav class="navbar header-navbar">
+            <div id="cssmenu" class="menu-navbar">
+                <ul>
+                    <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Xả kho</span></a></li>
+                    <li> <a href="/gioi-thieu"><span class="text_menu">Giới thiệu</span></a></li>
+                    <li> <a href="/collections/dong-ho-nam-chinh-hang"><span class="text_menu">Menu</span></a></li>
+                    <li> <a href="/collections/dong-ho-nu-chinh-hang"><span class="text_menu">Name</span></a></li>
+                    <li> <a href="/collections/dong-ho-luxury-chinh-hang"><span class="text_menu">Nữ</span></a></li>
+                    <li> <a href="/collections/dong-ho-luxury-chinh-hang"><span class="text_menu">Luxury</span></a></li>
+                    <li> <a href="/collections/dong-ho-luot-chinh-hang"><span class="text_menu">Hàng lướt 99%</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
         <div class="search-acount" style="display: flex;">
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">

@@ -3,15 +3,15 @@
     session_start();
 
     require('View/SharedUser/HeaderUser.php');
-    if (isset($_SESSION['IdRole'])) {
-        if ($_SESSION['IdRole'] == 1) {
-            require('View/SharedAdmin/MenuAdmin.php');
-        } else {
-            require('View/SharedUser/MenuUser.php');
-        }
-    } else {
-        require('View/SharedUser/MenuUser.php');
-    }
+    // if (isset($_SESSION['IdRole'])) {
+    //     if ($_SESSION['IdRole'] == 1) {
+    //         require('View/SharedAdmin/MenuAdmin.php');
+    //     } else {
+    //         // require('View/SharedUser/MenuUser.php');
+    //     }
+    // } else {
+    //     require('View/SharedUser/MenuUser.php');
+    // }
     ?>
     <div class="wrapper">
         <div class="wrapper-container">
