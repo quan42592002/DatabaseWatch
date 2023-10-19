@@ -5,7 +5,7 @@
             require('View/SharedAdmin/AHeadCssMenu.php');
             require('View/SharedAdmin/HeaderAdmin.php');
             require('View/SharedAdmin/MenuAdmin.php');
-            require('View/SharedAdmin/BodyAdmin.php');
+            // require('View/SharedAdmin/BodyAdmin.php');
         } else {
             require('View/SharedUser/UHeadCssMenu.php');
             require('View/SharedUser/HeaderUser.php');
@@ -47,7 +47,7 @@
     <?php
     if (isset($_SESSION['IdRole'])) {
         if ($_SESSION['IdRole'] == 1) {
-            require('View/SharedUser/UFooterCssMenu.php');
+            require('View/SharedAdmin/AFooterCssMenu.php');
         } else {
             require('View/SharedUser/UFooterCssMenu.php');
         }

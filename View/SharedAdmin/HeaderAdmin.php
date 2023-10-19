@@ -1,6 +1,11 @@
 <div class="header-wrapper">
     <div class="header-container align-center header-flex">
         <div class="search-acount" style="display: flex;">
+            <div id="sider-icon-full" style="position: fixed;
+                top: 11px;
+                left: 313px;">
+                <i class="bi bi-window-sidebar" style="color: #8f8f8f;font-size: 25px"></i>
+            </div>
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">
                 <input style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid #bababa" type="text" placeholder="Tìm đồng hồ theo tên,hãng...">
