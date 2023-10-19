@@ -13,23 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $_SESSION['error'] = null;
         $result = $this->Login($username, $password);
-        // if ($result->num_rows > 0) {
-        //     while ($row = $result->fetch_assoc()) {
-        //         $roleUser = new SetUser();
-        //         $roleUser->setUser($row["IdUsers"], $row["Username"], $row["Password"]);
-        //     }
-        // }
-        // foreach ($users as $key) {
-        //     if ($key->Username == $username && $key->Password == $password) {
-        //         $_SESSION['username'] = $username;
-        //         // Đăng nhập thành công
-        //         header("Location: http://localhost:3000/main.php");
-        //         exit();
-        //     } else {
-        //         header("Location: http://localhost:3000/main.php?message='error'");
-        //         exit();
-        //     }
-        // }
     }
 }
 
@@ -39,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <img class="site-icon " src="https://cdn.tgdd.vn/2022/10/banner/TGDD-540x270.png">
     <form action="" method="post" class="form-login" style="width: 30%;">
         <div class="card" style="margin-left:0 ;margin-bottom: 0;">
-            <div class="card-header" style="background: cadetblue;">
-                <h3 style="color: white;">Đăng nhập</h3>
+            <div class="card-header" style="background: #f1f3f4;">
+                <h3 style="color: #826c6c;">Đăng nhập</h3>
             </div>
             <div class="card-body">
                 <?php

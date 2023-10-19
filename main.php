@@ -1,17 +1,19 @@
     <?php
-    require('View/SharedUser/UHeadCssMenu.php');
     session_start();
-
-    require('View/SharedUser/HeaderUser.php');
-    // if (isset($_SESSION['IdRole'])) {
-    //     if ($_SESSION['IdRole'] == 1) {
-    //         require('View/SharedAdmin/MenuAdmin.php');
-    //     } else {
-    //         // require('View/SharedUser/MenuUser.php');
-    //     }
-    // } else {
-    //     require('View/SharedUser/MenuUser.php');
-    // }
+    if (isset($_SESSION['IdRole'])) {
+        if ($_SESSION['IdRole'] == 1) {
+            require('View/SharedAdmin/AHeadCssMenu.php');
+            require('View/SharedAdmin/HeaderAdmin.php');
+            require('View/SharedAdmin/MenuAdmin.php');
+            require('View/SharedAdmin/BodyAdmin.php');
+        } else {
+            require('View/SharedUser/UHeadCssMenu.php');
+            require('View/SharedUser/HeaderUser.php');
+        }
+    } else {
+        require('View/SharedUser/UHeadCssMenu.php');
+        require('View/SharedUser/HeaderUser.php');
+    }
     ?>
     <div class="wrapper">
         <div class="wrapper-container">
@@ -21,20 +23,20 @@
                     if (isset($_SESSION['IdRole'])) {
                         if ($_SESSION['IdRole'] == 1) {
                             require 'Route/admin/web.php';
-                        }else{
+                        } else {
                             require 'Route/user/web.php';
                         }
-                    }else{
+                    } else {
                         require 'Route/user/web.php';
                     }
                 } else {
                     if (isset($_SESSION['IdRole'])) {
                         if ($_SESSION['IdRole'] == 1) {
                             require('View/Admin/DashBoard.php');
-                        }else{
+                        } else {
                             require('View/Client/TrangChu.html');
                         }
-                    }else{
+                    } else {
                         require('View/Client/TrangChu.html');
                     }
                 }
@@ -43,5 +45,13 @@
         </div>
     </div>
     <?php
-    require('View/SharedUser/UFooterCssMenu.php');
+    if (isset($_SESSION['IdRole'])) {
+        if ($_SESSION['IdRole'] == 1) {
+            require('View/SharedUser/UFooterCssMenu.php');
+        } else {
+            require('View/SharedUser/UFooterCssMenu.php');
+        }
+    } else {
+        require('View/SharedUser/UFooterCssMenu.php');
+    }
     ?>
