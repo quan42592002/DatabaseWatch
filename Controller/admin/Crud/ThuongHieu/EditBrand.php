@@ -6,17 +6,17 @@ $db = new Database;
 $db->connect();
 $conect = $db->conn;
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Lấy dữ liệu từ form
-    $IdThuongHieu = $_GET['IdThuongHieu'];
+    $IdThuongHieu = (int)$_POST['IdThuongHieu'];
+    $SoThuTu = $_POST['SoThuTu'];
+    $TenGoi = $_POST['TenGoi'];
 
-    $sql = "SELECT * FROM tbl_thuonghieu Where IdThuongHieu = '$IdThuongHieu';";
+    $sql = "UPDATE tbl_thuonghieu SET Stt = '$SoThuTu',TenGoi = '$TenGoi'  WHERE IdThuongHieu = $IdThuongHieu";
 
     $result = $conect->query($sql);
-    $datax = $result->fetch_assoc();
 
     $data = array(
-        'datax' => $datax,
         'status' => true,
     );
 
@@ -24,3 +24,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     header('Content-Type: application/json');
     echo json_encode($data);
 }
+$db->closeDatabase();

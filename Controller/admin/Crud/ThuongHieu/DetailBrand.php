@@ -6,25 +6,22 @@ $db = new Database;
 $db->connect();
 $conect = $db->conn;
 
-// Xử lý dữ liệu ở đây (ví dụ: lấy dữ liệu từ cơ sở dữ liệu)
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Lấy dữ liệu từ form
-    $SoThuTu = $_POST['SoThuTu'];
-    $TenGoi = $_POST['TenGoi'];
+    $IdThuongHieu = $_GET['IdThuongHieu'];
 
-    $sql = "INSERT INTO tbl_thuonghieu (Stt, TenGoi) VALUES ('$SoThuTu', '$TenGoi')";
+    $sql = "SELECT * FROM tbl_thuonghieu Where IdThuongHieu = '$IdThuongHieu';";
+
     $result = $conect->query($sql);
+    $datax = $result->fetch_assoc();
 
     $data = array(
-        'SoThuTu' =>  $SoThuTu,
-        'TenGoi' => $TenGoi,
+        'datax' => $datax,
         'status' => true,
     );
-    
+
     // Trả về dữ liệu dưới dạng JSON
     header('Content-Type: application/json');
     echo json_encode($data);
 }
-
-
-?>
+$db->closeDatabase();
