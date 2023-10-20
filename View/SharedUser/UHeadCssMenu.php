@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/style.css">
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/main.css">
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/trangchuuser.css">
+    <link rel="stylesheet" href="http://localhost:3000/Assets/css/DanhSachSP.css">
+
     <link rel="stylesheet" href="http://localhost:3000/Assets/TrangChu.js">
 
     <!-- css của trang chủ -->
