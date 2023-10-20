@@ -1,8 +1,7 @@
 <?php
 	$controller = $_GET['controller'];
-if ($controller == "LoginController") {
-	require('Controller/auth/' . $controller . '.php'); 
-}else if ($controller == "Logout") {
+if ($controller == "LoginController" || $controller == "FogetController" 
+||  $controller == "FogetQuestionController" || $controller == "Logout") {
 	require('Controller/auth/' . $controller . '.php'); 
 }else{
 	require('Controller/user/' . $controller . '.php'); 
