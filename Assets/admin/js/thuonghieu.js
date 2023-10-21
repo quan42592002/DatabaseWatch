@@ -111,28 +111,27 @@ var myController = {
     SaveData: function () {
         var IdThuongHieu = $("#IdThuongHieu").val();
         var files = $("#duong_dan_tai_lieu")[0].files; // Khai báo biến files bên trong hàm
-    
-        if (IdThuongHieu == 0) {
-            if (files != undefined && files.length > 0) {
-                if (window.FormData !== undefined) {
-                    var formData = new FormData();
-    
-                    for (var x = 0; x < files.length; x++) {
-                        if (files[x].size >= 52428800) {
-                            alert('Chỉ được upload file dưới 50MB', 'Thông báo');
-                            $('#duong_dan_tai_lieu').val("");
-                            return;
-                        }
-                        formData.append('duong_dan_tai_lieu[]', files[x]); // Sử dụng mảng để gửi nhiều tệp
+
+        if (files != undefined && files.length > 0) {
+            if (window.FormData !== undefined) {
+                var formData = new FormData();
+
+                for (var x = 0; x < files.length; x++) {
+                    if (files[x].size >= 52428800) {
+                        alert('Chỉ được upload file dưới 50MB', 'Thông báo');
+                        $('#duong_dan_tai_lieu').val("");
+                        return;
                     }
-    
-                    // Thêm các thông tin khác vào formData
-                    formData.append("SoThuTu", $("#SoThuTu").val());
-                    formData.append("TenGoi", $("#TenGoi").val());
-    
+                    formData.append('duong_dan_tai_lieu[]', files[x]); // Sử dụng mảng để gửi nhiều tệp
+                }
+                // Thêm các thông tin khác vào formData
+                formData.append("SoThuTu", $("#SoThuTu").val());
+                formData.append("TenGoi", $("#TenGoi").val());
+                formData.append("IdThuongHieu", $("#IdThuongHieu").val());
+                if (IdThuongHieu == 0) {
                     $.ajax({
                         type: "POST",
-                        url: 'http://localhost:8000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
+                        url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
                         contentType: false,
                         processData: false,
                         data: formData, // Sử dụng formData để gửi tệp
@@ -144,103 +143,67 @@ var myController = {
                                 alert("Có lỗi xảy ra");
                             }
                         },
-                        error: function (response) {
-                            alert("Có lỗi xảy ra");
-                        }
                     });
                 } else {
-                    alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
+                    $.ajax({
+                        type: "POST",
+                        url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/EditBrand.php',
+                        contentType: false,
+                        processData: false,
+                        data: formData, // Sử dụng formData để gửi tệp
+                        success: function (response) {
+                            if (response.status == true) {
+                                alert("Thành công");
+                                myController.LoadTable();
+                            } else {
+                                alert("Có lỗi xảy ra");
+                            }
+                        },
+                    });
                 }
             } else {
-                // Xử lý khi không có tệp nào được tải lên
+                alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
             }
         } else {
-            // Xử lý chỉnh sửa thông tin thương hiệu
+            if (IdThuongHieu == 0) {
+                $.ajax({
+                    url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
+                    method: 'Post',
+                    data: {
+                        SoThuTu: $("#SoThuTu").val(),
+                        TenGoi: $("#TenGoi").val(),
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.status) {
+                            alert("Thành công");
+                            myController.LoadTable();
+                        }else {
+                            alert("Có lỗi xảy ra");
+                        }
+                    },
+                });
+            } else {
+                $.ajax({
+                    url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/EditBrand.php',
+                    method: 'Post',
+                    data: {
+                        IdThuongHieu: IdThuongHieu,
+                        SoThuTu: $("#SoThuTu").val(),
+                        TenGoi: $("#TenGoi").val(),
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.status) {
+                            alert("Thành công");
+                            myController.LoadTable();
+                        }else {
+                            alert("Có lỗi xảy ra");
+                        }
+                    },
+                });
+            }
         }
     }
-    
-    // SaveData: function () {
-    //     var IdThuongHieu = $("#IdThuongHieu").val();
-
-    //     if (IdThuongHieu == 0) {
-    //         if (files != undefined && files.length > 0) {
-    //             if (window.FormData !== undefined) {
-    //                 var formData = new FormData();
-    //                 files = $("#duong_dan_tai_lieu")[0].files;
-
-    //                 for (var x = 0; x < files.length; x++) {
-    //                     if (files[x].size >= 52428800) {
-    //                         alert('Chỉ được upload file dưới 50MB', 'Thông báo');
-    //                         $('#duong_dan_tai_lieu').val("");
-    //                         return;
-    //                     }
-    //                     formData.append('files["duong_dan_tai_lieu"]', files[x]); // Sử dụng mảng để gửi nhiều tệp
-    //                 }
-    //                 $.ajax({
-    //                     type: "POST",
-    //                     url: 'http://localhost:8000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
-    //                     contentType: false,
-    //                     processData: false,
-    //                     data: {
-    //                         SoThuTu: $("#SoThuTu").val(),
-    //                         TenGoi: $("#TenGoi").val(),
-    //                     },
-    //                     success: function (response) {
-    //                         if (response.status == true) {
-    //                             alert("Thành công");
-    //                             myController.LoadTable();
-    //                         } else {
-    //                             alert("Có lỗi xảy ra");
-    //                         }
-    //                     },
-    //                     error: function (response) {
-    //                         alert("Có lỗi xảy ra");
-    //                     }
-    //                 });
-    //             } else {
-    //                 alert("Upload file thất bại!");
-    //             }
-    //         } else {
-    //             $.ajax({
-    //                 url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
-    //                 method: 'Post',
-    //                 data: {
-    //                     SoThuTu: $("#SoThuTu").val(),
-    //                     TenGoi: $("#TenGoi").val(),
-    //                 },
-    //                 dataType: 'json',
-    //                 success: function (response) {
-    //                     if (response.status) {
-    //                         alert("Thành công");
-    //                         myController.LoadTable();
-    //                     }
-    //                 },
-    //                 error: function (error) {
-    //                     console.log('Error:', error);
-    //                 }
-    //             });
-    //         }
-    //     } else {
-    //         $.ajax({
-    //             url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/EditBrand.php',
-    //             method: 'Post',
-    //             data: {
-    //                 IdThuongHieu: IdThuongHieu,
-    //                 SoThuTu: $("#SoThuTu").val(),
-    //                 TenGoi: $("#TenGoi").val(),
-    //             },
-    //             dataType: 'json',
-    //             success: function (response) {
-    //                 if (response.status) {
-    //                     alert("Thành công");
-    //                     myController.LoadTable();
-    //                 }
-    //             },
-    //             error: function (error) {
-    //                 console.log('Error:', error);
-    //             }
-    //         });
-    //     }
-    // }
 };
 myController.init();

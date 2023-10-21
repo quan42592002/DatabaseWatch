@@ -80,12 +80,23 @@ margin-top: 15px;
   padding:  15px 10px 15px 10px;
   border-radius: 4px;
 }
-.price{
+.price,.sex,.machine-series,.product-line,.material-grass,.material-wire,.size,.feature,.color{
   display: inline-block;
   width: 49%;
   border: 1PX solid green;
   height: 240px;
+/* padding: 10px; */
+
 }
+/* a */
+.price a,.sex a,.machine-series a,.product-line a,.material-grass a,.material-wire a,.size a,.feature a,.color a{
+border: 1px solid #e0e0e0 ;
+border-radius: 4px;
+padding: 7px;
+text-decoration: none;
+color: rgb(51, 51, 51);
+}
+
 /* END Sub */
 /* .sub-boloc {
   -ms-overflow-style: none;
