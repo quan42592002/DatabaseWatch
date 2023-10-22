@@ -50,15 +50,16 @@ var myController = {
         $("#TenGoi").val("");
     },
 
-    LoadTable: function () {
+    LoadTable: function (page=1) {
         $.ajax({
-            url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/LoadTable.php',
-            method: 'Get',
+            url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/LoadTable.php?page=' + page,
+            method: 'GET',
             dataType: 'json',
             success: function (response) {
                 if (response.status) {
                     var datax = response.datax;
                     var html = "";
+    
                     $.each(datax, function (index, value) {
                         html += "<tr><td>" + value.IdThuongHieu + "</td>" +
                             "<td>" + value.Stt + "</td>" +
@@ -66,13 +67,28 @@ var myController = {
                             "<td>" +
                             '<div>' +
                             '<a class="btn btn-success" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdThuongHieu + ')" ><i class="bi bi-pencil"></i></a>' +
-                            '<a class="btn btn-primary " title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdThuongHieu + ')"><i class="bi bi-trash"></i></a>'
-                        '</div>'
-                            + "</td>" +
+                            '<a class="btn btn-primary" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdThuongHieu + ')"><i class="bi bi-trash"></i></a>' +
+                            '</div>' +
+                            "</td>" +
                             "</tr>";
                     });
-
+    
                     $("#tbl_ThuongHieu").html(html);
+    
+                    // Phân trang
+                    var totalPages = Math.ceil(response.total_items / response.items_per_page);
+                    var currentPage = response.current_page;
+    
+                    var paginationHtml = "";
+                    for (var i = 1; i <= totalPages; i++) {
+                        if (i === currentPage) {
+                            paginationHtml += '<span>' + i + '</span>';
+                        } else {
+                            paginationHtml += '<a href="javascript:myController.LoadTable(' + i + ')">' + i + '</a>';
+                        }
+                    }
+    
+                    $(".pagination").html(paginationHtml);
                 }
             },
             error: function (error) {
