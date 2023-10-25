@@ -88,6 +88,10 @@ margin-top: 15px;
   border-top: 1PX solid #e0e0e0;
   height: 120px;
 }
+
+.price a{
+  margin-right: 10px;
+}
 .price a:hover{
   border: 1px solid #0066FF;
 }
