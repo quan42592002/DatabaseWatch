@@ -12,11 +12,11 @@
 
         <div id="cssmenu" class="menu-navbar">
             <ul>
-                <li> <a href="/collections/xa-kho-gia-tot">Trang chủ , thông tin</a></li>
+                <li> <a href="?controller=DashBoardController">Trang chủ , thông tin</a></li>
                 <li> <a href="/gioi-thieu">Báo cáo , thống kê</a></li>
-                <li> <a href="/collections/dong-ho-nam-chinh-hang">Quản lý đồng hồ</a></li>
-                <li> <a href="/collections/dong-ho-nu-chinh-hang">Quản lý nhập kho</a></li>
-                <li> <a href="/collections/dong-ho-luxury-chinh-hang">Tìm kiếm</a></li>
+                <li> <a href="?controller=DongHoController">Quản lý đồng hồ</a></li>
+                <li> <a href="?controller=QuanLyKhoController">Quản lý nhập kho</a></li>
+                <li> <a href="">Tìm kiếm</a></li>
                 <li> <a href="?controller=ThuongHieuController">Danh mục thương hiệu</a></li>
                 <li> <a href="/collections/dong-ho-luot-chinh-hang">Danh mục hệ thống</a></li>
             </ul>

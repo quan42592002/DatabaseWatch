@@ -3,7 +3,7 @@ var myController = {
 
     init: function () {
         myController.resetForm();
-        myController.LoadTable();
+        // myController.LoadTable();
         myController.RegesterEvent();
     },
 
@@ -36,7 +36,11 @@ var myController = {
         });
 
         $("#btn_TaoMoi").off("click").on("click", function () {
-            myController.resetForm();
+            $("#modal-DongHo").show();
+        });
+
+        $("#btn_Thoat").off("click").on("click", function () {
+            $("#modal-DongHo").hide();
         });
 
         $("#btn_SaveData").off("click").on("click", function () {
@@ -45,12 +49,10 @@ var myController = {
     },
 
     resetForm: function () {
-        $("#IdThuongHieu").val(0);
-        $("#SoThuTu").val("");
-        $("#TenGoi").val("");
+        $("#modal-DongHo").hide();
     },
 
-    LoadTable: function (page=1) {
+    LoadTable: function (page = 1) {
         $.ajax({
             url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/LoadTable.php?page=' + page,
             method: 'GET',
@@ -59,7 +61,7 @@ var myController = {
                 if (response.status) {
                     var datax = response.datax;
                     var html = "";
-    
+
                     $.each(datax, function (index, value) {
                         html += "<tr><td>" + value.IdThuongHieu + "</td>" +
                             "<td>" + value.Stt + "</td>" +
@@ -72,13 +74,13 @@ var myController = {
                             "</td>" +
                             "</tr>";
                     });
-    
+
                     $("#tbl_ThuongHieu").html(html);
-    
+
                     // Phân trang
                     var totalPages = Math.ceil(response.total_items / response.items_per_page);
                     var currentPage = response.current_page;
-    
+
                     var paginationHtml = "";
                     for (var i = 1; i <= totalPages; i++) {
                         if (i === currentPage) {
@@ -87,7 +89,7 @@ var myController = {
                             paginationHtml += '<a href="javascript:myController.LoadTable(' + i + ')">' + i + '</a>';
                         }
                     }
-    
+
                     $(".pagination").html(paginationHtml);
                 }
             },
@@ -194,7 +196,7 @@ var myController = {
                         if (response.status) {
                             alert("Thành công");
                             myController.LoadTable();
-                        }else {
+                        } else {
                             alert("Có lỗi xảy ra");
                         }
                     },
@@ -213,7 +215,7 @@ var myController = {
                         if (response.status) {
                             alert("Thành công");
                             myController.LoadTable();
-                        }else {
+                        } else {
                             alert("Có lỗi xảy ra");
                         }
                     },

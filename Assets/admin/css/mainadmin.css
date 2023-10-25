@@ -175,6 +175,18 @@ button, select {
   background-color: #218838;
   border-color: #1e7e34;
 }
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #aa2e3a;
+  border-color: #aa2e3a;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: rgb(40, 11, 14);
+  border-color: rgb(40, 11, 14);
+}
 .btn:focus, .btn:hover {
   text-decoration: none;
 }
@@ -513,4 +525,32 @@ button, select {
 /* Hover effect on rows */
 .styled-table tbody tr:hover {
   background-color: #ddd;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline;
+  margin: 5px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: #314e6e;
 }
