@@ -7,7 +7,7 @@
                 <img class="lazyload_none" width="160" height="35" src="https://www.watchstore.vn/upload/original-image/logo-watchstore.png" alt="Đồng hồ Watchstore">
             </picture>
         </a>
-        <nav class="navbar header-navbar">
+        <nav  class="navbar header-navbar">
             <div id="cssmenu" class="menu-navbar">
                 <ul>
                     <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Xả kho</span></a></li>
@@ -40,18 +40,18 @@
                                 <li style="margin-right:15px;">
                                 <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Hàng cao cấp</span></a>
                                 <ul >
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
-                                    <li><a style="line-height: 30px;" href="">Frederique Constant</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
+                                    <li><a style="line-height: 30px;" href="">Longines</a></li>
 
                                
 
@@ -62,17 +62,17 @@
                                 <li style="margin-right:15px;">
                                 <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Các hãng khác</span></a>
                                 <ul >
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                    <li><a style="line-height: 30px;" href="">Casino</a></li>
-
-                               
-
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                    <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
+                                
                                    </ul>
                                 </li>
                            
@@ -145,7 +145,7 @@
                 <i style="position:absolute;top:9px;font-size: 18px;right:12px;" class="bi bi-search"></i>
             </div>
             <!--End search-product -->
-            <div class="admin-login"><i class="bi bi-person-circle iconuser" style="color: #8f8f8f;"></i>
+            <div class="admin-login"><i class="bi bi-person-circle iconuser" style="color: #020101;"></i>
                 <div class="admin-sub">
                     <ul>
                         <li style="height: 40px;
@@ -178,9 +178,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="card-shop">
+            <div  class="card-shop">
                 <a href="http://" class="card-shop-header">
-                    <i class="bi bi bi-cart iconuser" style="color: #8f8f8f;"></i>
+                    <i class="bi bi bi-cart iconuser" style="color: #020101;"></i>
+                    <p>5</p>
                 </a>
             </div>
         </div>

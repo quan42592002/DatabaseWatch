@@ -51,7 +51,13 @@ ul {
 }
 
 /* Menu Navbar */
+.navbar{
+  padding-bottom: 5px;
 
+}
+.menu-navbar>ul>li>a{
+  color: #020101;
+}
 .navbar-wrapper {
   background: rgb(20 137 172);
   height: 42px;
@@ -116,7 +122,7 @@ ul {
 .text_menu {
   line-height: 2.6;
   padding: 15px;
-  color: #6c6c6c;
+  color: #020101;
   font-size: 16px;
 }
 
@@ -172,7 +178,21 @@ ul {
   z-index: 10;
   position: relative;
 }
-
+.card-shop{
+  position: relative;
+}
+.card-shop p{
+  position: absolute;
+  color: white;
+  line-height: 17px;
+  font-size: 12px;
+  background: red;
+  width: 17px;
+  border-radius: 20px;
+  text-align: center;
+  top: -14px;
+  right: -6px;
+}
 .admin-sub {
   border-radius: 12px;
   box-shadow: 1px solid black;
@@ -247,8 +267,6 @@ ul {
   color: #020101;
   font-weight: bold;
   border-bottom: 1px solid #6c6c6c;
-
-  border-bottom: 1px solid;
 }
 .sub-menu-main a{
   text-decoration: none;
@@ -259,6 +277,9 @@ ul {
   text-align: left;
   color: #333333;
   
+}
+.sub-menu-main>li>ul>li>a:hover{
+  color: #0066FF;
 }
 
 /* END sub-menu */
