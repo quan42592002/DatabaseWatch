@@ -12,7 +12,7 @@ var myController = {
 
         $(".js-example-tags").select2({
             width: "100%",
-            allowClear: true 
+            allowClear: true
         });
 
 
@@ -49,7 +49,7 @@ var myController = {
         $("#btn_TaoChiTiet").off("click").on("click", function () {
             myController.SaveNewChiTiet();
         });
-        
+
 
         $("#btn_Thoat").off("click").on("click", function () {
             $("#modal-DongHo").hide();
@@ -142,7 +142,7 @@ var myController = {
                             "</tr>";
                     });
 
-                    $("#tbl_ThuongHieu").html(html);
+                    $("#tbl_DongHo").html(html);
 
                     // Phân trang
                     var totalPages = Math.ceil(response.total_items / response.items_per_page);
@@ -194,7 +194,8 @@ var myController = {
                         $("#urlAnh").css('border-radius', '0%')
 
                         $("#modal-DongHo").show();
-
+                        myController.LoadDetailChiTiet(datax.IdDongHo);
+                        myController.UpdateSoLuong(datax.IdDongHo);
                     }
                 }
             },
@@ -204,9 +205,31 @@ var myController = {
         });
     },
 
-    SaveNewChiTiet:function () {
+    UpdateSoLuong: function (IdDongHo) {
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/UpdateSoLuong.php',
+            method: 'Get',
+            data: {
+                IdDongHo: IdDongHo,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    var datax = response.datax;
+                    if (datax != null) {
+                        $("#SoLuong").val(datax);
+                    }
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    },
+
+    SaveNewChiTiet: function () {
         var IdDongHo = $("#IdDongHo").val();
-        if (IdDongHo <=0) {
+        if (IdDongHo <= 0) {
             alert("Bạn chưa có thông tin đồng hồ");
             return;
         }
@@ -220,7 +243,69 @@ var myController = {
             success: function (response) {
                 if (response.status) {
                     alert("Thêm mới thành công");
-                    myController.LoadDetailChiTiet();
+                    myController.LoadDetailChiTiet(IdDongHo);
+                    myController.UpdateSoLuong(IdDongHo);
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    },
+
+    DeleteChiTiet: function (IdChiTietDongHo) {
+        var IdDongHo = $("#IdDongHo").val();
+        if (IdChiTietDongHo <= 0) {
+            alert("Bạn chưa có thông tin");
+            return;
+        }
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/DeleteChiTiet.php',
+            method: 'Post',
+            data: {
+                IdChiTietDongHo: IdChiTietDongHo,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    alert("Xóa thành công thành công");
+                    myController.LoadDetailChiTiet(IdDongHo);
+                    myController.UpdateSoLuong(IdDongHo);
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    },
+
+    LoadDetailChiTiet: function (IdDongHo) {
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadDetailChiTiet.php',
+            method: 'GET',
+            data: {
+                IdDongHo: IdDongHo,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    var datax = response.datax;
+                    var html = "";
+
+                    $.each(datax, function (index, value) {
+                        html += "<tr><td><input type='text' class='form-control' value ='" + value.Imei + "'></td>" +
+                            "<td><input type='text' class='form-control' value ='" + value.BaoHanh + "'></td>" +
+                            "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhTu + "'disabled></td>" +
+                            "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhDen + "'disabled></td>" +
+                            "<td>" +
+                            '<div>' +
+                            '<a class="btn btn-danger" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteChiTiet(' + value.IdChiTietDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                            '</div>' +
+                            "</td>" +
+                            "</tr>";
+                    });
+
+                    $("#tbl_ChiTietDongHo").html(html);
                 }
             },
             error: function (error) {

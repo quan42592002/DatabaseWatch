@@ -39,7 +39,7 @@
                             <th style="text-align: center;">Giá bán</th>
                             <th style="text-align: center;">Chức năng</th>
                         </tr>
-                        <tbody id="tbl_ThuongHieu">
+                        <tbody id="tbl_DongHo">
                         </tbody>
                     </table>
                     <div class="pagination">
@@ -60,9 +60,9 @@
     <div class="card-body p-2" style="display: inline;overflow-y: scroll">
         <input type="hidden" class="form-control" id="IdDongHo" placeholder="" >
         <div style="display: flex;">
-            <div class="" style="width: 20%; background: #c7c6c6;height: 168px;">
+            <div class="" style="width: 20%; background: #007bff;height: 168px;">
                 <div class="upload" style="text-align-last: center;margin: 15px;">
-                    <img src="" id="urlAnh" alt="" width="130px">
+                    <img  id="urlAnh" src="http://localhost:3000/UpLoad/Public/3135715.png" width="130px">
                 </div>
                 <div class="form-group" >
                     <div class="input-group col-md-12">
@@ -143,8 +143,6 @@
                     <tbody id="tbl_ChiTietDongHo">
                     </tbody>
                 </table>
-                <div class="pagination">
-                </div>
             </div>
         </div>
     </div>
