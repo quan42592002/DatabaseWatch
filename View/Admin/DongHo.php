@@ -58,12 +58,13 @@
         <button class="btn btn-danger" id="btn_Thoat" style="display: flex;margin: 10px; ">Chuyển & Đóng</button>
     </div>
     <div class="card-body p-2" style="display: inline;overflow-y: scroll">
+        <input type="hidden" class="form-control" id="IdDongHo" placeholder="" >
         <div style="display: flex;">
             <div class="" style="width: 20%; background: #c7c6c6;height: 168px;">
                 <div class="upload" style="text-align-last: center;margin: 15px;">
                     <img src="" id="urlAnh" alt="" width="130px">
                 </div>
-                <div class="form-group" style="margin-top: 136px;">
+                <div class="form-group" >
                     <div class="input-group col-md-12">
                         <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
                     </div>
@@ -72,51 +73,57 @@
             <div class="" style="width: 40%;margin-left: 20px;">
                 <div class="form-group p-1" style="padding-top: 0px;">
                     <label for="" class="form-label">Tên đồng hồ</label>
-                    <input type="text" class="form-control" id="SoThuTu" placeholder="">
+                    <input type="text" class="form-control" id="TenDongHo" placeholder="">
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Phân loại (Nam/Nữ)</label>
-                    <select name="" id="" class="form-control" >
-                        <option value="">-- Chọn Phân loại--</option>
-                        <option value="">Nam</option>
-                        <option value="">Nữ</option>
+                    <select name="" id="NamNu" class="form-control ">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
                     </select>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Kiểu dáng</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <select class="form-control js-example-tags" id="KieuDang">
+                        <option>--Chọn kiểu dáng--</option>
+                    </select>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Loại dây</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <select name="" id="LoaiDay" class="form-control js-example-tags">
+                        <option value="">-- Chọn Loại dây --</option>
+                    </select>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Chống nước</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <select name="" id="ChongNuoc" class="form-control">
+                        <option value="1">Có chống nước</option>
+                        <option value="0">Không chống nước</option>
+                    </select>
                 </div>
             </div>
             <div class="" style="width: 40%;margin-left: 20px;">
                 <div class="form-group p-1" style="padding-top: 0px;">
                     <label for="" class="form-label">Thương hiệu</label>
-                    <select name="" id="" class="form-control" >
+                    <select name="" id="ThuongHieu" class="form-control js-example-tags">
                         <option value="">-- Chọn Thương Hiệu</option>
                     </select>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Số lượng</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <input type="number" class="form-control" id="SoLuong" placeholder="Nhập số lượng" disabled style="font-size: large;">
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Giá mua</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <input type="number" class="form-control" id="GiaMua" placeholder="Nhập giá mua ...">
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Giá bán</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <input type="text" class="form-control" id="GiaBan" placeholder="Nhập giá bán ...">
                 </div>
                 <div class="form-group p-1">
-                    <label for="" class="form-label">Giảm giá</label>
-                    <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
+                    <label for="" class="form-label">Giảm giá (%)</label>
+                    <input type="number" class="form-control" id="GiamGia" placeholder="Nhập giám giá ...">
                 </div>
             </div>
         </div>
@@ -133,20 +140,7 @@
                         <th style="text-align: center;">Đến ngày</th>
                         <th style="text-align: center;">Xóa</th>
                     </tr>
-                    <tbody id="tbl_ThuongHieu">
-                        <tr>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                        </tr> <tr>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                            <td><input type="text" class="form-control" id="SoThuTu" placeholder=""></td>
-                        </tr>
+                    <tbody id="tbl_ChiTietDongHo">
                     </tbody>
                 </table>
                 <div class="pagination">
@@ -158,4 +152,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.css">
 <script src="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.min.js"></script>
+<link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/Select2/select2.css">
+<script src="http://localhost:3000/Assets/admin/js/plugins/Select2/select2.js"></script>
 <script src="http://localhost:3000/Assets/admin/js/DongHo.js"></script>

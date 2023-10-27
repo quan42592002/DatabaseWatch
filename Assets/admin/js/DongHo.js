@@ -2,13 +2,19 @@ var files;
 var myController = {
 
     init: function () {
-        myController.resetForm();
-        // myController.LoadTable();
+        $("#modal-DongHo").hide();
+        myController.LoadData();
         myController.RegesterEvent();
     },
 
 
     RegesterEvent: function () {
+
+        $(".js-example-tags").select2({
+            width: "100%",
+            allowClear: true 
+        });
+
 
         $('#duong_dan_tai_lieu').filestyle({
             text: 'Đính kèm tệp',
@@ -37,24 +43,78 @@ var myController = {
 
         $("#btn_TaoMoi").off("click").on("click", function () {
             $("#modal-DongHo").show();
+            myController.resetForm();
         });
 
         $("#btn_Thoat").off("click").on("click", function () {
             $("#modal-DongHo").hide();
         });
 
-        $("#btn_SaveData").off("click").on("click", function () {
+        $("#btn_Save").off("click").on("click", function () {
             myController.SaveData();
         });
     },
 
     resetForm: function () {
-        $("#modal-DongHo").hide();
+        $("#IdDongHo").val(0);
+        $("#TenDongHo").val("");
+        $("#NamNu").val("Nam");
+        $("#KieuDang").val("");
+        $("#SoLuong").val("0");
+        $("#LoaiDay").val("");
+        $("#GiaMua").val("");
+        $("#GiaBan").val("");
+        $("#GiamGia").val("");
+    },
+
+    LoadData: function () {
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadData.php',
+            method: 'Get',
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    var lstLoaiDay = response.lstLoaiDay;
+                    var lstThuongHieu = response.lstThuongHieu;
+                    var lstKieuDang = response.lstKieuDang;
+
+                    if (lstLoaiDay != null) {
+                        var option = "<option value=''>-- Chọn Loại dây --</option>";
+                        $.each(lstLoaiDay, function (index, value) {
+                            option += "<option value='" + value.TenGoi + "'>" + value.TenGoi + "</option>";
+                        });
+                        $("#LoaiDay").html(option);
+                    }
+
+                    if (lstThuongHieu != null) {
+                        var option = "<option value=''>-- Chọn thương hiệu --</option>";
+                        $.each(lstThuongHieu, function (index, value) {
+                            option += "<option value='" + value.IdThuongHieu + "'>" + value.TenGoi + "</option>";
+                        });
+                        $("#ThuongHieu").html(option);
+                    }
+
+                    if (lstKieuDang != null) {
+                        var option = "<option value=''>-- Chọn kiểu dáng --</option>";
+                        $.each(lstKieuDang, function (index, value) {
+                            option += "<option value='" + value.TenGoi + "'>" + value.TenGoi + "</option>";
+                        });
+                        $("#KieuDang").html(option);
+                    }
+
+                    myController.LoadTable();
+
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
     },
 
     LoadTable: function (page = 1) {
         $.ajax({
-            url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/LoadTable.php?page=' + page,
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadTable.php?page=' + page,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -63,13 +123,15 @@ var myController = {
                     var html = "";
 
                     $.each(datax, function (index, value) {
-                        html += "<tr><td>" + value.IdThuongHieu + "</td>" +
-                            "<td>" + value.Stt + "</td>" +
+                        html += "<tr><td>" + value.TenDongHo + "</td>" +
                             "<td>" + value.TenGoi + "</td>" +
+                            "<td>" + value.NamNu + "</td>" +
+                            "<td>" + value.GiaMua + "</td>" +
+                            "<td>" + value.GiaBan + "</td>" +
                             "<td>" +
                             '<div>' +
-                            '<a class="btn btn-success" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdThuongHieu + ')" ><i class="bi bi-pencil"></i></a>' +
-                            '<a class="btn btn-primary" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdThuongHieu + ')"><i class="bi bi-trash"></i></a>' +
+                            '<a class="btn btn-success" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
+                            '<a class="btn btn-primary" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
                             '</div>' +
                             "</td>" +
                             "</tr>";
@@ -99,24 +161,35 @@ var myController = {
         });
     },
 
-    LoadDetail: function (IdThuongHieu) {
+    LoadDetail: function (IdDongHo) {
         $.ajax({
-            url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/DetailBrand.php',
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadDetail.php',
             method: 'Get',
             data: {
-                IdThuongHieu: IdThuongHieu,
+                IdDongHo: IdDongHo,
             },
             dataType: 'json',
             success: function (response) {
                 if (response.status) {
                     var datax = response.datax;
                     if (datax != null) {
-                        $("#IdThuongHieu").val(datax.IdThuongHieu);
-                        $("#SoThuTu").val(datax.Stt);
-                        $("#TenGoi").val(datax.TenGoi);
-                        $("#urlAnh").attr('src', datax.UrlAnh);
-                        $("#urlAnh").css('width', '100%')
+                        $("#IdDongHo").val(datax.IdDongHo);
+                        $("#TenDongHo").val(datax.TenDongHo);
+                        $("#KieuDang").val(datax.KieuDang).trigger("change");
+                        $("#IdThuongHieu").val(datax.IdThuongHieu).trigger("change");
+                        $("#NamNu").val(datax.NamNu);
+                        $("#SoLuong").val(datax.SoLuong);
+                        $("#GiaMua").val(datax.GiaMua);
+                        $("#GiaBan").val(datax.GiaBan);
+                        $("#GiamGia").val(datax.GiamGia);
+                        $("#IdThuongHieu").trigger("change");
+                        $("#KieuDang").trigger("change");
+
+                        $("#urlAnh").attr('src', datax.Url_anh);
                         $("#urlAnh").css('border-radius', '0%')
+
+                        $("#modal-DongHo").show();
+
                     }
                 }
             },
@@ -127,7 +200,32 @@ var myController = {
     },
 
     SaveData: function () {
-        var IdThuongHieu = $("#IdThuongHieu").val();
+        var IdDongHo = $("#IdDongHo").val();
+        var TenDongHo = $("#TenDongHo").val();
+        var NamNu = $("#NamNu").val();
+        var SoLuong = $("#SoLuong").val();
+        var KieuDang = $("#KieuDang").val();
+        var LoaiDay = $("#LoaiDay").val();
+        var GiaMua = $("#GiaMua").val();
+        var GiaBan = $("#GiaBan").val();
+        var GiamGia = $("#GiamGia").val();
+        var ChongNuoc = $("#ChongNuoc").val();
+        var ThuongHieu = $("#ThuongHieu").val();
+
+        var objData = {
+            IdDongHo: IdDongHo,
+            TenDongHo: TenDongHo,
+            NamNu: NamNu,
+            SoLuong: SoLuong,
+            KieuDang: KieuDang,
+            LoaiDay: LoaiDay,
+            GiaMua: GiaMua,
+            GiaBan: GiaBan,
+            GiamGia: GiamGia,
+            ChongNuoc: ChongNuoc,
+            ThuongHieu: ThuongHieu,
+        };
+
         var files = $("#duong_dan_tai_lieu")[0].files; // Khai báo biến files bên trong hàm
 
         if (files != undefined && files.length > 0) {
@@ -143,13 +241,11 @@ var myController = {
                     formData.append('duong_dan_tai_lieu[]', files[x]); // Sử dụng mảng để gửi nhiều tệp
                 }
                 // Thêm các thông tin khác vào formData
-                formData.append("SoThuTu", $("#SoThuTu").val());
-                formData.append("TenGoi", $("#TenGoi").val());
-                formData.append("IdThuongHieu", $("#IdThuongHieu").val());
-                if (IdThuongHieu == 0) {
+                formData.append("strJson", JSON.stringify(objData));
+                if (IdDongHo == 0) {
                     $.ajax({
                         type: "POST",
-                        url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
+                        url: 'http://localhost:8000/Controller/admin/Crud/DongHo/Insert.php',
                         contentType: false,
                         processData: false,
                         data: formData, // Sử dụng formData để gửi tệp
@@ -181,45 +277,6 @@ var myController = {
                 }
             } else {
                 alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
-            }
-        } else {
-            if (IdThuongHieu == 0) {
-                $.ajax({
-                    url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/NewBrand.php',
-                    method: 'Post',
-                    data: {
-                        SoThuTu: $("#SoThuTu").val(),
-                        TenGoi: $("#TenGoi").val(),
-                    },
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.status) {
-                            alert("Thành công");
-                            myController.LoadTable();
-                        } else {
-                            alert("Có lỗi xảy ra");
-                        }
-                    },
-                });
-            } else {
-                $.ajax({
-                    url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/EditBrand.php',
-                    method: 'Post',
-                    data: {
-                        IdThuongHieu: IdThuongHieu,
-                        SoThuTu: $("#SoThuTu").val(),
-                        TenGoi: $("#TenGoi").val(),
-                    },
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.status) {
-                            alert("Thành công");
-                            myController.LoadTable();
-                        } else {
-                            alert("Có lỗi xảy ra");
-                        }
-                    },
-                });
             }
         }
     }
