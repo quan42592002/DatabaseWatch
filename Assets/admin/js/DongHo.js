@@ -46,6 +46,11 @@ var myController = {
             myController.resetForm();
         });
 
+        $("#btn_TaoChiTiet").off("click").on("click", function () {
+            myController.SaveNewChiTiet();
+        });
+        
+
         $("#btn_Thoat").off("click").on("click", function () {
             $("#modal-DongHo").hide();
         });
@@ -191,6 +196,31 @@ var myController = {
                         $("#modal-DongHo").show();
 
                     }
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    },
+
+    SaveNewChiTiet:function () {
+        var IdDongHo = $("#IdDongHo").val();
+        if (IdDongHo <=0) {
+            alert("Bạn chưa có thông tin đồng hồ");
+            return;
+        }
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/SaveNewChiTiet.php',
+            method: 'Post',
+            data: {
+                IdDongHo: IdDongHo,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    alert("Thêm mới thành công");
+                    myController.LoadDetailChiTiet();
                 }
             },
             error: function (error) {

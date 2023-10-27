@@ -85,7 +85,7 @@
                 <div class="form-group p-1">
                     <label for="" class="form-label">Kiểu dáng</label>
                     <select class="form-control js-example-tags" id="KieuDang">
-                        <option>--Chọn kiểu dáng--</option>
+                        <option selected="selected">--Chọn kiểu dáng--</option>
                     </select>
                 </div>
                 <div class="form-group p-1">
