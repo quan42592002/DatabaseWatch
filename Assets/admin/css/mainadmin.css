@@ -24,9 +24,20 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
+  background: #ffffff;
   min-width: 1024px;
+  /* background-image: url('/UpLoad/Public/maxresdefault.jpg');
+  background-size: cover; */
   display: block;
+}
+
+input:disabled {
+  cursor: default;
+  background: #eaeaea;
+  color: #ca3232;
+  background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3));
+  color: -internal-light-dark(rgb(84, 84, 84), rgb(170, 170, 170));
+  border-color: rgba(118, 118, 118, 0.3);
 }
 
 ul {
@@ -42,7 +53,7 @@ ul {
 .header-wrapper {
   position: fixed;
   top: 0;
-  width: 80%;
+  width: 82%;
   right: 0;
   height: 40px;
   padding: 10px 0px;
@@ -175,6 +186,18 @@ button, select {
   background-color: #218838;
   border-color: #1e7e34;
 }
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #aa2e3a;
+  border-color: #aa2e3a;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: rgb(40, 11, 14);
+  border-color: rgb(40, 11, 14);
+}
 .btn:focus, .btn:hover {
   text-decoration: none;
 }
@@ -287,12 +310,11 @@ button, select {
 /* Menu Navbar */
 
 .navbar-wrapper {
-  background: rgb(248 248 248);
-  height: 100vh;
-  background: linear-gradient(153deg, white, #e1e1e1);
-  width: 250px;
-  justify-content: center;
-  display: flex;
+     height: 100vh;
+     box-shadow: 0px 3px 5px 1px rgb(173 167 167 / 42%);
+     width: 250px;
+     justify-content: center;
+     display: flex;
 }
 
 #cssmenu {
@@ -335,10 +357,11 @@ button, select {
   line-height: 1;
   display: block;
   position: relative;
+  top: -10px;
   box-sizing: border-box;
   line-height: 2.6;
   color: #6c6c6c;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 #cssmenu ul li {
@@ -362,10 +385,17 @@ button, select {
   font-size: 17px; */
   color: rgb(42, 157, 240);
   transition: all .5s;
-  font-size: 17px;
+  /* font-size: 17px; */
 }
 
+.menu-level-2 ul li{
+  list-style: none;
+}
 
+.menu-level-2 ul li a{
+  font-size: 14px;
+  text-decoration: blink;
+}
 
 /* //Footer */
 
@@ -478,8 +508,8 @@ button, select {
 }
 
 #wrapper-admin {
-  right: 1%;
-  width: 77%;
+  right: 35px;
+  width: 78%;
   position: absolute;
   top: 59px;
   display: block;
@@ -513,4 +543,32 @@ button, select {
 /* Hover effect on rows */
 .styled-table tbody tr:hover {
   background-color: #ddd;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline;
+  margin: 5px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: #314e6e;
 }

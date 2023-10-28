@@ -29,7 +29,7 @@
                     <div class="form-group" style="padding: 12px;">
                         <label class="control-label">Chọn tài liệu:</label>
                         <div class="input-group col-md-12">
-                            <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control"/>
+                            <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -44,6 +44,8 @@
                         <tbody id="tbl_ThuongHieu">
                         </tbody>
                     </table>
+                    <div class="pagination">
+                    </div>
                 </div>
             </div>
         </div>

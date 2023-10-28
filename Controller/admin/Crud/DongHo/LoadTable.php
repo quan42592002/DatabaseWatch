@@ -6,7 +6,7 @@ $db->connect();
 $conect = $db->conn;
 
 // Số mục trên mỗi trang
-$items_per_page = 2;
+$items_per_page = 10;
 
 // Lấy số trang từ tham số truy vấn, mặc định là trang 1
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -15,7 +15,9 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = (int)(($page - 1) * $items_per_page);
 
 // Truy vấn SQL chỉ lấy các mục cần hiển thị trên trang hiện tại
-$sql = "SELECT * FROM tbl_thuonghieu LIMIT $start, $items_per_page;";
+$sql = "SELECT * FROM tbl_dongho
+        JOIN  tbl_thuonghieu ON tbl_dongho.IdThuongHieu = tbl_thuonghieu.IdThuongHieu
+        LIMIT $start, $items_per_page;";
 $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -33,4 +35,3 @@ $data = array(
 // Trả về dữ liệu dưới dạng JSON
 header('Content-Type: application/json');
 echo json_encode($data);
-?>
