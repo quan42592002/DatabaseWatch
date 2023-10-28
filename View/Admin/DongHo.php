@@ -84,13 +84,13 @@
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Kiểu dáng</label>
-                    <select class="form-control js-example-tags" id="KieuDang">
+                    <select class="form-control" id="KieuDang">
                         <option selected="selected">--Chọn kiểu dáng--</option>
                     </select>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Loại dây</label>
-                    <select name="" id="LoaiDay" class="form-control js-example-tags">
+                    <select name="" id="LoaiDay" class="form-control">
                         <option value="">-- Chọn Loại dây --</option>
                     </select>
                 </div>
@@ -105,7 +105,7 @@
             <div class="" style="width: 40%;margin-left: 20px;">
                 <div class="form-group p-1" style="padding-top: 0px;">
                     <label for="" class="form-label">Thương hiệu</label>
-                    <select name="" id="ThuongHieu" class="form-control js-example-tags">
+                    <select name="" id="ThuongHieu" class="form-control js-example-basic-single">
                         <option value="">-- Chọn Thương Hiệu</option>
                     </select>
                 </div>

@@ -10,9 +10,8 @@ var myController = {
 
     RegesterEvent: function () {
 
-        $(".js-example-tags").select2({
+        $(".js-example-basic-single").select2({
             width: "100%",
-            allowClear: true
         });
 
 
@@ -70,6 +69,9 @@ var myController = {
         $("#GiaMua").val("");
         $("#GiaBan").val("");
         $("#GiamGia").val("");
+        $("#urlAnh").attr('src', "http://localhost:3000/UpLoad/Public/3135715.png");
+        $("#urlAnh").css('border-radius', '0%');
+        $("#tbl_ChiTietDongHo").html("");
     },
 
     LoadData: function () {
@@ -105,6 +107,12 @@ var myController = {
                             option += "<option value='" + value.TenGoi + "'>" + value.TenGoi + "</option>";
                         });
                         $("#KieuDang").html(option);
+
+                        // var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+
+                        // $("#KieuDang").select2({
+                        //     data: data
+                        // })
                     }
 
                     myController.LoadTable();

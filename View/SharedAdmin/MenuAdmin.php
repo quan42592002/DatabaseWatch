@@ -34,8 +34,15 @@
                 <li> <a href="?controller=DongHoController"><i class="bi bi-app-indicator"></i> Đồng hồ</a></li>
                 <li> <a href="?controller=QuanLyKhoController"><i class="bi bi-box-seam"></i> Quản lý phiếu</a></li>
                 <li> <a href=""><i class="bi bi-funnel"></i> Tìm kiếm</a></li>
-                <li> <a href="?controller=ThuongHieuController"><i class="bi bi-gear"></i> Danh mục thương hiệu</a></li>
-                <li> <a href="/collections/dong-ho-luot-chinh-hang"><i class="bi bi-gear"></i> Danh mục hệ thống</a></li>
+                <li>
+                    <a href="javascript:myAdmin.OnClickMenu()"><i class="bi bi-gear"></i> Cấu hình</a>
+                    <div class="menu-level-2">
+                        <ul>
+                            <li style="list-style: none;"><a href="#">Danh mục hệ thống</a></li>
+                            <li style="list-style: none;"><a href="?controller=ThuongHieuController">Danh mục thương hiệu</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
