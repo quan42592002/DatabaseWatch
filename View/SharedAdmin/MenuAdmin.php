@@ -30,7 +30,7 @@
         <div id="cssmenu" class="menu-navbar cssmenu">
             <ul>
                 <li> <a href="?controller=DashBoardController"><i class="bi bi-bar-chart"></i> Trang chủ , thống kê</a></li>
-                <li> <a href="/gioi-thieu"><i class="bi bi-bookmarks"></i> Báo cáo </a></li>
+                <li> <a href="?controller=BaoCaoController"><i class="bi bi-bookmarks"></i> Báo cáo </a></li>
                 <li> <a href="?controller=DongHoController"><i class="bi bi-app-indicator"></i> Đồng hồ</a></li>
                 <li> <a href="?controller=QuanLyKhoController"><i class="bi bi-box-seam"></i> Quản lý phiếu</a></li>
                 <li> <a href=""><i class="bi bi-funnel"></i> Tìm kiếm</a></li>
