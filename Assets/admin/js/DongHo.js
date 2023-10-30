@@ -143,8 +143,8 @@ var myController = {
                             "<td>" + value.GiaBan + "</td>" +
                             "<td>" +
                             '<div>' +
-                            '<a class="btn btn-success" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
-                            '<a class="btn btn-primary" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                            '<a class="btn btn-success btn-sm" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
+                            '<a class="btn btn-danger btn-sm" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
                             '</div>' +
                             "</td>" +
                             "</tr>";
@@ -189,14 +189,13 @@ var myController = {
                         $("#IdDongHo").val(datax.IdDongHo);
                         $("#TenDongHo").val(datax.TenDongHo);
                         $("#KieuDang").val(datax.KieuDang).trigger("change");
+                        $("#LoaiDay").val(datax.LoaiDay).trigger("change");
                         $("#IdThuongHieu").val(datax.IdThuongHieu).trigger("change");
                         $("#NamNu").val(datax.NamNu);
                         $("#SoLuong").val(datax.SoLuong);
                         $("#GiaMua").val(datax.GiaMua);
                         $("#GiaBan").val(datax.GiaBan);
                         $("#GiamGia").val(datax.GiamGia);
-                        $("#IdThuongHieu").trigger("change");
-                        $("#KieuDang").trigger("change");
 
                         $("#urlAnh").attr('src', datax.Url_anh);
                         $("#urlAnh").css('border-radius', '0%')
@@ -307,7 +306,7 @@ var myController = {
                             "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhDen + "'disabled></td>" +
                             "<td>" +
                             '<div>' +
-                            '<a class="btn btn-danger" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteChiTiet(' + value.IdChiTietDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                            '<a class="btn btn-danger btn-sm" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteChiTiet(' + value.IdChiTietDongHo + ')"><i class="bi bi-trash"></i></a>' +
                             '</div>' +
                             "</td>" +
                             "</tr>";
@@ -368,7 +367,7 @@ var myController = {
                 if (IdDongHo == 0) {
                     $.ajax({
                         type: "POST",
-                        url: 'http://localhost:8000/Controller/admin/Crud/DongHo/Insert.php',
+                        url: 'http://localhost:3000/Controller/admin/Crud/DongHo/Insert.php',
                         contentType: false,
                         processData: false,
                         data: formData, // Sử dụng formData để gửi tệp
