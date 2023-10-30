@@ -7,6 +7,20 @@
                 <img class="lazyload_none" width="160" height="35" src="https://www.watchstore.vn/upload/original-image/logo-watchstore.png" alt="Đồng hồ Watchstore">
             </picture>
         </a>
+        <nav class="navbar header-navbar">
+            <div id="cssmenu" class="menu-navbar">
+                <ul>
+                    <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Xả kho</span></a></li>
+                    <li> <a href="/gioi-thieu"><span class="text_menu">Giới thiệu</span></a></li>
+                    <li> <a href="/collections/dong-ho-nam-chinh-hang"><span class="text_menu">Menu</span></a></li>
+                    <li> <a href="/collections/dong-ho-nu-chinh-hang"><span class="text_menu">Name</span></a></li>
+                    <li> <a href="/collections/dong-ho-luxury-chinh-hang"><span class="text_menu">Nữ</span></a></li>
+                    <li> <a href="/collections/dong-ho-luxury-chinh-hang"><span class="text_menu">Luxury</span></a></li>
+                    <li> <a href="/collections/dong-ho-luot-chinh-hang"><span class="text_menu">Hàng lướt 99%</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
         <div class="search-acount" style="display: flex;">
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">
@@ -21,13 +35,29 @@
                             background: linear-gradient(45deg, #1fa3d6, #e0ddeb);
                             border-radius: 11px 11px 0px 0px;
                             text-align: -webkit-center;">
-                            <h3 style="margin-top: -4px;line-height: 40px;">Admin</h3>
+                            <h3 style="margin-top: -4px;line-height: 40px;">
+                                <?php
+                                if (isset($_SESSION['Username'])) {
+                                    echo $_SESSION['Username'];
+                                } else {
+                                    echo "Tài khoản";
+                                }
+                                ?>
+                            </h3>
                         </li>
-                        <li><a href="#">Thông tin</a></li>
-                        <li><a href="">Đăng kí</a></li>
-                        <li><a href="?controller=LoginController">Đăng nhập</a></li>
-                        <li><a href="#">Đăng xuất</a></li>
-                        <li><a href="#">Yêu thích</a></li>
+                        <?php
+                        if (isset($_SESSION['Username'])) {
+                            echo "<li><a href='#'>Thông tin cá nhân</a></li>
+                            <li><a href='#'>Danh mục yêu thích</a></li>
+                            <li><a href='?controller=Logout'>Đăng xuất</a></li>";
+                        } else {
+                            echo "
+                            <li><a href='?controller=LoginController'>Đăng nhập</a></li>
+                            <li><a href='#'>Danh mục yêu thích</a></li>
+                            ";
+                        }
+                        ?>
+                     
                     </ul>
                 </div>
             </div>
