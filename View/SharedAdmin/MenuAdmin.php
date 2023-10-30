@@ -38,7 +38,7 @@
                     <a href="javascript:myAdmin.OnClickMenu()"><i class="bi bi-gear"></i> Cấu hình</a>
                     <div class="menu-level-2">
                         <ul>
-                            <li style="list-style: none;"><a href="#">Danh mục hệ thống</a></li>
+                            <li style="list-style: none;"><a href="?controller=DanhMucHeThongController">Danh mục hệ thống</a></li>
                             <li style="list-style: none;"><a href="?controller=ThuongHieuController">Danh mục thương hiệu</a></li>
                         </ul>
                     </div>
