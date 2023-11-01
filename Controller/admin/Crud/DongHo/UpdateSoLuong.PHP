@@ -14,7 +14,8 @@ $sql = "SELECT * FROM tbl_chitietdongho WHERE tbl_chitietdongho.IdDongHo = '$IdD
 $result = $conect->query($sql);
 $datax = $result->num_rows  > 0 ? $result->num_rows : 0 ;
 
-// $sqk_Update = 
+$sql_Update = "UPDATE tbl_dongho SET SoLuong = '$datax' WHERE IdDongHo = $IdDongHo ";
+$stmt = $conect->query($sql_Update);
 
 $data = array(
     'datax' => $datax,

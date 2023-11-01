@@ -606,3 +606,6 @@ select {
 .pagination a:hover {
   background-color: #314e6e;
 }
+input[type='checkbox'] {
+  transform: scale(2); /* Tùy chỉnh kích thước bằng cách sử dụng transform */
+}

@@ -33,6 +33,7 @@ class LoginController
                     $roleUser = new SetUser();
                     $roleUser->setUser($row["IdUsers"], $row["Username"], $row["Password"],null,null,null,null,null,null, $row["IdRole"]);
                     $_SESSION['Username'] = $roleUser->Username;
+                    $_SESSION['IdUsers'] = $roleUser->IdUsers;
                     $_SESSION['IdRole'] = $roleUser->IdRole;
                     echo '<script>window.location.href="http://localhost:3000/main.php";</script>';
                     exit;

@@ -22,22 +22,16 @@
                             <th style="text-align: center;">Số Lượng</th>
                             <th style="text-align: center;">Giá mua</th>
                             <th style="text-align: center;">Giá bán</th>
+                            <th style="text-align: center;">#</th>
                         </tr>
                         <tbody id="tbl_DongHo">
                         </tbody>
                     </table>
-                    <div class="pagination">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="card" style="margin: 0 auto;margin-top: 20px;">
-        <div class="" style="width: 100%; display: flex; ">
-            <input type="text" class="form-control" id="NameUsers" style="width: 20%;margin: 10px;" placeholder="Người tạo ..." value="<?php echo $_SESSION['Username'] ?>" disabled>
-            <button class="btn btn-primary" id="btn_TimKiem" style="display: flex;margin: 10px; ">Lưu tạm</button>
-            <button class="btn btn-info" id="btn_TimKiem" style="display: flex;margin: 10px; ">Xóa tạm</button>
-        </div>
         <div>
             <h5>Nhập hàng</h5>
         </div>
@@ -46,27 +40,34 @@
                 <div class="" style="width: 100%;">
                     <table class="styled-table">
                         <tr>
+                            <th style="text-align: center;">ID</th>
+                            <th style="text-align: center;">Ảnh</th>
                             <th style="text-align: center;">Tên đồng hồ</th>
                             <th style="text-align: center;">Thương hiệu</th>
                             <th style="text-align: center;">Phân loại</th>
-                            <th style="text-align: center;">Giá mua</th>
-                            <th style="text-align: center;">Giá bán</th>
+                            <th style="text-align: center;">SoLuong</th>
                         </tr>
-                        <tbody id="tbl_Them">
+                        <tbody id="tbl_DongHoThem">
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="" style="width: 40%;margin-left: 20px; border: 1px solid black; padding: 10px;">
+                <input type="hidden" class="form-control" id="IdUsers" value="<?php echo $_SESSION['IdUsers'] ?>">
+
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="" class="form-label">Người tạo</label>
+                    <input type="text" class="form-control" id="NameUsers" placeholder="Người tạo ..." value="<?php echo $_SESSION['Username'] ?>" disabled>
+                </div>
                 <div class="form-group p-1" style="padding-top: 0px;">
                     <label for="" class="form-label">Mã phiếu</label>
                     <input type="text" class="form-control" id="MaPhieuNhap" placeholder="Nhập mã phiếu ...">
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Số lượng nhập</label>
-                    <input type="number" class="form-control" id="SoluongNhap" placeholder="Số lượng ...">
+                    <input type="number" class="form-control" id="SoluongNhap" placeholder="Số lượng ..." disabled>
                 </div>
-                <button class="btn btn-primary" id="btn_TimKiem" style="display: flex;margin: 10px; ">Hoàn thành</button>
+                <button class="btn btn-primary" id="btn_Save" style="display: flex;margin: 10px; ">Hoàn thành</button>
             </div>
         </div>
     </div>
