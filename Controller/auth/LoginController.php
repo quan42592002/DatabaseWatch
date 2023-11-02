@@ -22,8 +22,10 @@ class LoginController
             $password = $conect->real_escape_string($password);
 
      
-            $sql = "SELECT tbl_user.IdUsers, tbl_user.Username, tbl_user.Password , tbl_userrole.IdRole 
-            FROM tbl_user INNER JOIN tbl_userrole ON tbl_user.IdUsers = tbl_userrole.IdUsers
+            $sql = "SELECT tbl_user.IdUsers, tbl_user.Username, tbl_user.Password , tbl_userrole.IdRole ,tbl_client.HoTen
+            FROM tbl_user 
+            INNER JOIN tbl_userrole ON tbl_user.IdUsers = tbl_userrole.IdUsers
+            Join tbl_client ON tbl_user.IdUsers = tbl_client.IdUsers
             WHERE tbl_user.Username = '$username' AND tbl_user.Password = '$password'";
 
             $result = $conect->query($sql);
@@ -31,9 +33,10 @@ class LoginController
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $roleUser = new SetUser();
-                    $roleUser->setUser($row["IdUsers"], $row["Username"], $row["Password"],null,null,null,null,null,null, $row["IdRole"]);
+                    $roleUser->setUser($row["IdUsers"], $row["Username"], $row["Password"],null,null,null,null,null,null, $row["IdRole"], $row["HoTen"]);
                     $_SESSION['Username'] = $roleUser->Username;
                     $_SESSION['IdUsers'] = $roleUser->IdUsers;
+                    $_SESSION['HoTen'] = $roleUser->HoTen;
                     $_SESSION['IdRole'] = $roleUser->IdRole;
                     echo '<script>window.location.href="http://localhost:3000/main.php";</script>';
                     exit;

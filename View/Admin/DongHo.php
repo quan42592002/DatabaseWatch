@@ -5,7 +5,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 1040;
+        z-index: 9999999999999;
         background-color: #fff;
     }
 
@@ -66,7 +66,7 @@
                 </div>
                 <div class="form-group" >
                     <div class="input-group col-md-12">
-                        <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
+                        <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" multiple />
                     </div>
                 </div>
             </div>

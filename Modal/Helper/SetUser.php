@@ -10,10 +10,11 @@ class SetUser {
     public $CauTraLoi;
     public $CountPassworld;
     public $IdRole;
+    public $HoTen;
 
 
     public function setUser($IdUsers, $Username = null, $Password = null, $Email = null, 
-    $Create_Date = null, $MaPin = null, $CauHoiBaoMat  = null,$CauTraLoi = null,$CountPassworld = null,$IdRole = null) {
+    $Create_Date = null, $MaPin = null, $CauHoiBaoMat  = null,$CauTraLoi = null,$CountPassworld = null,$IdRole = null ,$HoTen = null) {
         $this->IdUsers = $IdUsers;
         $this->Username = $Username;
         $this->Password = $Password;
@@ -24,6 +25,7 @@ class SetUser {
         $this->CauTraLoi = $CauTraLoi;
         $this->CountPassworld = $CountPassworld;
         $this->IdRole = $IdRole;
+        $this->HoTen = $HoTen;
     }
 
 }

@@ -2,8 +2,8 @@ var files;
 var myController = {
 
     init: function () {
+        myController.RegesterEvent();
         myController.LoadTable();
-        // myController.RegesterEvent();
         myController.resetForm();
     },
 
@@ -133,6 +133,7 @@ var myController = {
                 if (response.status) {
                     alert("Cập nhập thành công");
                     myController.RegesterEvent();
+                    myController.LoadTable();
                 }
             },
         });

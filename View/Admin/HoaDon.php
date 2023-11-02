@@ -3,7 +3,7 @@
         <div class="card-header">
             <h3>Hóa đơn nhập</h3>
         </div>
-        <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue;padding: 20px; ">
+        <div class="" style="width: 100%; display: flex;padding: 20px; ">
             <select name="" id="" class="form-control" style="width: 30%;">
                 <option value="">--Chọn phân loại --</option>
                 <option value="">1. Xem hóa đơn theo tháng</option>
@@ -20,7 +20,7 @@
                         <p>Ngày tạo: <?php echo date("d/m/Y"); ?></p>
                     </div>
                     <h2>Thông tin hóa đơn:</h2>
-                    <p>Người nhập: </p>
+                    <p>Người nhập: <?php echo $_SESSION['HoTen'] ?></p>
                     <p>Số hiệu: </p>
 
                     <h2>Chi tiết hóa đơn:</h2>

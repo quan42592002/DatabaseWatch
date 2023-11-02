@@ -41,6 +41,8 @@
                         <ul>
                             <li style="list-style: none;"><a href="#">Danh mục hệ thống</a></li>
                             <li style="list-style: none;"><a href="?controller=ThuongHieuController">Danh mục thương hiệu</a></li>
+                            <li style="list-style: none;"><a href="?controller=ThuongHieuController">Slider</a></li>
+                          
                         </ul>
                     </div>
                 </li>

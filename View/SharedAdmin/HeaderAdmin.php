@@ -4,7 +4,7 @@
             <div id="sider-icon-full" style="position: fixed;
                 top: 11px;
                 left: 313px;">
-                <i class="bi bi-window-sidebar" style="color: #8f8f8f;font-size: 25px"></i>
+                <i class="bi bi-arrows-fullscreen" style="color: #8f8f8f;font-size: 20px"></i>
             </div>
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">
