@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $SoLuong = $jsonData->SoLuong;
     $KieuDang = $jsonData->KieuDang;
     $LoaiDay = $jsonData->LoaiDay;
+    $GiaMua =  $jsonData->GiaMua;
     $GiaBan = $jsonData->GiaBan;
     $GiamGia = $jsonData->GiamGia;
     $ChongNuoc = $jsonData->ChongNuoc == "1" ? 1 : 0;
@@ -35,16 +36,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadOk = 0;
         }
 
-        $sql = "INSERT INTO tbl_dongho (IdDongHo,TenDongHo, ThuongHieu, NamNu,SoLuong,KieuDang,GiaMua,GiaBan,
-        LoaiDay,GiamGia,Url_anh,FileName,ChongNuoc) VALUES (?,?, ?, ?,?,?, ?, ?,?,?, ?, ?,?)";
+
+        $sql = "UPDATE tbl_dongho SET TenDongHo=?,ThuongHieu=?,NamNu=?, KieuDang=?, GiaMua=?, GiaBan=?
+        , LoaiDay=?, GiamGia=?,Url_anh=?, FileName=? , ChongNuoc=?
+        WHERE IdDongHo =? ";
+
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
-            "sssssssssssss",
-            $IdDongHo,
+            "ssssssssssss" . "s",
             $TenDongHo,
             $ThuongHieu,
             $NamNu,
-            $SoLuong,
             $KieuDang,
             $GiaMua,
             $GiaBan,
@@ -53,34 +55,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $filePath,
             $fileName,
             $ChongNuoc,
+            $IdDongHo,
         );
 
         if ($stmt->execute()) {
             move_uploaded_file($file['tmp_name'][0], $filePath);
-            $response = ["status" => true];
-            header('Content-Type: application/json');
-            echo json_encode($response);
-        } else {
-            $response = ["status" => false];
-            header('Content-Type: application/json');
-            echo json_encode($response);
         }
     } else {
-        $sql = "INSERT INTO tbl_thuonghieu (Stt, TenGoi) VALUES (?, ?)";
+        $sql = "UPDATE tbl_dongho SET TenDongHo=?,ThuongHieu=?,NamNu=?, KieuDang=?, GiaMua=?, GiaBan=?
+        , LoaiDay=?, GiamGia=? , ChongNuoc=?
+        WHERE IdDongHo =? ";
+
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $SoThuTu, $TenGoi);
-
-        if ($stmt->execute()) {
-            $response = ["status" => true];
-            header('Content-Type: application/json');
-            echo json_encode($response);
-        } else {
-            $response = ["status" => false];
-            header('Content-Type: application/json');
-            echo json_encode($response);
-        }
+        $stmt->bind_param(
+            "sssssssss" . "s",
+            $TenDongHo,
+            $ThuongHieu,
+            $NamNu,
+            $KieuDang,
+            $GiaMua,
+            $GiaBan,
+            $LoaiDay,
+            $GiamGia,
+            $ChongNuoc,
+            $IdDongHo,
+        );
     }
-
+    header('Content-Type: application/json');
+    echo json_encode(array(
+        "status" => true
+    ));
 }
+
 
 $db->closeDatabase();

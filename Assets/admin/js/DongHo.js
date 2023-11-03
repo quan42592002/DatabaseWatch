@@ -9,12 +9,6 @@ var myController = {
 
 
     RegesterEvent: function () {
-
-        $(".js-example-basic-single").select2({
-            width: "100%",
-        });
-
-
         $('#duong_dan_tai_lieu').filestyle({
             text: 'Đính kèm tệp',
             dragdrop: false,
@@ -45,10 +39,13 @@ var myController = {
             myController.resetForm();
         });
 
+        $("#btn_CapNhapDuLieu").off("click").on("click", function () {
+            myController.UpdateData();
+        });
+
         $("#btn_TaoChiTiet").off("click").on("click", function () {
             myController.SaveNewChiTiet();
         });
-
 
         $("#btn_Thoat").off("click").on("click", function () {
             $("#modal-DongHo").hide();
@@ -57,6 +54,12 @@ var myController = {
         $("#btn_Save").off("click").on("click", function () {
             myController.SaveData();
         });
+
+        $("#order_gia").off("change").on("change", function () {
+            myController.LoadTable();
+        });
+
+
     },
 
     resetForm: function () {
@@ -72,6 +75,10 @@ var myController = {
         $("#urlAnh").attr('src', "http://localhost:3000/UpLoad/Public/3135715.png");
         $("#urlAnh").css('border-radius', '0%');
         $("#tbl_ChiTietDongHo").html("");
+        $("#btn_CapNhapDuLieu").hide();
+        $("#btn_Save").show();
+        $("#btn_CapNhapChiTiet").hide();
+
     },
 
     LoadData: function () {
@@ -88,7 +95,7 @@ var myController = {
                     if (lstLoaiDay != null) {
                         var option = "<option value=''>-- Chọn Loại dây --</option>";
                         $.each(lstLoaiDay, function (index, value) {
-                            option += "<option value='" + value.TenGoi + "'>" + value.TenGoi + "</option>";
+                            option += "<option value='" + value.TenGoi + "'>" + (index + 1) + ". " + value.TenGoi + "</option>";
                         });
                         $("#LoaiDay").html(option);
                     }
@@ -96,7 +103,7 @@ var myController = {
                     if (lstThuongHieu != null) {
                         var option = "<option value=''>-- Chọn thương hiệu --</option>";
                         $.each(lstThuongHieu, function (index, value) {
-                            option += "<option value='" + value.IdThuongHieu + "'>" + value.TenGoi + "</option>";
+                            option += "<option value='" + value.TenGoi + "'>" + (index + 1) + ". " + value.TenGoi + "</option>";
                         });
                         $("#ThuongHieu").html(option);
                     }
@@ -104,7 +111,7 @@ var myController = {
                     if (lstKieuDang != null) {
                         var option = "<option value=''>-- Chọn kiểu dáng --</option>";
                         $.each(lstKieuDang, function (index, value) {
-                            option += "<option value='" + value.TenGoi + "'>" + value.TenGoi + "</option>";
+                            option += "<option value='" + value.TenGoi + "'>" + (index + 1) + ". " + value.TenGoi + "</option>";
                         });
                         $("#KieuDang").html(option);
 
@@ -126,9 +133,15 @@ var myController = {
     },
 
     LoadTable: function (page = 1) {
+
+        var order_gia = $("#order_gia").val();
+
         $.ajax({
             url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadTable.php?page=' + page,
             method: 'GET',
+            data: {
+                order_gia: order_gia,
+            },
             dataType: 'json',
             success: function (response) {
                 if (response.status) {
@@ -136,15 +149,18 @@ var myController = {
                     var html = "";
 
                     $.each(datax, function (index, value) {
-                        html += "<tr><td>" + value.TenDongHo + "</td>" +
-                            "<td>" + value.TenGoi + "</td>" +
+                        html += "<tr>" +
+                           "<td><img src='" + value.Url_anh + "' width='65spx'></td>" +
+                            "<td>" + value.TenDongHo + "</td>" +
+                            "<td>" + value.ThuongHieu + "</td>" +
                             "<td>" + value.NamNu + "</td>" +
                             "<td>" + value.GiaMua + "</td>" +
                             "<td>" + value.GiaBan + "</td>" +
                             "<td>" +
                             '<div>' +
                             '<a class="btn btn-success btn-sm" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
-                            '<a class="btn btn-danger btn-sm" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                            '<a class="btn btn-info btn-sm" title="File đính kèm" style="margin-left: 5px;" href="javascript:myController.ModalFile(' + value.IdDongHo + ')"><i class="bi bi-file-earmark-play"></i></a>' +
+                            '<a class="btn btn-danger btn-sm" title="Xóa đồng hồ" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
                             '</div>' +
                             "</td>" +
                             "</tr>";
@@ -188,19 +204,26 @@ var myController = {
                     if (datax != null) {
                         $("#IdDongHo").val(datax.IdDongHo);
                         $("#TenDongHo").val(datax.TenDongHo);
-                        $("#KieuDang").val(datax.KieuDang).trigger("change");
-                        $("#LoaiDay").val(datax.LoaiDay).trigger("change");
-                        $("#IdThuongHieu").val(datax.IdThuongHieu).trigger("change");
+                        $("#KieuDang").val(datax.KieuDang);
+                        $("#LoaiDay").val(datax.LoaiDay);
+                        $("#ThuongHieu").val(datax.ThuongHieu);
                         $("#NamNu").val(datax.NamNu);
                         $("#SoLuong").val(datax.SoLuong);
                         $("#GiaMua").val(datax.GiaMua);
                         $("#GiaBan").val(datax.GiaBan);
                         $("#GiamGia").val(datax.GiamGia);
 
-                        $("#urlAnh").attr('src', datax.Url_anh);
-                        $("#urlAnh").css('border-radius', '0%')
+                        if (datax.Url_anh == "") {
+                            $("#urlAnh").attr('src', "http://localhost:3000/UpLoad/Public/3135715.png");
+                            $("#urlAnh").css('border-radius', '0%');
+                        } else {
+                            $("#urlAnh").attr('src', datax.Url_anh);
+                            $("#urlAnh").css('border-radius', '0%')
+                        }
 
                         $("#modal-DongHo").show();
+                        $("#btn_CapNhapDuLieu").show();
+                        $("#btn_Save").hide();
                         myController.LoadDetailChiTiet(datax.IdDongHo);
                         myController.UpdateSoLuong(datax.IdDongHo);
                     }
@@ -225,6 +248,15 @@ var myController = {
                     var datax = response.datax;
                     if (datax != null) {
                         $("#SoLuong").val(datax);
+
+                        if (datax == 1 || datax == "1") {
+                            $("#btn_CapNhapChiTiet").show();
+                            $("#btn_TaoChiTiet").hide();
+                        } else {
+                            $("#btn_CapNhapChiTiet").hide();
+                            $("#btn_TaoChiTiet").show();
+                        }
+
                     }
                 }
             },
@@ -300,16 +332,31 @@ var myController = {
                     var html = "";
 
                     $.each(datax, function (index, value) {
-                        html += "<tr><td><input type='text' class='form-control' value ='" + value.Imei + "'></td>" +
-                            "<td><input type='text' class='form-control' value ='" + value.BaoHanh + "'></td>" +
-                            "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhTu + "'disabled></td>" +
-                            "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhDen + "'disabled></td>" +
-                            "<td>" +
-                            '<div>' +
-                            '<a class="btn btn-danger btn-sm" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteChiTiet(' + value.IdChiTietDongHo + ')"><i class="bi bi-trash"></i></a>' +
-                            '</div>' +
-                            "</td>" +
-                            "</tr>";
+
+                        if (value.Imei == null || value.Imei == "null") {
+                            html += "<tr><td><input type='text' class='form-control' placeholder='vd: BI1054-12E-0'></td>" +
+                                "<td><input type='text' class='form-control' value ='" + value.BaoHanh + "'></td>" +
+                                "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhTu + "'disabled></td>" +
+                                "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhDen + "'disabled></td>" +
+                                "<td>" +
+                                '<div>' +
+                                '<a class="btn btn-danger btn-sm" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteChiTiet(' + value.IdChiTietDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                                '</div>' +
+                                "</td>" +
+                                "</tr>";
+                        } else {
+                            html += "<tr><td><input type='text' class='form-control' value ='" + value.Imei + "'></td>" +
+                                "<td><input type='text' class='form-control' value ='" + value.BaoHanh + "'></td>" +
+                                "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhTu + "'disabled></td>" +
+                                "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhDen + "'disabled></td>" +
+                                "<td>" +
+                                '<div>' +
+                                '<a class="btn btn-danger btn-sm" title="Xem thông tin" style="margin-left: 5px;" href="javascript:myController.DeleteChiTiet(' + value.IdChiTietDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                                '</div>' +
+                                "</td>" +
+                                "</tr>";
+                        }
+
                     });
 
                     $("#tbl_ChiTietDongHo").html(html);
@@ -319,6 +366,88 @@ var myController = {
                 console.log('Error:', error);
             }
         });
+    },
+
+    UpdateData: function () {
+        var IdDongHo = $("#IdDongHo").val();
+        var TenDongHo = $("#TenDongHo").val();
+        var NamNu = $("#NamNu").val();
+        var SoLuong = $("#SoLuong").val();
+        var KieuDang = $("#KieuDang").val();
+        var LoaiDay = $("#LoaiDay").val();
+        var GiaMua = $("#GiaMua").val();
+        var GiaBan = $("#GiaBan").val();
+        var GiamGia = $("#GiamGia").val();
+        var ChongNuoc = $("#ChongNuoc").val();
+        var ThuongHieu = $("#ThuongHieu").val();
+
+        var objData = {
+            IdDongHo: IdDongHo,
+            TenDongHo: TenDongHo,
+            NamNu: NamNu,
+            SoLuong: SoLuong,
+            KieuDang: KieuDang,
+            LoaiDay: LoaiDay,
+            GiaMua: GiaMua,
+            GiaBan: GiaBan,
+            GiamGia: GiamGia,
+            ChongNuoc: ChongNuoc,
+            ThuongHieu: ThuongHieu,
+        };
+
+        var files = $("#duong_dan_tai_lieu")[0].files; // Khai báo biến files bên trong hàm
+
+        if (files != undefined && files.length > 0) {
+            if (window.FormData !== undefined) {
+                var formData = new FormData();
+
+                for (var x = 0; x < files.length; x++) {
+                    if (files[x].size >= 52428800) {
+                        alert('Chỉ được upload file dưới 50MB', 'Thông báo');
+                        $('#duong_dan_tai_lieu').val("");
+                        return;
+                    }
+                    formData.append('duong_dan_tai_lieu[]', files[x]); // Sử dụng mảng để gửi nhiều tệp
+                }
+                // Thêm các thông tin khác vào formData
+                formData.append("strJson", JSON.stringify(objData));
+
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:3000/Controller/admin/Crud/DongHo/UpdateData.php',
+                    contentType: false,
+                    processData: false,
+                    data: formData, // Sử dụng formData để gửi tệp
+                    success: function (response) {
+                        if (response.status) {
+                            alert("Cập nhập thành công");
+                            myController.LoadTable();
+                        } else {
+                            alert("Có lỗi xảy ra");
+                        }
+                    },
+                });
+
+            } else {
+                alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
+            }
+        } else {
+            $.ajax({
+                type: "POST",
+                url: 'http://localhost:3000/Controller/admin/Crud/DongHo/UpdateData.php',
+                data: {
+                    strJson: JSON.stringify(objData),
+                },
+                success: function (response) {
+                    if (response.status) {
+                        alert("Cập nhập thành công");
+                        myController.LoadTable();
+                    } else {
+                        alert("Có lỗi xảy ra");
+                    }
+                },
+            });
+        }
     },
 
     SaveData: function () {
@@ -364,39 +493,22 @@ var myController = {
                 }
                 // Thêm các thông tin khác vào formData
                 formData.append("strJson", JSON.stringify(objData));
-                if (IdDongHo == 0) {
-                    $.ajax({
-                        type: "POST",
-                        url: 'http://localhost:3000/Controller/admin/Crud/DongHo/Insert.php',
-                        contentType: false,
-                        processData: false,
-                        data: formData, // Sử dụng formData để gửi tệp
-                        success: function (response) {
-                            if (response.status == true) {
-                                alert("Thành công");
-                                myController.LoadTable();
-                            } else {
-                                alert("Có lỗi xảy ra");
-                            }
-                        },
-                    });
-                } else {
-                    $.ajax({
-                        type: "POST",
-                        url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/EditBrand.php',
-                        contentType: false,
-                        processData: false,
-                        data: formData, // Sử dụng formData để gửi tệp
-                        success: function (response) {
-                            if (response.status == true) {
-                                alert("Thành công");
-                                myController.LoadTable();
-                            } else {
-                                alert("Có lỗi xảy ra");
-                            }
-                        },
-                    });
-                }
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:3000/Controller/admin/Crud/DongHo/Insert.php',
+                    contentType: false,
+                    processData: false,
+                    data: formData, // Sử dụng formData để gửi tệp
+                    success: function (response) {
+                        if (response.status == true) {
+                            alert("Thành công");
+                            myController.LoadTable();
+                            $("#modal-DongHo").hide();
+                        } else {
+                            alert("Có lỗi xảy ra");
+                        }
+                    },
+                });
             } else {
                 alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
             }

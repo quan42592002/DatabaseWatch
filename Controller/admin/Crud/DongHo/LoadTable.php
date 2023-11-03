@@ -10,14 +10,21 @@ $items_per_page = 10;
 
 // Lấy số trang từ tham số truy vấn, mặc định là trang 1
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$order_gia = isset($_GET['order_gia']) ? $_GET['order_gia']   : "";
+$SortGia = "";
+
+if ($order_gia =="1") {
+    $SortGia = "ORDER BY tbl_dongho.GiaBan ASC";
+}else if ($order_gia =="2") {
+    $SortGia = "ORDER BY tbl_dongho.GiaBan DESC";
+}
 
 // Tính toán vị trí bắt đầu và kết thúc của các mục trên trang hiện tại
 $start = (int)(($page - 1) * $items_per_page);
 
 // Truy vấn SQL chỉ lấy các mục cần hiển thị trên trang hiện tại
-$sql = "SELECT * FROM tbl_dongho
-        JOIN  tbl_thuonghieu ON tbl_dongho.IdThuongHieu = tbl_thuonghieu.IdThuongHieu
-        LIMIT $start, $items_per_page;";
+$sql = "SELECT * FROM tbl_dongho ".$SortGia. " LIMIT $start, $items_per_page" ;
+
 $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
 

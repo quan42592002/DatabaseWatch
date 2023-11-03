@@ -26,12 +26,20 @@
         </div>
         <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; ">
             <button class="btn btn-success" id="btn_TaoMoi" style="display: flex;margin: 10px; ">Tạo mới</button>
+            <select name="" id="order_gia" class="form-control" style="width: 15%;margin-top: 10px;">
+                <option value="">-- Sắp xêp theo giá --</option>
+                <option value="1">1. Thấp=>Cao</option>
+                <option value="2">2. Cao=>Thấp</option>
+            </select>
+            <input type="text" class="form-control" id="txtTimKiem" placeholder="Tìm kiếm theo tên, Thương hiệu" style="width: 25%;margin-left: 10px; margin-top: 10px;">
+
         </div>
         <div class="card-body p-2" style="display: flex;">
             <div class="form-group" style="width: 100%; display: flex;">
                 <div class="" style="width: 100%;">
                     <table class="styled-table">
                         <tr>
+                            <th style="text-align: center;">Ảnh</th>
                             <th style="text-align: center;">Tên đồng hồ</th>
                             <th style="text-align: center;">Thương hiệu</th>
                             <th style="text-align: center;">Phân loại</th>
@@ -55,16 +63,17 @@
     </div>
     <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; ">
         <button class="btn btn-primary" id="btn_Save" style="display: flex;margin: 10px; ">Lưu dữ liệu</button>
+        <button class="btn btn-primary" id="btn_CapNhapDuLieu" style="display: flex;margin: 10px; ">Cập nhập dữ liệu</button>
         <button class="btn btn-danger" id="btn_Thoat" style="display: flex;margin: 10px; ">Chuyển & Đóng</button>
     </div>
     <div class="card-body p-2" style="display: inline;overflow-y: scroll">
-        <input type="hidden" class="form-control" id="IdDongHo" placeholder="" >
+        <input type="hidden" class="form-control" id="IdDongHo" placeholder="">
         <div style="display: flex;">
             <div class="" style="width: 20%; background: #007bff;height: 168px;">
                 <div class="upload" style="text-align-last: center;margin: 15px;">
-                    <img  id="urlAnh" src="http://localhost:3000/UpLoad/Public/3135715.png" width="130px">
+                    <img id="urlAnh" src="http://localhost:3000/UpLoad/Public/3135715.png" width="130px">
                 </div>
-                <div class="form-group" >
+                <div class="form-group">
                     <div class="input-group col-md-12">
                         <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" multiple />
                     </div>
@@ -129,6 +138,7 @@
         </div>
         <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; border-top: 1px solid blue;">
             <button class="btn btn-secondary" id="btn_TaoChiTiet" style="display: flex;margin: 10px; ">Tạo chi tiết đồng hồ</button>
+            <button class="btn btn-primary" id="btn_CapNhapChiTiet" style="display: flex;margin: 10px; ">Cập nhập dữ liệu</button>
         </div>
         <div class="form-group" style="width: 100%; display: flex;">
             <div class="" style="width: 100%;">
@@ -150,6 +160,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.css">
 <script src="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.min.js"></script>
-<link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/Select2/select2.css">
-<script src="http://localhost:3000/Assets/admin/js/plugins/Select2/select2.js"></script>
 <script src="http://localhost:3000/Assets/admin/js/DongHo.js"></script>

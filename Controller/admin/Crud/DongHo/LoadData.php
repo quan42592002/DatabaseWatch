@@ -13,7 +13,7 @@ $sql = "";
 
 $resultLoaiDay = $conect->query("SELECT * FROM tbl_danhmuchethong Where tbl_danhmuchethong.PhanLoai = 'Danh mục loại dây' ");
 $resultKieuDang = $conect->query("SELECT * FROM tbl_danhmuchethong Where tbl_danhmuchethong.PhanLoai = 'Danh mục kiểu dáng' ");
-$resultThuongHieu = $conect->query("SELECT * FROM tbl_thuonghieu");
+$resultThuongHieu = $conect->query("SELECT * FROM tbl_danhmuchethong Where tbl_danhmuchethong.PhanLoai = 'Danh mục thương hiệu' ");
 
 $lstLoaiDay = $resultLoaiDay->fetch_all(MYSQLI_ASSOC);
 $lstThuongHieu = $resultThuongHieu->fetch_all(MYSQLI_ASSOC);
