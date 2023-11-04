@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $SoLuong = $jsonData->SoLuong;
     $KieuDang = $jsonData->KieuDang;
     $LoaiDay = $jsonData->LoaiDay;
+    $GiaMua = $jsonData->GiaMua;
     $GiaBan = $jsonData->GiaBan;
     $GiamGia = $jsonData->GiamGia;
     $ChongNuoc = $jsonData->ChongNuoc == "1" ? 1 : 0;

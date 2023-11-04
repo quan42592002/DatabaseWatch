@@ -75,7 +75,7 @@
                 </div>
                 <div class="form-group">
                     <div class="input-group col-md-12">
-                        <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" multiple />
+                        <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -136,12 +136,15 @@
                 </div>
             </div>
         </div>
-        <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; border-top: 1px solid blue;">
-            <button class="btn btn-secondary" id="btn_TaoChiTiet" style="display: flex;margin: 10px; ">Tạo chi tiết đồng hồ</button>
-            <button class="btn btn-primary" id="btn_CapNhapChiTiet" style="display: flex;margin: 10px; ">Cập nhập dữ liệu</button>
-            <button class="btn btn-danger" id="btn_UploadFile" style="display: flex;margin: 10px; ">File đính kèm</button>
+        <div class="" style="width: 100%; display: flex;">
+            <button class="btn btn-secondary modal-table-chitiet" id="btn_TaoChiTiet" style="display: flex;margin: 10px; ">Tạo chi tiết đồng hồ</button>
+            <button class="btn btn-primary modal-table-chitiet" id="btn_CapNhapChiTiet" style="display: flex;margin: 10px; ">Cập nhập dữ liệu</button>
+            <div class="input-group col-md-12  modal-table-file" style="width: 50%; margin-top: 10px;">
+                <input type="file" id="duong_dan_tai_lieu2" name="duong_dan_tai_lieu2" class="form-control" multiple />
+            </div>
+            <button class="btn btn-danger modal-table-file" id="btn_UploadFile" style="display: flex;margin: 10px; ">Cập nhập file</button>
         </div>
-        <div class="form-group" style="width: 100%; display: flex;">
+        <div class="form-group modal-table-chitiet" style="width: 100%; display: flex;">
             <div class="" style="width: 100%;">
                 <table class="styled-table">
                     <tr>
@@ -152,6 +155,20 @@
                         <th style="text-align: center;">Xóa</th>
                     </tr>
                     <tbody id="tbl_ChiTietDongHo">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="form-group modal-table-file" style="width: 100%; display: flex;">
+            <div class="" style="width: 100%;">
+                <table class="styled-table">
+                    <tr>
+                        <th style="text-align: center;">Ảnh</th>
+                        <th style="text-align: center;">Tên File</th>
+                        <th style="text-align: center;">Hiển thi</th>
+                        <th style="text-align: center;">Chức năng</th>
+                    </tr>
+                    <tbody id="tbl_DinhKemFile">
                     </tbody>
                 </table>
             </div>
