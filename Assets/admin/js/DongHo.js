@@ -158,9 +158,8 @@ var myController = {
                             "<td>" + value.GiaBan + "</td>" +
                             "<td>" +
                             '<div>' +
-                            '<a class="btn btn-success btn-sm" title="Xem thông tin" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
-                            '<a class="btn btn-info btn-sm" title="File đính kèm" style="margin-left: 5px;" href="javascript:myController.ModalFile(' + value.IdDongHo + ')"><i class="bi bi-file-earmark-play"></i></a>' +
-                            '<a class="btn btn-danger btn-sm" title="Xóa đồng hồ" style="margin-left: 5px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
+                            '<a class="btn btn-primary btn-sm" title="Xem thông tin" style="border-radius: 20px;" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
+                            '<a class="btn btn-danger btn-sm" title="Xóa đồng hồ" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
                             '</div>' +
                             "</td>" +
                             "</tr>";

@@ -139,6 +139,7 @@
         <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; border-top: 1px solid blue;">
             <button class="btn btn-secondary" id="btn_TaoChiTiet" style="display: flex;margin: 10px; ">Tạo chi tiết đồng hồ</button>
             <button class="btn btn-primary" id="btn_CapNhapChiTiet" style="display: flex;margin: 10px; ">Cập nhập dữ liệu</button>
+            <button class="btn btn-danger" id="btn_UploadFile" style="display: flex;margin: 10px; ">File đính kèm</button>
         </div>
         <div class="form-group" style="width: 100%; display: flex;">
             <div class="" style="width: 100%;">
