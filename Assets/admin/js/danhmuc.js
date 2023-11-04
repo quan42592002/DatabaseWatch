@@ -42,6 +42,11 @@ var myController = {
         $("#btn_SaveData").off("click").on("click", function () {
             myController.SaveData();
         });
+
+        $("#cbPhanLoai").off("change").on("change", function () {
+            myController.LoadTable();
+        });
+
     },
 
     resetForm: function () {
@@ -51,9 +56,14 @@ var myController = {
     },
 
     LoadTable: function (page=1) {
+        var cbPhanLoai = $("#cbPhanLoai").val();
+
         $.ajax({
-            url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/LoadTable.php?page=' + page,
+            url: 'http://localhost:3000/Controller/admin/Crud/DanhMuc/LoadTable.php?page=' + page,
             method: 'GET',
+            data:{
+                cbPhanLoai:cbPhanLoai
+            },
             dataType: 'json',
             success: function (response) {
                 if (response.status) {
@@ -61,8 +71,8 @@ var myController = {
                     var html = "";
     
                     $.each(datax, function (index, value) {
-                        html += "<tr><td>" + value.IdThuongHieu + "</td>" +
-                            "<td>" + value.Stt + "</td>" +
+                        html += "<tr><td>" + value.Id + "</td>" +
+                            "<td>" + value.SoThuTu + "</td>" +
                             "<td>" + value.TenGoi + "</td>" +
                             "<td>" +
                             '<div>' +

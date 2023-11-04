@@ -8,10 +8,27 @@
             </div>
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">
-                <input style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid #bababa" type="text" placeholder="Tìm đồng hồ theo tên,hãng...">
-                <i style="position:absolute;top:9px;font-size: 18px;right:12px;" class="bi bi-search"></i>
+            <h4 style="margin: 10px; ">Thông báo: 10</h4>
             </div>
-            
+            <!--End search-product -->
+            <div class="admin-login"><i class="bi bi-envelope iconNotifi" style="color: #8f8f8f;"></i>
+                <div class="admin-noti">
+                    <ul>
+                        <li>
+                            <a href='#'>
+                                <h5>Duyệt đơn hàng : <small>11/05/2023</small></h5>
+                                <span style="color: #9d0000;">Nội dung : Đông đã đặt mua đơn hàng</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='#'>
+                                <h5>Duyệt đơn hàng : <small>11/05/2023</small></h5>
+                                <span style="color: #9d0000;">Nội dung : Đông đã đặt mua đơn hàng</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <!--End search-product -->
             <div class="admin-login"><i class="bi bi-person-circle iconuser" style="color: #8f8f8f;"></i>
                 <div class="admin-sub">
@@ -46,6 +63,7 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

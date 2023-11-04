@@ -518,6 +518,46 @@ select {
   transition: all .4s;
 }
 
+.admin-noti {
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 1px solid black;
+  box-shadow: 0px 3px 5px 1px rgb(0 0 0 / 42%);
+  box-shadow: 1px saddlebrown;
+  width: 300px;
+  height: 273px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: -213px;
+  display: none;
+}
+
+.admin-noti ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  margin-top: 4px;
+
+}
+
+.admin-noti li {
+  font-size: 13px;
+  line-height: 0px;
+
+}
+
+.admin-noti a {
+  text-decoration: none;
+  color: rgb(78 69 69);
+  font-size: 15px;
+}
+
+.admin-noti a:hover {
+  color: #880404;
+  font-size: 16px;
+  transition: all .4s;
+}
+
 .admin-login .iconuser:hover {
   cursor: pointer;
 }
@@ -533,7 +573,7 @@ select {
 }
 
 .logo_web {
-  background: rgb(211 220 224);
+  background: rgb(255, 255, 255);
   height: 60px;
   display: block;
   line-height: 80px;

@@ -9,10 +9,12 @@
                 </picture>
             </a>
         </div>
-        <div style="text-align: center; padding: 19px; background-image: url('/UpLoad/Public/bg.jpg');background-size: cover;" class="cssmenu">
+        <div style="text-align: center; padding: 7px; background-image: url('/UpLoad/Public/bg.jpg');background-size: cover;" class="cssmenu">
             <picture class="logo_header">
                 <img class="lazyload_none" width="90" height="90" src="/UpLoad/Public/3135715.png" alt="">
-                <div> <?php
+                <div style="    color: #cb1919;
+    font-size: 15px;
+    font-weight: 700;"> <?php
                         if (isset($_SESSION['Username'])) {
                             echo $_SESSION['Username'];
                         } else {
@@ -39,10 +41,10 @@
                     <a href="javascript:myAdmin.OnClickMenu()"><i class="bi bi-gear"></i> Cấu hình</a>
                     <div class="menu-level-2">
                         <ul>
-                            <li style="list-style: none;"><a href="#">Danh mục hệ thống</a></li>
+                            <li style="list-style: none;"><a href="?controller=DanhMucHeThongController">Danh mục hệ thống</a></li>
                             <li style="list-style: none;"><a href="?controller=ThuongHieuController">Danh mục thương hiệu</a></li>
                             <li style="list-style: none;"><a href="?controller=ThuongHieuController">Slider</a></li>
-                          
+
                         </ul>
                     </div>
                 </li>
