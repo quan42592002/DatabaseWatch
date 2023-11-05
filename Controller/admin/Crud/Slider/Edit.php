@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
 
         if (move_uploaded_file($file['tmp_name'][0], $filePath)) {
-            $sql = "UPDATE slider SET  NameSlider=?, CreateDate=?, UrlSlider=?,NameFile=? WHERE IdSlider =?  ";
+            $sql = "UPDATE tbl_slider SET  NameSlider=?, CreateDate=?, UrlSlider=?,NameFile=? WHERE IdSlider =?  ";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("sssss", $name_slider, $create_date, $filePath, $fileName,$Id_Slider);
                 
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
    
      } else {
-        $sql = "UPDATE slider SET  NameSlider=?, CreateDate=? WHERE IdSlider =? ";
+        $sql = "UPDATE tbl_slider SET  NameSlider=?, CreateDate=? WHERE IdSlider =? ";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $name_slider, $create_date,$Id_Slider);
 

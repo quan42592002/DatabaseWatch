@@ -18,15 +18,15 @@ $start = (int)(($page - 1) * $items_per_page);
 
 //truy vấn sql
 if($phan_loai_slider!="" ){ 
-    $sql="SELECT * from slider where NameSlider='$phan_loai_slider' LIMIT $start, $items_per_page;";
+    $sql="SELECT * from tbl_slider where NameSlider='$phan_loai_slider' LIMIT $start, $items_per_page;";
     $result = $conect->query($sql);
     $datax = $result->fetch_all(MYSQLI_ASSOC);
-    $total_items = mysqli_num_rows($conect->query("SELECT * FROM slider where NameSlider='$phan_loai_slider';"));
+    $total_items = mysqli_num_rows($conect->query("SELECT * FROM tbl_slider where NameSlider='$phan_loai_slider';"));
 }else{
-    $sql="SELECT * from slider LIMIT $start, $items_per_page;";
+    $sql="SELECT * from tbl_slider LIMIT $start, $items_per_page;";
     $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
-$total_items = mysqli_num_rows($conect->query("SELECT * FROM slider;"));
+$total_items = mysqli_num_rows($conect->query("SELECT * FROM tbl_slider;"));
 }
 
 
