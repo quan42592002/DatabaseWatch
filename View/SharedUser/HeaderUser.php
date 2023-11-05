@@ -179,7 +179,7 @@
                 </div>
             </div>
             <div  class="card-shop">
-                <a href="http://" class="card-shop-header">
+                <a href="?controller=GioHangController" class="card-shop-header">
                     <i class="bi bi bi-cart iconuser" style="color: #020101;"></i>
                     <p>5</p>
                 </a>

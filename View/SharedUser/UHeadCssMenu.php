@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/main.css">
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/trangchuuser.css">
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/DanhSachSP.css">
+    <link rel="stylesheet" href="http://localhost:3000/Assets/css/GioHang.css">
 
-    <link rel="stylesheet" href="http://localhost:3000/Assets/TrangChu.js">
+
 
     <!-- css của trang chủ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
