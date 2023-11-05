@@ -16,7 +16,7 @@
         <div class="card-body p-2" style="display: flex;">
             <div class="form-group" style="width: 100%; display: flex;">
 
-                <input type="hidden" class="form-control" id="IdThuongHieu">
+                <input type="hidden" class="form-control" id="Id">
                 <div class="" style="width: 50%;">
                     <table class="styled-table">
                         <tr>
@@ -40,16 +40,16 @@
                         <label for="" class="form-label">Tên gọi</label>
                         <input type="text" class="form-control" id="TenGoi" placeholder="Nhập tên gọi ...">
                     </div>
-                </div>
-                <div class="" style="width: 20%; background: #448aff;height: 155px;">
-                    <div class="upload" style="text-align-last: center;margin: 15px;">
-                        <img src="/UpLoad/Public/3135715.png" id="urlAnh" alt="" width="130px">
-                    </div>
-                    <div class="form-group">
+                    <div class="form-group" style="padding: 15px;">
                         <label class="control-label">Chọn tài liệu:</label>
                         <div class="input-group col-md-12">
                             <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
                         </div>
+                    </div>
+                </div>
+                <div class="" style="width: 20%; background: #448aff;height: 155px;">
+                    <div class="upload" style="text-align-last: center;margin: 15px;">
+                        <img src="/UpLoad/Public/3135715.png" id="urlAnh" alt="" width="130px">
                     </div>
                 </div>
             </div>

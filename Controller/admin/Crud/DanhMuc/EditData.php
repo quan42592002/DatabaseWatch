@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Lấy dữ liệu từ form
     $SoThuTu = $_POST['SoThuTu'];
     $TenGoi = $_POST['TenGoi'];
-    $IdThuongHieu = (int)$_POST['IdThuongHieu'];
+    $Id = (int)$_POST['Id'];
 
-    $uploadDir = '../../../../UpLoad/ThuongHieu/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
+    $uploadDir = '../../../../UpLoad/Admin/DanhMuc'; // Thư mục lưu trữ tệp ảnh trên máy chủ
     $file = $_FILES['duong_dan_tai_lieu'];
 
     if ($file['error'][0] === UPLOAD_ERR_OK) {
@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (move_uploaded_file($file['tmp_name'][0], $filePath)) {
-            $sql = "UPDATE tbl_thuonghieu SET TenGoi=?, UrlAnh=?, FileName=?, Stt=? WHERE IdThuongHieu =? ";
+            $sql = "UPDATE tbl_danhmuchethong SET TenGoi=?, UrlAnh=?, FileName=?, SoThuTu=? WHERE Id =? ";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssss" . "s", $TenGoi, $filePath, $fileName, $SoThuTu,$IdThuongHieu);
+            $stmt->bind_param("ssss" . "s", $TenGoi, $filePath, $fileName, $SoThuTu,$Id);
 
             if ($stmt->execute()) {
                 $response = ["status" => true];
@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $response = ["status" => false];
         }
     } else {
-        $sql = "UPDATE tbl_thuonghieu SET TenGoi=?, Stt=? WHERE IdThuongHieu =? ";
+        $sql = "UPDATE tbl_danhmuchethong SET TenGoi=?, SoThuTu=? WHERE Id =? ";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss" . "s", $TenGoi, $SoThuTu,$IdThuongHieu);
+        $stmt->bind_param("ss" . "s", $TenGoi, $SoThuTu,$Id);
 
         if ($stmt->execute()) {
             $response = ["status" => true];

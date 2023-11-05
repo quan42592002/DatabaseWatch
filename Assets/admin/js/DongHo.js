@@ -421,6 +421,7 @@ var myController = {
                     success: function (response) {
                         if (response.status == true) {
                             alert("Upload Thành công");
+                            myController.LoadTableFile();
                         } else {
                             alert("Có lỗi xảy ra");
                         }
