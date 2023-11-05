@@ -31,26 +31,18 @@
     <!--BEGIN sub BOLOC -->
     <div id="sub-boloc" class="sub-boloc">
       <!-- brand -->
-        <div class="brand">
-          <div class="title">Thương hiệu</div>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item1.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item2.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item3.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item4.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item5.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item6.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item7.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item6.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item5.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item4.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item3.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item2.png" alt=""></a>
-          <a  class="brand-item" href=""><img src="/UpLoad/Brand/Brand-item1.png" alt=""></a>
-
-
+        <div class="brand" id="list-brand">
+          <!-- <div class="title">Thương hiệu</div> -->
          
 
+         <h3></h3>
+
         </div>
+
+        <script id="data-brand" type="x-tmpl-mustache">
+        <a  class="brand-item" href=""><img src="{{Url}}" alt=""></a>
+
+        </script>
         <!-- END brand -->
         <!-- Price -->
      
@@ -743,3 +735,5 @@
     <p>Lưu ý: Khách qua shop xem hàng vui lòng báo trước để chúng tôi chuẩn bị sẵn hàng, do chúng tôi có rất nhiều mã hàng nên không thể bày hết ở cửa hàng. Xin cám ơn!</p> 
     <p>Chương Trình Xả Kho Quanh Năm</p> 
   </div>
+  <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
+<script src="http://localhost:3000/Assets/user/js/brand.js"></script>

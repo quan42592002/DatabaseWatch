@@ -13,7 +13,7 @@ if (!$conn) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Lấy dữ liệu từ form
+    // Lấy dữ liệu từ form(bên file js truyền vào)
     $SoThuTu = $_POST['SoThuTu'];
     $TenGoi = $_POST['TenGoi'];
 

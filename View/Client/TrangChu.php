@@ -359,20 +359,25 @@
   <div class="high-class-banner"><img src="/UpLoad/Banner/banner-dong-ho-cao-cap.png" alt=""></div>
 
 
-  <div class="high-class-main">
+  <div class="high-class-main" id="lstDuLieu">
     <!-- 1 -->
-    <div class="flashsale-product">
+
+  </div>
+</div>
+<!-- END HIGH-CLASS-PRODUCT -->
+<script id="data-dong-ho" type="x-tmpl-mustache">
+<div class="flashsale-product">
       <div class="flashsale-product-main">
         <!-- img -->
         <div class="img-fls-product"> <a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
         <!-- name -->
         <div class="name-fls-product">
-          <h3>Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h3>
+          <h3>{{TenDongHo}}</h3>
         </div>
         <!-- price -->
         <div class="price-fls-product">
           <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
+            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
             <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >5.850.000₫</a> <div class="fls-discount">-25%</div></li>
 
           </ul>
@@ -389,158 +394,7 @@
 
       </div>
     </div>
-    <!-- 2 -->
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product2.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >5.850.000₫</a> <div class="fls-discount">-35%</div></li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-
-      </div>
-    </div>
-    <!-- 3 -->
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Citizen 40mm Nam BI1054-12E</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">2.730.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >3.650.000₫</a> <div class="fls-discount">-88%</div></li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-
-      </div>
-    </div>
-    <!-- 4 -->
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product2.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Orient 41.7mm Nam RA-AA0B02R19B</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.850.000₫</a> <div class="fls-discount">-34%</div></li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-
-      </div>
-    </div>
-    <!-- 5 -->
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-
-      </div>
-    </div>
-    <!-- 6 -->
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""> <img src="/UpLoad/Product/fls-product3.png" alt=""></a></div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >5.850.000₫</a> <div class="fls-discount">-25%</div></li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </div>
-</div>
-<!-- END HIGH-CLASS-PRODUCT -->
-
+</script>
 
 <!-- BEGIN Content -->
   <!-- <div class="content-store">
@@ -667,7 +521,8 @@
 
 
 </div>
-
+<script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
+<script src="http://localhost:3000/Assets/user/js/trangtruAjax.js"></script>
 
 
 

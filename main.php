@@ -34,10 +34,10 @@
                         if ($_SESSION['IdRole'] == 1) {
                             require('View/Admin/DashBoard.php');
                         } else {
-                            require('View/Client/TrangChu.html');
+                            require('View/Client/TrangChu.php');
                         }
                     } else {
-                        require('View/Client/TrangChu.html');
+                        require('View/Client/TrangChu.php');
                     }
                 }
                 ?>
