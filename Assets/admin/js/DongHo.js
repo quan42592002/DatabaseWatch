@@ -71,6 +71,10 @@ var myController = {
             myController.SaveNewChiTietFile();
         });
 
+        $("#btn_CapNhapChiTiet").off("click").on("click", function () {
+            myController.UpdateChiTiet();
+        });
+
     },
 
     resetForm: function () {
@@ -163,7 +167,7 @@ var myController = {
 
                     $.each(datax, function (index, value) {
                         html += "<tr>" +
-                           "<td><img src='" + value.Url_anh + "' width='65spx'></td>" +
+                            "<td><img src='" + value.Url_anh + "' width='65spx'></td>" +
                             "<td>" + value.TenDongHo + "</td>" +
                             "<td>" + value.ThuongHieu + "</td>" +
                             "<td>" + value.NamNu + "</td>" +
@@ -233,7 +237,7 @@ var myController = {
                             $("#urlAnh").attr('src', datax.Url_anh);
                             $("#urlAnh").css('border-radius', '0%')
                         }
-                        
+
                         $(".modal-table-chitiet").show();
                         $(".modal-table-file").hide();
                         $("#modal-DongHo").show();
@@ -266,7 +270,7 @@ var myController = {
 
                     $.each(datax, function (index, value) {
                         html += "<tr>" +
-                           "<td><img src='" + value.UrlFile + "' width='65spx'></td>" +
+                            "<td><img src='" + value.UrlFile + "' width='65spx'></td>" +
                             "<td>" + value.NameFile + "</td>" +
                             "<td> <input type='checkbox' checked></td>" +
                             "<td>" +
@@ -316,7 +320,7 @@ var myController = {
                             $("#urlAnh").attr('src', datax.Url_anh);
                             $("#urlAnh").css('border-radius', '0%')
                         }
-                        
+
                         $(".modal-table-file").show();
                         $(".modal-table-chitiet").hide();
                         $("#modal-DongHo").show();
@@ -345,15 +349,6 @@ var myController = {
                     var datax = response.datax;
                     if (datax != null) {
                         $("#SoLuong").val(datax);
-
-                        if (datax == 1 || datax == "1") {
-                            $("#btn_CapNhapChiTiet").show();
-                            $("#btn_TaoChiTiet").hide();
-                        } else {
-                            $("#btn_CapNhapChiTiet").hide();
-                            $("#btn_TaoChiTiet").show();
-                        }
-
                     }
                 }
             },
@@ -381,6 +376,35 @@ var myController = {
                     alert("Thêm mới thành công");
                     myController.LoadDetailChiTiet(IdDongHo);
                     myController.UpdateSoLuong(IdDongHo);
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    },
+
+    UpdateChiTiet: function () {
+        var IdDongHo = $("#IdDongHo").val();
+        if (IdDongHo <= 0) {
+            alert("Bạn chưa có thông tin đồng hồ");
+            return;
+        }
+
+        var Imei = $("#Imel_0").val();
+        
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/UpdateChiTiet.php',
+            method: 'Post',
+            data: {
+                IdDongHo: IdDongHo,
+                Imei:Imei,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    alert("Thêm mới thành công");
+                    myController.LoadDetailChiTiet(IdDongHo);
                 }
             },
             error: function (error) {
@@ -430,7 +454,7 @@ var myController = {
             } else {
                 alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
             }
-        }else{
+        } else {
             alert("Chưa có file nào được đính kèm");
         }
     },
@@ -476,8 +500,8 @@ var myController = {
 
                     $.each(datax, function (index, value) {
 
-                        if (value.Imei == null || value.Imei == "null") {
-                            html += "<tr><td><input type='text' class='form-control' placeholder='vd: BI1054-12E-0'></td>" +
+                        if (value.Imei == null || value.Imei == "null" || value.Imei =="") {
+                            html += "<tr><td><input type='text' id='Imel_0' class='form-control' placeholder='vd: BI1054-12E-0'></td>" +
                                 "<td><input type='text' class='form-control' value ='" + value.BaoHanh + "'></td>" +
                                 "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhTu + "'disabled></td>" +
                                 "<td><input type='date' class='form-control' value ='" + value.NgayBaoHanhDen + "'disabled></td>" +
@@ -503,6 +527,13 @@ var myController = {
                     });
 
                     $("#tbl_ChiTietDongHo").html(html);
+                    if (datax[0].Imei == null || datax[0].Imei =="null" || datax[0].Imei == "") {
+                        $("#btn_CapNhapChiTiet").show();
+                        $("#btn_TaoChiTiet").hide();
+                    } else {
+                        $("#btn_CapNhapChiTiet").hide();
+                        $("#btn_TaoChiTiet").show();
+                    }
                 }
             },
             error: function (error) {
