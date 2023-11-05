@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="login" style="margin-top: 40px;">
-    <img class="site-icon " src="https://cdn.tgdd.vn/2022/10/banner/TGDD-540x270.png">
+    <img class="site-icon " src="http://localhost:3000/UpLoad/Public/Login.jpg" width="580px">
     <form action="" method="post" class="form-login" style="width: 30%;">
         <div class="card" style="margin-left:0 ;margin-bottom: 0;">
             <div class="card-header" style="background: #f1f3f4;">
@@ -39,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Tài khoản</label>
-                    <input type="text" class="form-control" name="username">
+                    <input type="text" class="form-control" name="username" placeholder="Nhập tài khoản ...">
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Mật khẩu</label>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="password"  placeholder="Nhập mật khẩu ...">
                 </div>
                 <div class="form-group p-1">
                     <button class="btn btn-primary" style="display: flex;">Đăng nhập</button>
