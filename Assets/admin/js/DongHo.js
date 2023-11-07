@@ -168,7 +168,7 @@ var myController = {
                     $.each(datax, function (index, value) {
                         html += "<tr>" +
                             "<td><img src='" + value.Url_anh + "' width='65spx'></td>" +
-                            "<td>" + value.TenDongHo + "</td>" +
+                            "<td>" + '<a class="" title="Xem thông tin" style="border-radius: 20px;list-style:none" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" >'+ value.TenDongHo + "</a></td>" +
                             "<td>" + value.ThuongHieu + "</td>" +
                             "<td>" + value.NamNu + "</td>" +
                             "<td>" + value.GiaMua + "</td>" +

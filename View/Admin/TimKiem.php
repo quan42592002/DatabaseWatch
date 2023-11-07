@@ -5,25 +5,34 @@
         </div>
         <div class="" style="width: 100%; display: flex; ">
             <div class="form-group p-1" style="width: 25%;">
-                <label for="" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" id="SoLuong" placeholder="Nhập số lượng">
+                <label for="" class="form-label">Tên sản phẩm</label>
+                <input type="text" class="form-control" id="Search_Ten" placeholder="Nhập tên sản phẩm">
             </div>
             <div class="form-group p-1" style="width: 25%;">
-                <label for="" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" id="SoLuong" placeholder="Nhập số lượng">
+                <label for="" class="form-label">Thương hiệu</label>
+                    <select name="" id="ThuongHieu" class="form-control">
+                    </select>
             </div>
             <div class="form-group p-1" style="width: 25%;">
-                <label for="" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" id="SoLuong" placeholder="Nhập số lượng">
+            <label for="" class="form-label">Loại dây</label>
+
+            <select name="" id="LoaiDay" class="form-control">
+           
+            </select>
+
             </div>
             <div class="form-group p-1" style="width: 25%;">
-                <label for="" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" id="SoLuong" placeholder="Nhập số lượng">
+            <label for="" class="form-label">Kiểu dáng</label>
+
+            <select name="" id="KieuDang" class="form-control">
+           
+            </select>
+
             </div>
         </div>
         <div class="" style="width: 100%; display: flex;justify-content: center; ">
             <button class="btn btn-primary" id="btnReset" style="display: flex;margin: 10px; "><i class="bi bi-arrow-repeat" style="margin-right: 10px;"></i>  Làm mới</button>
-            <button class="btn btn-secondary" id="btnReset" style="display: flex;margin: 10px; "><i class="bi bi-search" style="margin-right: 10px;"></i>Tìm kiếm</button>
+            <button class="btn btn-secondary" id="btnSearch" style="display: flex;margin: 10px; "><i class="bi bi-search" style="margin-right: 10px;"></i>Tìm kiếm</button>
         </div>
         <div class="card-body p-2" style="display: flex;">
             <div class="form-group" style="width: 100%; display: flex;">
@@ -46,3 +55,4 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="http://localhost:3000/Assets/admin/js/TimKiem.js"></script>
