@@ -173,32 +173,32 @@
             <!-- cart-product-right -->
          
                 <div class="cart-product-right">
-                    <div style="width: 318px;" class="sub-price">
-                        <h>Tạm Tính</h>
-                        <div id="sub-price">111111đ</div>
+                    <div style="width: 318px;display:flex;" class="sub-price">
+                        <h style="font-size: 14px;font-weight: bold;margin-right: 140px;height:35px;">Tạm Tính</h>
+                        <div id="sub-price">780.000đ</div>
                     </div>
 
                     <div style="width: 318px;" class="price">
-                        <h>Thành Tiền</h>
+                        <h style="margin-left: -10px;" >Thành Tiền</h>
                         <div id="price" style=" margin-left: 100px; font-size: 24px;
                     font-weight: bold;color:rgb(232, 24, 84) ;">
-                          1111111 đ
+                            840,000đ
                         </div>
                     </div>
 
 
-                    <div style="background-color:white;" class="pay">
-                        <button style=" width: 115px;height: 100%;background-color:rgb(232, 24, 84);border:none;margin-right: 25px;border-radius:5px;">
-                            <a href="#">Cập nhật</a>
+                    <div style="background-color:white;display: flex;" class="pay">
+                        <button style="width: 115px;height: 100%;background-color:rgb(232, 24, 84);border:none;margin-right: 25px;border-radius:5px;color:white;">
+                            <a style="color:white;" href="#">Cập nhật</a>
                         </button>
-                        <button style=" width: 115px;height: 100%;background-color:rgb(232, 24, 84) ;border:none;border-radius:5px;">
+                        <button style="width: 115px;height: 100%;background-color:rgb(232, 24, 84) ;border:none;border-radius:5px;margin-right: -10px;color:white;">
                             <a>Xóa hết Sp</a>
                         </button>
                     </div>
-                    <button class="pay">  <a href="/cart/checkout">ĐẶT HÀNG NGAY</a></button>
+                    <button class="pay">  <a style="color:white;" href="/cart/checkout">ĐẶT HÀNG NGAY</a></button>
 
 
-                    <button class="pay"> <a href="/products/category">TIẾP TỤC MUA HÀNG</a> </button>
+                    <button class="pay"> <a style="color:white;" href="/products/category">TIẾP TỤC MUA HÀNG</a> </button>
                 </div>
             
 
@@ -210,3 +210,13 @@
     <!-- cart-product -->
 
 </div>
+<style>
+/*cart*/
+.sub-price div {
+    font-size: 16px;
+    font-weight: bold;
+}
+.price{height: 61px;
+    display: flex;
+    line-height: 61px;}
+</style>

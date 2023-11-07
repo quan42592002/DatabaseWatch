@@ -6,9 +6,6 @@
         <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; ">
             <button class="btn btn-success" id="btn_TaoMoi" style="display: flex;margin: 10px; ">Tạo mới</button>
             <button class="btn btn-primary" id="btn_SaveData" style="display: flex;margin: 10px; margin-left: 0px; ">Cập nhập</button>
-            <input style="    margin-left: 700px;
-    height: 30px;
-    margin-top: 10px;" type="text">
         </div>
         <div class="card-body p-2" style="display: flex;">
             <div class="form-group" style="width: 100%; display: flex;">
@@ -23,7 +20,11 @@
                 <div class="" style="width: 30%;margin-left: 20px;">
                     <div class="form-group p-1" style="padding-top: 0px;">
                         <label for="" class="form-label">Tên Slider</label>
-                        <input type="text" class="form-control" id="nameslider">
+                        <select id="nameslider" class="form-control"    >
+                        <option value="">-- Chọn phân loại --</option>
+                            <option value="Trang Chủ">1. Trang Chủ</option>
+                            <option value="Trang Shop">2. Trang Shop</option>
+                        </select>
                     </div>
                     <div class="form-group p-1">
                         <label for="" class="form-label">Ngày Tạo</label>
@@ -49,25 +50,6 @@
                     <div class="pagination">
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="card" style="margin: 0 auto;margin-top: 20px;">
-        <div class="card-header">
-            <h3>Slider</h3>
-        </div>
-        <div class="" style="width: 100%; display: flex; border-bottom: 1px solid blue; ">
-           <select name="PhanLoaiSlider" id="PhanLoaiSlider" class="form-control" style="width: 20%;">
-           <option value="">--------</option>
-
-            <option value="Trang Chủ">Trang Chủ</option>
-            <option value="Trang Shop">Trang Shop</option>
-           </select>
-        </div>
-        <div class="card-body p-2" style="display: flex;">
-            <div class="form-group" style="width: 100%; display: flex;">
-
-            
             </div>
         </div>
     </div>

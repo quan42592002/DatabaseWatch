@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $IdSlider = $_POST['IdSlidertest'];
 
-    $sql = "DELETE FROM slider Where IdSlider = '$IdSlider';";
+    $sql = "DELETE FROM tbl_slider Where IdSlider = '$IdSlider';";
 
    $result = $conect->query($sql);
     

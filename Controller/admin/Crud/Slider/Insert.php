@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $name_slider = $_POST['nameSlider'];
     $create_date=$_POST['createdate'];
-    $uploadDir = '../../../../UpLoad/Slider/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
+    $uploadDir = '../../../../UpLoad/Admin/Slider/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
     $file = $_FILES['duong_dan_tai_lieu'];
     if ($file['error'][0] === UPLOAD_ERR_OK) {
         $fileName = time() . '_' . $file['name'][0];
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         if (move_uploaded_file($file['tmp_name'][0], $filePath)) {
-            $sql = "INSERT INTO  slider(NameSlider, CreateDate, UrlSlider,NameFile) VALUES (?, ?, ?,?)";
+            $sql = "INSERT INTO  tbl_slider(NameSlider, CreateDate, UrlSlider,NameFile) VALUES (?, ?, ?,?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssss", $name_slider, $create_date, $filePath, $fileName);
 
@@ -40,19 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     }else {
 
-        $sql = "INSERT INTO  slider(NameSlider, CreateDate) VALUES (?, ?)";
+        $sql = "INSERT INTO  tbl_slider(NameSlider, CreateDate) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $name_slider, $create_date);
 
-      
-    }
 
-
-
-    // $sql="INSERT INTO slider(NameSlider,CreateDate) value( '$name_slider','$create_date') ";
-    // $stmt = $conn->query($sql);
-    
-    if ($stmt) {
+    if ($stmt->execute()) {
         $response = ["status" => true];
     
     }else{
@@ -61,6 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     header('Content-Type: application/json');
     echo json_encode($response);
+    }
+
+
+
+  
         
 }
 

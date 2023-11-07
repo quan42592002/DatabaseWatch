@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
    //lấy dữ liệu từ data bên file js truyền vào
    $IdSlider = $_GET['IdSlider'];
    
-    $sql = "SELECT * FROM slider WHERE IdSlider = $IdSlider";
+    $sql = "SELECT * FROM tbl_slider WHERE IdSlider = $IdSlider";
     $result = $conect->query($sql);
     $record = $result->fetch_assoc();
     

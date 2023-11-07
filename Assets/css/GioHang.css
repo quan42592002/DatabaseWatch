@@ -26,6 +26,7 @@ h4 {
 .cart-product{
     width: 1170px;
     display: flex;
+    
 }
 .cart-product-left{
     width: 847px;
@@ -89,4 +90,55 @@ h4 {
     margin-left: -5px;
     margin-right: -5px;
 
+}
+.sub-price{
+    width: 272px;
+    height: 61px;
+    display: flex;
+    line-height: 61px;
+    border-bottom: 1px solid rgb(133, 129, 129);
+}
+.sub-price h{
+    font-size: 14px;
+ font-weight: bold;
+ margin-right: 140px;
+}
+.sub-price div{
+      font-size: 16px;
+ font-weight: bold;
+
+}
+.price{
+    width: 272px;
+    height: 61px;
+    display: flex;
+    line-height: 61px;
+}
+.pay{
+    width: 262px;
+    height: 40px;
+    background-color: rgb(232, 24, 84);
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
+.shop-continute{
+    width: 262px;
+    height: 40px;
+    border: 1px solid rgb(232, 24, 84);
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: rgb(232, 24, 84);
+    margin-top: 20px;
+border-radius: 5px;
+}
+
+.sub-quantity button,.pay,.shop-continute{
+    cursor: pointer;
 }
