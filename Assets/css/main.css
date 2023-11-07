@@ -84,7 +84,35 @@
 .login{
     display: -webkit-box;
 }
+.buynow {
+    padding: 5px 15px;
+    opacity: 0;
+  }
 
+  .buynow:hover {
+    background: #893dc3;
+    border: 0;
+    color: #fff;
+    background-image: none;
+    background: #662d91;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    margin: 0 auto;
+    padding: 5px 15px;
+    line-height: 1.8rem;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    transition: all .4s;
+    opacity: 1;
+  }
 .form-login {
     display: block;
     background: #fff;

@@ -153,7 +153,7 @@ var myController = {
                     $.each(datax, function (index, value) {
                         html += "<tr><td><img src='" + value.Url_anh + "' width='65spx'></td>" +
                             "<td>" + value.TenDongHo + "</td>" +
-                            "<td>" + value.TenGoi + "</td>" +
+                            "<td>" + value.ThuongHieu + "</td>" +
                             "<td>" + value.NamNu + "</td>" +
                             "<td>" + value.SoLuong + "</td>" +
                             "<td>" + value.GiaMua + "</td>" +

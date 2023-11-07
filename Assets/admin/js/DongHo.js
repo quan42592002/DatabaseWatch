@@ -230,8 +230,8 @@ var myController = {
                         $("#GiaBan").val(datax.GiaBan);
                         $("#GiamGia").val(datax.GiamGia);
 
-                        if (datax.Url_anh == "") {
-                            $("#urlAnh").attr('src', "http://localhost:3000/UpLoad/Public/3135715.png");
+                        if (datax.Url_anh == "" || datax.Url_anh == null) {
+                            $("#urlAnh").attr('src', 'UpLoad/Public/3135715.png');
                             $("#urlAnh").css('border-radius', '0%');
                         } else {
                             $("#urlAnh").attr('src', datax.Url_anh);
@@ -527,13 +527,19 @@ var myController = {
                     });
 
                     $("#tbl_ChiTietDongHo").html(html);
-                    if (datax[0].Imei == null || datax[0].Imei =="null" || datax[0].Imei == "") {
-                        $("#btn_CapNhapChiTiet").show();
-                        $("#btn_TaoChiTiet").hide();
-                    } else {
+                    if (datax.length > 0) {
+                        if (datax[0].Imei == null || datax[0].Imei =="null" || datax[0].Imei == "" ) {
+                            $("#btn_CapNhapChiTiet").show();
+                            $("#btn_TaoChiTiet").hide();
+                        } else {
+                            $("#btn_CapNhapChiTiet").hide();
+                            $("#btn_TaoChiTiet").show();
+                        }
+                    }else{
                         $("#btn_CapNhapChiTiet").hide();
                         $("#btn_TaoChiTiet").show();
                     }
+               
                 }
             },
             error: function (error) {
@@ -686,6 +692,23 @@ var myController = {
             } else {
                 alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
             }
+        }else{
+            $.ajax({
+                type: "POST",
+                url: 'http://localhost:3000/Controller/admin/Crud/DongHo/Insert.php',
+                data: {
+                    strJson:JSON.stringify(objData),
+                }, 
+                success: function (response) {
+                    if (response.status == true) {
+                        alert("Thành công");
+                        myController.LoadTable();
+                        $("#modal-DongHo").hide();
+                    } else {
+                        alert("Có lỗi xảy ra");
+                    }
+                },
+            });
         }
     }
 };

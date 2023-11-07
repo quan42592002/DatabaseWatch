@@ -67,9 +67,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode($response);
         }
     } else {
-        $sql = "INSERT INTO tbl_thuonghieu (Stt, TenGoi) VALUES (?, ?)";
+        $sql = "INSERT INTO tbl_dongho (TenDongHo, ThuongHieu, NamNu,SoLuong,KieuDang,GiaMua,GiaBan,
+        LoaiDay,GiamGia,ChongNuoc) VALUES (?,?, ?, ?,?,?, ?, ?,?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $SoThuTu, $TenGoi);
+        $stmt->bind_param(
+            "ssssssssss",
+            $TenDongHo,
+            $ThuongHieu,
+            $NamNu,
+            $SoLuong,
+            $KieuDang,
+            $GiaMua,
+            $GiaBan,
+            $LoaiDay,
+            $GiamGia,
+            $ChongNuoc,
+        );
 
         if ($stmt->execute()) {
             $response = ["status" => true];

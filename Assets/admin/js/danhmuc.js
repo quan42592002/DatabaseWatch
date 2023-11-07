@@ -193,7 +193,7 @@ var myController = {
                         processData: false,
                         data: formData, // Sử dụng formData để gửi tệp
                         success: function (response) {
-                            if (response.status == true) {
+                            if (response.status) {
                                 alert("Thành công");
                                 myController.LoadTable();
                             } else {

@@ -1,36 +1,4 @@
-<style>
-  .buynow {
-    padding: 5px 15px;
-    opacity: 0;
-  }
-
-  .buynow:hover {
-    background: #893dc3;
-    border: 0;
-    color: #fff;
-    background-image: none;
-    background: #662d91;
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 500;
-    margin: 0 auto;
-    padding: 5px 15px;
-    line-height: 1.8rem;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    transition: all .4s;
-    opacity: 1;
-  }
-</style>
 <!-- /* BEGIN BANNER */ -->
-
 <div class="banner">
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -45,7 +13,6 @@
     <div class="swiper-pagination"></div>
   </div>
 </div>
-
 <!-- /* END BANNER */ -->
 
 <!--BEGIN treatment -->
@@ -113,121 +80,12 @@
 <!--BEGIN flashsale -->
 <div class="flashsale">
   <div class="banner-flashsale"><img src="/UpLoad/Banner/Bannerflashsale.jpg" alt=""></div>
-  <div class="flashsale-main">
-    <!-- 1 -->
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">5.850.000₫</a>
-              <div class="fls-discount">-25%</div>
-            </li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="#">
-            <button type="" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
-                Thêm vào giỏ hàng
-              </span></button>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">5.850.000₫</a>
-              <div class="fls-discount">-25%</div>
-            </li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="#">
-            <button type="" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
-                Thêm vào giỏ hàng
-              </span></button>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-fls-product">
-          <h3>Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h3>
-        </div>
-        <!-- price -->
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">5.850.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">5.850.000₫</a>
-              <div class="fls-discount">-25%</div>
-            </li>
-
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="#">
-            <button type="" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
-                Thêm vào giỏ hàng
-              </span></button>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-
+  <div class="flashsale-main" id="lstDuLieuMain">
 
   </div>
   <div class="all-product"> <a href="">Xem thêm đồng hồ xả kho</a></div>
 </div>
+<!-- END LUXURY -->
 <script type="text/javascript">
   $(document).ready(function() {
     $('.flashsale-main').slick({
@@ -326,16 +184,6 @@
 
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.luxury').slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 2
-    });
-  });
-</script>
-<!-- END LUXURY -->
 <!-- BEGIN HIGH-CLASS-PRODUCT -->
 <div class="high-class">
   <div class="high-class-banner"><img src="/UpLoad/Banner/banner-dong-ho-cao-cap.png" alt=""></div>
@@ -374,6 +222,38 @@
           <i style="font-size: 14px;font-style: normal;" >9</i>
         </div>
 
+      </div>
+    </div>
+</script>
+
+<script id="data-dong-ho-main" type="x-tmpl-mustache">
+  <div class="flashsale-product">
+      <div class="flashsale-product-main">
+        <div class="img-fls-product"><a href=""><img src="{{Url_anh}}" alt=""></a> </div>
+        <div class="name-fls-product">
+          <h3>{{TenDongHo}}</h3>
+        </div>
+        <div class="price-fls-product">
+          <ul>
+            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}₫</a></li>
+            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">5.850.000₫</a>
+              <div class="fls-discount">-{{GiamGia}}%</div>
+            </li>
+          </ul>
+        </div>
+        <div class="fls-rating">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-half"></i>
+          <i class="bi bi-star"></i>
+          <i style="font-size: 14px;font-style: normal;">9</i>
+          <a href="javascript:myController.AddShopping({{IdChiTietDongHo}})">
+            <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
+                Thêm vào giỏ hàng
+              </span></button>
+          </a>
+        </div>
       </div>
     </div>
 </script>
@@ -513,5 +393,22 @@
 
 
 </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.luxury').slick({
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 2
+    });
+  });
+</script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js
+"></script>
 <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
-<script src="http://localhost:3000/Assets/user/js/trangtruAjax.js"></script>
+<script src="http://localhost:3000/Assets/user/js/home.js"></script>
