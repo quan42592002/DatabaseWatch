@@ -115,9 +115,9 @@ h4 {
     line-height: 61px;
 }
 .pay{
-    width: 262px;
+    width: 307px;
     height: 40px;
-    background-color: rgb(232, 24, 84);
+    background-color: rgb(50, 138, 221);
     font-size: 14px;
     line-height: 40px;
     text-align: center;
@@ -125,7 +125,11 @@ h4 {
     margin-top: 20px;
     border: 1px solid white;
     border-radius: 5px;
-
+}
+.pay:hover{
+    background-color: rgb(141, 118, 209);
+    scale: 1.1;
+    transition: .4 all;
 }
 .shop-continute{
     width: 262px;

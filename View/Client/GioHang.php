@@ -25,29 +25,10 @@ if (!isset($_SESSION['IdRole'])) {
         <!-- cart-product-right -->
         <div class="cart-product-right">
             <div style="width: 318px;display:flex;" class="sub-price">
-                <h style="font-size: 14px;font-weight: bold;margin-right: 140px;height:35px;">Tạm Tính</h>
-                <div id="sub-price">780.000đ</div>
-            </div>
-
-            <div style="width: 318px;" class="price">
-                <h style="margin-left: -10px;">Thành Tiền</h>
-                <div id="price" style=" margin-left: 100px; font-size: 24px;
-                    font-weight: bold;color:rgb(232, 24, 84) ;">
-                    840,000đ
-                </div>
-            </div>
-
-
-            <div style="background-color:white;display: flex;" class="pay">
-                <button style="width: 115px;height: 100%;background-color:rgb(232, 24, 84);border:none;margin-right: 25px;border-radius:5px;color:white;">
-                    <a style="color:white;" href="#">Cập nhật</a>
-                </button>
-                <button style="width: 115px;height: 100%;background-color:rgb(232, 24, 84) ;border:none;border-radius:5px;margin-right: -10px;color:white;">
-                    <a>Xóa hết Sp</a>
-                </button>
+                <h style="font-size: 14px;font-weight: bold;margin-right: 140px;height:35px;">Tổng tiền</h>
+                <div id="sub-price">0đ</div>
             </div>
             <button class="pay"> <a style="color:white;" href="/cart/checkout">ĐẶT HÀNG NGAY</a></button>
-
 
             <button class="pay"> <a style="color:white;" href="/products/category">TIẾP TỤC MUA HÀNG</a> </button>
         </div>
@@ -61,8 +42,8 @@ if (!isset($_SESSION['IdRole'])) {
             <div style="text-align:center" class="image-prd"> <img src="{{Url_anh}}" alt=""></div>
             <div class="sub-product">
                 <ul style="width: 160px;">
-                    <li> <a style="font-weight: bold ;color:black" href="/Products/Detail/@item.ProductRecord.Id">{{TenDongHo}}</a> </li>
-                    <li style="cursor: pointer;color:rgb(232, 24, 84) ;"> <a onclick="return window.confirm('Are you sure?')" style="cursor: pointer;color:rgb(232, 24, 84) ;" href="cart/remove/@item.ProductRecord.Id">Xóa</a> </li>
+                    <li> <a style="font-weight: bold ;color:black" href="">{{TenDongHo}}</a> </li>
+                    <li style="cursor: pointer;color:rgb(232, 24, 84) ;"> <a style="cursor: pointer;color:rgb(232, 24, 84) ;" href="javascript:myController.RemoveCard({{Id}})"><i class="bi bi-trash2"></i> Xóa</a> </li>
                 </ul>
 
                 <div class="box-price">
@@ -89,5 +70,11 @@ if (!isset($_SESSION['IdRole'])) {
         line-height: 61px;
     }
 </style>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js
+"></script>
 <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
 <script src="http://localhost:3000/Assets/user/js/giohang.js"></script>
