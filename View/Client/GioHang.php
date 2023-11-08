@@ -4,13 +4,11 @@ if (!isset($_SESSION['IdRole'])) {
     exit;
 }
 ?>
-<input type="hidden"  id="UsersId" value=
-"<?php 
-        if(isset($_SESSION['IdRole']))
-        {
-        echo $_SESSION['IdUsers'];
-        }
-  ?>">
+<input type="hidden" id="UsersId" value="<?php
+                                            if (isset($_SESSION['IdRole'])) {
+                                                echo $_SESSION['IdUsers'];
+                                            }
+                                            ?>">
 <div class="cart-body">
     <div class="title">
         <h3>GIỎ HÀNG</h3>
@@ -18,7 +16,9 @@ if (!isset($_SESSION['IdRole'])) {
     <!-- cart-product -->
     <div class="cart-product">
         <form style="width: 804px;margin-right: 50px;" id="frm" method="post" action="/Cart/Update">
-            
+            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang">
+            </div>
+
         </form>
         <!-- cart-product-left -->
         <!-- END cart-product-right -->
@@ -56,26 +56,24 @@ if (!isset($_SESSION['IdRole'])) {
     </div>
     <!-- cart-product -->
     <script id="data-gio-hang" type="x-tmpl-mustache">
-        <div style="overflow: auto; margin: 0px;" class="cart-product-left">
-                <!-- product 1 -->
-                <div class="product-left">
-                    <div style="text-align:center" class="image-prd"> <img src="{{Url_anh}}" alt=""></div>
-                    <div class="sub-product">
-                        <ul style="width: 160px;">
-                            <li> <a style="font-weight: bold ;color:black" href="/Products/Detail/@item.ProductRecord.Id">Orient 43mm Nam FAG00003W0</a> </li>
-                            <li style="cursor: pointer;color:rgb(232, 24, 84) ;"> <a onclick="return window.confirm('Are you sure?')" style="cursor: pointer;color:rgb(232, 24, 84) ;" href="cart/remove/@item.ProductRecord.Id">Xóa</a> </li>
-                        </ul>
+        <!-- product 1 -->
+        <div class="product-left">
+            <div style="text-align:center" class="image-prd"> <img src="{{Url_anh}}" alt=""></div>
+            <div class="sub-product">
+                <ul style="width: 160px;">
+                    <li> <a style="font-weight: bold ;color:black" href="/Products/Detail/@item.ProductRecord.Id">{{TenDongHo}}</a> </li>
+                    <li style="cursor: pointer;color:rgb(232, 24, 84) ;"> <a onclick="return window.confirm('Are you sure?')" style="cursor: pointer;color:rgb(232, 24, 84) ;" href="cart/remove/@item.ProductRecord.Id">Xóa</a> </li>
+                </ul>
 
-                        <div class="box-price">
-                            <p style="text-decoration: line-through;text-decoration-color: red; color:#8a8a8a">100000 đ</p>
-                        </div>
-                        <div class="box-price">
-                            <p>10000đ</p>
-                        </div>
-                    </div>
+                <div class="box-price">
+                    <p style="text-decoration: line-through;text-decoration-color: red; color:#8a8a8a">{{ GiaGiam }}</p>
+                </div>
+                <div class="box-price">
+                    <p>{{GiaBan}}</p>
                 </div>
             </div>
-</script>
+        </div>
+    </script>
 </div>
 
 <style>

@@ -194,7 +194,7 @@
         <div class="price-fls-product">
           <ul>
             <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >5.850.000₫</a> <div class="fls-discount">-25%</div></li>
+            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >{{GiaGiam}}₫</a> <div class="fls-discount">-25%</div></li>
 
           </ul>
         </div>
@@ -221,8 +221,8 @@
         </div>
         <div class="price-fls-product">
           <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">5.850.000₫</a>
+            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
+            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">{{GiaGiam}}</a>
               <div class="fls-discount">-{{GiamGia}}%</div>
             </li>
           </ul>
