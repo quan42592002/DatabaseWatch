@@ -1,12 +1,16 @@
+<input type="hidden"  id="UsersId" value=
+"<?php 
+        if(isset($_SESSION['IdRole']))
+        {
+        echo $_SESSION['IdUsers'];
+        }
+  ?>">
 <!-- /* BEGIN BANNER */ -->
 <div class="banner">
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-
       <div class="swiper-slide"><img src="http://localhost:3000/UpLoad/banner/banner-dan-van-phong.png" alt=""></div>
       <div class="swiper-slide"><img src="http://localhost:3000/UpLoad/banner/banner1.png" alt=""></div>
-
-
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -85,24 +89,6 @@
   </div>
   <div class="all-product"> <a href="">Xem thêm đồng hồ xả kho</a></div>
 </div>
-<!-- END LUXURY -->
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.flashsale-main').slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 500,
-    });
-    $('.high-class-main').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 51100,
-    });
-  });
-</script>
-<!--END flashsale -->
 
 <!-- BEGIN CATEGORY -->
 
@@ -404,6 +390,25 @@
     });
   });
 </script>
+<!-- END LUXURY -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.flashsale-main').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 500,
+    });
+    $('.high-class-main').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 51100,
+    });
+  });
+</script>
+<!--END flashsale -->
+
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css
 " rel="stylesheet">
