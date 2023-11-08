@@ -1,3 +1,7 @@
+<input type="hidden"  id="IdChiTietDongHo" value=
+"<?php 
+        echo  $_GET['IdChiTietDongHo'];
+  ?>">
 <div class="main-full page">
     <div class="main-container">
         <ol class="page-menu">
@@ -11,11 +15,11 @@
             </li>
             <li>
                 <a href="">
-                    <span>đồng hồ olym pianus</span>
+                    <span id="TenDongHo"></span>
                 </a>
             </li>
         </ol>
-        <h1 class="title">Olym Pianus 42mm Nam OP990-45ADGS-GL-X</h1>
+        <h1 class="title" id="TenDongHoMain"></h1>
         <div class="box-title">
             <a href="" class="title-evaluate">
                 <i class="bi bi-star-fill"></i>
@@ -43,15 +47,15 @@
                                 <div class="sub-image-detail" style="width: 670px;">
                                     <!-- 1 -->
                                     <div class="picture-detail">
-                                       <img src="/Upload/Detail/detail.png" alt="">
+                                       <img src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="">
                                     </div>
                                     <!-- 2 -->
                                     <div class="picture-detail">
-                                        <img src="/Upload/Detail/detail.png" alt="">
+                                        <img src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="">
                                      </div>
                                      <!-- 3 -->
                                      <div class="picture-detail">
-                                        <img src="/Upload/Detail/detail.png" alt="">
+                                        <img src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg   " alt="">
                                      </div>
                                 </div>
                                 <script>
@@ -65,21 +69,13 @@
                                 </script>
                             </div>
                         </div>
-                        <!-- <div class="image-nav">
+                        <div class="image-nav">
                             <button type="button" role="presentation" class="image-prev disabled">
                                 <i class="leftPrePro"></i>
                             </button>
                             <button type="button" role="presentation" class="image-prev disabled">
                                 <i class="rightNextPro"></i>
                             </button>
-                        </div> -->
-                    </div>
-                    <div class="read">
-                        <a id="show-popup-color-images-gallery-5" style="display: block" href="javascript:void(0)" class="read-full">Xem tất cả hình</a>
-                        <div class="counter-page">
-                            (
-                            <span class="page" data-count="0">1/7</span>
-                            )
                         </div>
                     </div>
                 </div>
@@ -141,158 +137,6 @@
                     <p>
                         <a href="https://www.watchstore.vn/blogs/news/dong-ho-olym-pianus-cua-nuoc-nao--co-tot-khong--335">Xem thêm >>></a>
                     </p>
-                </div>
-                <div class="data-slide-4">
-                    <h3 data="ctsp" class="article-title ctsp">Chi tiết sản phẩm</h3>
-                    <h3 data="csbh" class="article-title ">Chính sách bảo hành</h3>
-                    <h3 data="hdcs" class="article-title ">Hướng dẫn chọn size</h3>
-                </div>
-                <div class="data-slide-5">
-                    <div class="content" style="height: 300px; overflow: hidden;">
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            <source srcset="https://www.watchstore.vn/upload/image/olym-pianus-op990-45adgs-gl-x-mat-xanh.webp" type="image/webp ">
-                            <source srcset="https://www.watchstore.vn/upload/original-image/olym-pianus-op990-45adgs-gl-x-mat-xanh.jpg" type="image/jpeg">
-                            <img class="img_list_230586" src="https://www.watchstore.vn/upload/original-image/olym-pianus-op990-45adgs-gl-x-mat-xanh.jpg" alt="OP990-45ADGS-GL-X mặt xanh" width="730px" height="450px" data-id="230586">
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                        <p style="text-align: justify;">
-                            Ngay từ cái nhìn đầu tiên,
-                            <span style="color: #3598db;">
-                                <a style="color: #3598db;" href="https://www.watchstore.vn/products/olym-pianus-op990-45adgs-gl-x-13617">
-                                    <strong>Olym Pianus OP990-45ADGS-GL-X</strong>
-                                </a>
-                            </span> 
-                            mặt xanh mang hơi thở 
-                            <strong>tiểu Hublot</strong>
-                            đã ghi dấu ấn tượng với giới mộ điệu. Mặc dù có size mặt 42mm khá lớn nhưng dây cao su mềm, kích cỡ vừa phải khiến sản phẩm vẫn tạo ra sự gọn gàng trên cổ tay 15 - 18cm của nam giới.
-                        </p>
-                    </div>
-                    <div data-tab="5" class="btn-xemthem">
-                        <div class="bg-article"></div>
-                        <span class="btn-content xemthemct">                            
-                            Xem thêm 
-                        </span>
-                    </div>
                 </div>
                 <div id="data-slide-6" class="comdetail data-slide-6 ent-left formkh">
                     <h2 class="evaluate">Đánh giá review Olym Pianus OP990-45ADGS-GL-X</h2>
@@ -662,49 +506,7 @@
                         </p>              
                     </div>
                 </div>
-                <div class="box-address">
-                    <div class="address-top">
-                        <strong>Địa chỉ mua hàng</strong>
-                        <span>(vui lòng liên hệ trước để WatchStore chuẩn bị sẵn hàng)</span>
-                    </div>
-                    <div class="address-content">
-                        <div class="add-ent">
-                            97 Trần Đại Nghĩa, HBT, Hà Nội 
-                            <span class="contact">
-                                mở cửa: 8h30 đến 22h45 | 
-                                <a rel="map" target="map" href=""> Chỉ đường</a>
-                            </span>
-                        </div>
-                        <div class="add-ent">
-                            97 Trần Đại Nghĩa, HBT, Hà Nội 
-                            <span class="contact">
-                                mở cửa: 8h30 đến 22h45 | 
-                                <a rel="map" target="map" href=""> Chỉ đường</a>
-                            </span>
-                        </div>
-                        <div class="add-ent">
-                            97 Trần Đại Nghĩa, HBT, Hà Nội 
-                            <span class="contact">
-                                mở cửa: 8h30 đến 22h45 | 
-                                <a rel="map" target="map" href=""> Chỉ đường</a>
-                            </span>
-                        </div>
-                        <div class="add-ent">
-                            97 Trần Đại Nghĩa, HBT, Hà Nội 
-                            <span class="contact">
-                                mở cửa: 8h30 đến 22h45 | 
-                                <a rel="nofollow" target="_blank" href=""> Chỉ đường</a>
-                            </span>
-                        </div>
-                        <div class="add-ent">
-                            97 Trần Đại Nghĩa, HBT, Hà Nội 
-                            <span class="contact">
-                                mở cửa: 8h30 đến 22h45 | 
-                                <a rel="nofollow" target="_blank" href=""> Chỉ đường</a>
-                            </span>
-                        </div>
-                    </div>                   
-                </div>
+               
                 <div id="parameter" class="parameter">
                     <h2 class="par-name">Thông số Olym Pianus OP990-45ADGS-GL-X</h2>
                     <div class="par-content">
@@ -800,3 +602,5 @@
 </div>
 <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-left.css">
 <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-right.css">
+<script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
+<script src="http://localhost:3000/Assets/user/js/DetailWatch.js"></script>

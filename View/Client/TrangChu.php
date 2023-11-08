@@ -217,7 +217,7 @@
       <div class="flashsale-product-main">
         <div class="img-fls-product"><a href=""><img src="{{Url_anh}}" alt=""></a> </div>
         <div class="name-fls-product">
-          <a href="javascript:myController.DetailChiTiet({{IdDongHo}})" style="color:black"><h3>{{TenDongHo}}</h3></a>
+          <a href="javascript:myController.DetailChiTiet({{IdChiTietDongHo}})" style="color:black"><h3>{{TenDongHo}}</h3></a>
         </div>
         <div class="price-fls-product">
           <ul>

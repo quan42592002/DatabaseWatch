@@ -494,12 +494,14 @@ input {
 .sub-image-detail{
     width:500px ;
     height: 500px;
-    background-color: red;
 }
 .slick-slide img {
     display: block;
-    width: 700px;
+    width: auto;
     height: 500px;
+    margin: auto;
+    cursor: zoom-in;
+    border-radius: 5px;
 }
 .picture-detail{
     width: 500px;
