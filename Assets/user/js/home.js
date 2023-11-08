@@ -40,6 +40,10 @@ var myController = {
         });
     },
 
+    DetailChiTiet: function (IdDongHo) {
+        window.open('http://localhost:3000/main.php?controller=DetailWatchController&&IdDongHo=' +IdDongHo , '_self');
+    },
+
     LoadDongHo: function () {
         var UsersId = $("#UsersId").val();
         $.ajax({
@@ -64,8 +68,9 @@ var myController = {
                                 GiaBan: myController.formatCurrency(item.GiaBan),
                                 Url_anh: item.Url_anh,
                                 GiamGia: item.GiamGia,
-                                GiaGiam: myController.formatCurrency( String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan)) ),
-                                IdChiTietDongHo: item.IdChiTietDongHo
+                                GiaGiam: myController.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
+                                IdChiTietDongHo: item.IdChiTietDongHo,
+                                IdDongHo: item.IdDongHo
                             });
                         });
 
@@ -76,10 +81,10 @@ var myController = {
         });
     },
 
-    formatCurrency: function (number){
+    formatCurrency: function (number) {
         var n = number.split('').reverse().join("");
-        var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");    
-        return  n2.split('').reverse().join('') + ' VNĐ';
+        var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+        return n2.split('').reverse().join('') + ' VNĐ';
     }
 
 }
