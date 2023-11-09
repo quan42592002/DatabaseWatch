@@ -1,4 +1,4 @@
-<div id="wrapper-admin">
+<div id="wrapper-admin" class="lstDanhSachTaiKhoan">
     <div class="card" style="margin: 0 auto;margin-top: 20px;">
         <div class="card-header">
             <h3>Danh sách tài khoản</h3>

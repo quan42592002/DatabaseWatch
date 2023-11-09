@@ -1,11 +1,3 @@
-<style>
-    .error-message {
-        color: #ff7675;
-        font-size: 12px;
-        text-align: left;
-
-    }
-</style>
 <?php
 if (isset($_GET['exit'])) {
     if (isset($data['item_user'])) {
@@ -67,56 +59,83 @@ if (isset($_GET['exit'])) {
         <div class="card-body p-2" style="padding-top: 0;">
             <form method="post" action="http://localhost:3000/Controller/admin/Crud/TaiKhoan/SuaTaiKhoan.php" onsubmit="return validateForm(event)">
                 <input type="id" value="<?php echo  $id ?>" name="id_user" hidden>
-                <label for="FullName" class="input-label" >
-                    Họ và tên
-                </label>
-                <input type="text" class="form-control form-control-lg" name="ten_day_du" id="FullName" value="<?php echo $TenDayDu; ?>" required>
-                <label for="user_name" class="input-label" >
-                    Tên đăng nhập
-                </label>
-                <input type="text" class="form-control form-control-lg" name="user_name" id="UserName" required value="<?php echo $Username; ?>">
-                <p class="error-message" id="userNameError"></p>
-                <label for="mat_khau" class="input-label">
-                    Mật khẩu mới
-                </label>
-                <div style="position: relative;">
-                    <input type="password" class="form-control form-control-lg" name="mat_khau" id="Password" autocomplete="off" placeholder="Nếu không đổi mật khẩu thì không cần nhập trường này">
+                <div class="form-group p-1" style="padding-top: 0px">
+                    <label for="FullName" class="input-label">
+                        Họ và tên
+                    </label>
+                    <input type="text" class="form-control form-control-lg" name="ten_day_du" id="FullName" value="<?php echo $TenDayDu; ?>" required>
                 </div>
-                <p class="error-message" id="passwordError"></p>
-                <label for="mat_khau" class="input-label">
-                    Xác nhận mật khẩu mới
-                </label>
-                <div style="position: relative;">
-                    <input type="password" class="form-control form-control-lg" name="mat_khau" id="ComfirmPassword" autocomplete="off" placeholder="Nếu không đổi mật khẩu thì không cần nhập trường này">
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="user_name" class="input-label">
+                        Tên đăng nhập
+                    </label>
+                    <input type="text" class="form-control form-control-lg" name="user_name" id="UserName" required value="<?php echo $Username; ?>">
+                    <p class="error-message" id="userNameError"></p>
                 </div>
-                <p class="error-message" id="passwordError"></p>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="mat_khau" class="input-label">
+                        Mật khẩu mới
+                    </label>
+                    <div style="position: relative;">
+                        <input type="password" class="form-control form-control-lg" name="mat_khau" id="Password" autocomplete="off" placeholder="Nếu không đổi mật khẩu thì không cần nhập trường này">
+                    </div>
+                    <p class="error-message" id="passwordError"></p>
+                </div>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="mat_khau" class="input-label">
+                        Xác nhận mật khẩu mới
+                    </label>
+                    <div style="position: relative;">
+                        <input type="password" class="form-control form-control-lg" name="mat_khau" id="ComfirmPassword" autocomplete="off" placeholder="Nếu không đổi mật khẩu thì không cần nhập trường này">
+                    </div>
+                    <p class="error-message" id="passwordError"></p>
+                </div>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="email" class="input-label">
+                        Email
+                    </label>
+                    <input type="email" class="form-control form-control-lg" name="email" id="Email" required value="<?php echo $Email; ?>">
+                </div>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="so_dien_thoai" class="input-label">
+                        Số điện thoại
+                    </label>
+                    <input type="text" class="form-control form-control-lg" name="so_dien_thoai" id="PhoneNumber" value="<?php echo $SoDienThoai; ?>">
+                </div>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="dia_chi" class="input-label">
+                        Địa chỉ
+                    </label>
+                    <input type="text" class="form-control form-control-lg" name="dia_chi" id="Address" value="<?php echo $DiaChi; ?>">
+                </div>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <label for="loai_tai_khoan" class="input-label">
+                        Loại tài khoản
+                    </label>
+                    <select name="loai_tai_khoan" class="form-control form-control-lg">
 
-                <label for="email" class="input-label">
-                    Email
-                </label>
-                <input type="email" class="form-control form-control-lg" name="email" id="Email" required value="<?php echo $Email; ?>">
-
-                <label for="so_dien_thoai" class="input-label">
-                    Số điện thoại
-                </label>
-                <input type="text" class="form-control form-control-lg" name="so_dien_thoai" id="PhoneNumber" value="<?php echo $SoDienThoai; ?>">
-
-                <label for="dia_chi" class="input-label">
-                    Địa chỉ
-                </label>
-                <input type="text" class="form-control form-control-lg" name="dia_chi" id="Address" value="<?php echo $DiaChi; ?>">
-
-                <label for="loai_tai_khoan" class="input-label">
-                    Loại tài khoản
-                </label>
-                <select name="loai_tai_khoan" class="form-control form-control-lg">
-
-                    <option <?php echo $LoaiTaiKhoan == 0 ? "selected" : ""; ?> value="0">Admin</option>
-                    <option <?php echo $LoaiTaiKhoan == 1 ? "selected" : ""; ?> value="1">Khách hàng</option>
-                </select>
-                <button type="submit">Cập nhật</button>
-
+                        <option <?php echo $LoaiTaiKhoan == 0 ? "selected" : ""; ?> value="0">Admin</option>
+                        <option <?php echo $LoaiTaiKhoan == 1 ? "selected" : ""; ?> value="1">Khách hàng</option>
+                    </select>
+                </div>
+                <div class="form-group p-1" style="padding-top: 0px;">
+                    <button class="btn btn-primary" type="submit">Cập nhập dữ liệu</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
+<style>
+    .error-message {
+        color: #ff7675;
+        font-size: 12px;
+        text-align: left;
+
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".lstDanhSachTaiKhoan").hide();
+    });
+</script>

@@ -8,9 +8,7 @@ if(isset($_GET["action"])){
 	$action = $_GET["action"];
 	if($action == "ThemTaiKhoan"){
 		// header("Location: http://localhost:3000/View/Admin/TaiKhoan/ThemTaiKhoan.php");
-		
 		require('View/Admin/TaiKhoan/ThemTaiKhoan.php');
-        exit; // Dừng việc thực hiện mã sau đây
 	}
 	if($action == "SuaTaiKhoan"){
 		// require_once('Controller/Admin/Crud/TaiKhoan/SuaTaiKhoan.php');
@@ -29,11 +27,9 @@ if(isset($_GET["action"])){
 			} 
 		}
 		require('View/Admin/TaiKhoan/SuaTaiKhoan.php');
-        exit; 
 	}
 	if($action == "XoaTaiKhoan"){
 		require('Controller/Admin/Crud/TaiKhoan/XoaTaiKhoan.php');
-        exit; 
 	}
 }
 
