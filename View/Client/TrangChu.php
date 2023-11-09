@@ -1,10 +1,8 @@
-<input type="hidden"  id="UsersId" value=
-"<?php 
-        if(isset($_SESSION['IdRole']))
-        {
-        echo $_SESSION['IdUsers'];
-        }
-  ?>">
+<input type="hidden" id="UsersId" value="<?php
+                                          if (isset($_SESSION['IdRole'])) {
+                                            echo $_SESSION['IdUsers'];
+                                          }
+                                          ?>">
 <!-- /* BEGIN BANNER */ -->
 <div class="banner">
   <div class="swiper mySwiper">
@@ -387,11 +385,6 @@
       slidesToShow: 2,
       slidesToScroll: 2
     });
-  });
-</script>
-<!-- END LUXURY -->
-<script type="text/javascript">
-  $(document).ready(function() {
     $('.flashsale-main').slick({
       slidesToShow: 5,
       slidesToScroll: 1,
