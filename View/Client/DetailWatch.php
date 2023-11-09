@@ -385,64 +385,6 @@
                     </span>
                     <script>var price = 5850000;</script>
                     <script id="product-detail" src="https://assets.fundiin.vn/merchant/product-detail.js"></script>
-                    <div id="script-product-detail">
-                        <div class="fundiin__wrapper" id="fundiin__wrapper-identity">
-                            <div data-origin-panel class="">
-                                <span class="fundiin__panel">
-                                    Mua trả sau từ 
-                                    <span data-divided-price="1950000"> 1.950.000đ</span>
-                                    với       
-                                    <a class="fundiin__action">
-                                        <svg class="fdn-long-logo" width="70" height="40" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="10 0 90 45">
-                                            <defs>
-                                                <style>.fdn-cls-1,.fdn-cls-10,.fdn-cls-11,.fdn-cls-2,.fdn-cls-3,.fdn-cls-4,.fdn-cls-5,.fdn-cls-6,.fdn-cls-7,.fdn-cls-8,.fdn-cls-9{fill-rule:evenodd;}.fdn-cls-1{fill:url(#linear-gradient);}.fdn-cls-2{fill:url(#linear-gradient-2);}.fdn-cls-3{fill:url(#linear-gradient-3);}.fdn-cls-4{fill:url(#linear-gradient-4);}.fdn-cls-5{fill:url(#linear-gradient-5);}.fdn-cls-6{fill:url(#linear-gradient-6);}.fdn-cls-7{fill:url(#linear-gradient-7);}.fdn-cls-8{fill:url(#linear-gradient-8);}.fdn-cls-9{fill:url(#linear-gradient-9);}.fdn-cls-10{fill:url(#linear-gradient-10);}.fdn-cls-11{fill:url(#linear-gradient-11);}</style>           
-                                                <linearGradient id="linear-gradient" x1="14.02" y1="5.85" x2="13.55" y2="27.67" gradientUnits="userSpaceOnUse">                
-                                                    <stop offset="0" stop-color="#00eac9"></stop>                
-                                                    <stop offset="0.21" stop-color="#16ccd1"></stop>                
-                                                    <stop offset="0.65" stop-color="#4e81e6"></stop>                
-                                                    <stop offset="1" stop-color="#7d42f7"></stop>           
-                                                </linearGradient>            
-                                                <linearGradient id="linear-gradient-2" x1="35.57" y1="6.31" x2="35.1" y2="28.14" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-3" x1="50.25" y1="6.62" x2="49.78" y2="28.45" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-4" x1="76.63" y1="7.19" x2="76.16" y2="29.02" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-5" x1="83.96" y1="7.35" x2="83.49" y2="29.18" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-6" x1="95.07" y1="7.59" x2="94.6" y2="29.42" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-7" x1="65.35" y1="6.95" x2="64.88" y2="28.78" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-8" x1="17.69" y1="5.92" x2="17.22" y2="27.75" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-9" x1="76.42" y1="7.19" x2="75.96" y2="29.01" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-10" x1="83.75" y1="7.34" x2="83.28" y2="29.17" xlink:href="#linear-gradient"></linearGradient>            
-                                                <linearGradient id="linear-gradient-11" x1="20.79" y1="5.99" x2="20.32" y2="27.82" xlink:href="#linear-gradient"></linearGradient>          
-                                            </defs>          
-                                            <path class="fdn-cls-1" d="M15.21,24.11a2.39,2.39,0,0,1,0,4.77H11.94a2.39,2.39,0,0,1,0-4.77h3.27Z"></path>          
-                                            <path class="fdn-cls-2" d="M39,16.28a1.76,1.76,0,0,1,1.9,1.9v8.3A1.78,1.78,0,0,1,39,28.41a1.9,1.9,0,0,1-1.41-.54l-.21-.22-.26.16a5.08,5.08,0,0,1-6.3-.93A5.82,5.82,0,0,1,29.54,23V18.18a1.91,1.91,0,0,1,3.81,0v4.68c0,1.69.73,2,1.82,2a1.81,1.81,0,0,0,1.43-.57,2.12,2.12,0,0,0,.52-1.49V18.18A1.76,1.76,0,0,1,39,16.28Z"></path>          
-                                            <path class="fdn-cls-3" d="M50.57,16.29a4.64,4.64,0,0,1,3.73,1.62,5.78,5.78,0,0,1,1.3,3.92V26.6a1.9,1.9,0,1,1-3.8,0V21.94c0-1.7-.73-2.05-1.83-2.05a1.81,1.81,0,0,0-1.43.57A2.1,2.1,0,0,0,48,22V26.6a1.91,1.91,0,1,1-3.81,0V18.31a1.77,1.77,0,0,1,1.9-1.93,1.92,1.92,0,0,1,1.42.54l.21.23L48,17A4.6,4.6,0,0,1,50.57,16.29Z"></path>          
-                                            <path class="fdn-cls-4" d="M76.31,16.38a1.76,1.76,0,0,1,1.9,1.9V26.6a1.91,1.91,0,1,1-3.81,0V18.28A1.77,1.77,0,0,1,76.31,16.38Z"></path>          
-                                            <path class="fdn-cls-5" d="M83.64,16.38a1.76,1.76,0,0,1,1.9,1.9V26.6a1.91,1.91,0,1,1-3.81,0V18.28A1.77,1.77,0,0,1,83.64,16.38Z"></path>          
-                                            <path class="fdn-cls-6" d="M95.41,16.29a4.64,4.64,0,0,1,3.73,1.62,5.83,5.83,0,0,1,1.3,3.92V26.6a1.9,1.9,0,1,1-3.8,0V21.94c0-1.7-.73-2.05-1.84-2.05a1.8,1.8,0,0,0-1.42.57,2.1,2.1,0,0,0-.51,1.5V26.6A1.78,1.78,0,0,1,91,28.51a1.76,1.76,0,0,1-1.89-1.91V18.31A1.77,1.77,0,0,1,91,16.38a1.93,1.93,0,0,1,1.43.54l.21.23.26-.17A4.58,4.58,0,0,1,95.41,16.29Z"></path>          
-                                            <path class="fdn-cls-7" d="M69.21,10.86a1.77,1.77,0,0,0-1.91,1.9v4.18l-.53-.26a5,5,0,0,0-2.25-.49,5.3,5.3,0,0,0-4,1.71,6.24,6.24,0,0,0-1.66,4.45,6.2,6.2,0,0,0,1.65,4.38,5.29,5.29,0,0,0,4,1.78,5.14,5.14,0,0,0,2.82-.76l.27-.17.21.24a1.84,1.84,0,0,0,1.44.59,1.74,1.74,0,0,0,1.85-1.91V12.76A1.76,1.76,0,0,0,69.21,10.86ZM66.63,24.29a2.23,2.23,0,0,1-3.33.07,2.91,2.91,0,0,1-.65-2,2.89,2.89,0,0,1,.66-2,2.22,2.22,0,0,1,3.32.09,2.8,2.8,0,0,1,.67,1.94A2.85,2.85,0,0,1,66.63,24.29Z"></path>          
-                                            <path class="fdn-cls-8" d="M11.94,15.82h11A2.38,2.38,0,0,1,23,20.58H11.94a2.38,2.38,0,0,1-.13-4.76Z"></path>          
-                                            <path class="fdn-cls-9" d="M76.31,11.17A1.6,1.6,0,0,1,78,12.9a1.72,1.72,0,1,1-3.44,0A1.59,1.59,0,0,1,76.31,11.17Z"></path>          
-                                            <path class="fdn-cls-10" d="M83.64,11.17a1.6,1.6,0,0,1,1.71,1.73,1.72,1.72,0,1,1-3.44,0A1.59,1.59,0,0,1,83.64,11.17Z"></path>          
-                                            <path class="fdn-cls-11" d="M29.47,7.53a2.38,2.38,0,0,1,.13,4.76H11.94a2.38,2.38,0,0,1-.13-4.76H29.47Z"></path>        
-                                        </svg>      
-                                        <a class="fdn-guide-url" target="_blank">  
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 5 25 17" width="20" height="30">    
-                                                <defs>      
-                                                    <style>.cls-1{fill:#212121;}.cls-2{fill:#fff;}</style>    
-                                                </defs>    
-                                                <g id="Layer_2" data-name="Layer 2">      
-                                                    <g id="Layer_1-2" data-name="Layer 1">        
-                                                    <circle class="cls-1" cx="11.27" cy="11.27" r="11.27"></circle>        
-                                                    <path class="cls-2" d="M11.64,4.27a4.91,4.91,0,0,1,1.62.26,3.45,3.45,0,0,1,1.26.74,3.51,3.51,0,0,1,.82,1.2,4.4,4.4,0,0,1,.29,1.64,4.41,4.41,0,0,1-.32,1.75,3.24,3.24,0,0,1-.89,1.22,3.65,3.65,0,0,1-1.38.73,6.21,6.21,0,0,1-1.78.27v2.07H9.31v-3.5h.87a8.85,8.85,0,0,0,1.28-.1,2.83,2.83,0,0,0,1.08-.38,2,2,0,0,0,.74-.77,2.53,2.53,0,0,0,.28-1.28A2.12,2.12,0,0,0,13,6.57,2,2,0,0,0,11.55,6,2.14,2.14,0,0,0,10,6.61a2.07,2.07,0,0,0-.59,1.53h-2a4,4,0,0,1,.27-1.57,3.44,3.44,0,0,1,.83-1.22,4,4,0,0,1,1.34-.79A5.21,5.21,0,0,1,11.64,4.27Zm-.16,11.56v2.38H9.13V15.83Z"></path>      
-                                                    </g>    
-                                                </g>  
-                                            </svg>
-                                        </a>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>                      
-                    </div>
                 </div>
                 <div class="box-promo">
                     <div class="pr-top"> Khuyến mãi áp dụng từ 10/10/2023 đến 20/10/2023 </div>

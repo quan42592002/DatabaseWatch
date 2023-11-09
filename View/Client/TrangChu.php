@@ -40,7 +40,6 @@
     <div class="treatment-info-right">
       <h4>Miễn phí vận chuyển</h4>
       <p>Giao hàng nhanh, đóng gói cẩn thận</p>
-
     </div>
   </div>
   <!-- 3 -->
