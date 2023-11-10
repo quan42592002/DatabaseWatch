@@ -19,31 +19,46 @@ var myController = {
 
                     if (lstData != null) {
                         var TenDongHoMain = lstData.NamNu == "Nam" ? lstData.TenDongHo + " 42mm Nam " + lstData.Imei : lstData.TenDongHo + " 38mm Nữ " + lstData.Imei;
+                        var GiaGiam = myController.formatCurrency(String(parseInt(((lstData.GiaBan * lstData.GiamGia) / 100)) + parseInt(lstData.GiaBan)));
                         $("#TenDongHo").html(lstData.TenDongHo);
                         $("#TenDongHoMain").html(TenDongHoMain);
+                        $("#GiaBan").html(myController.formatCurrency(lstData.GiaBan));
+                        $("#GiaGiam").html(GiaGiam);
+                        $("#discountSP").html("- " + lstData.GiamGia + "%");
 
-                        
+                        var IdDongHo = lstData.IdDongHo;
+                        $(document).ready(function () {
+                            myController.LoadAnh(IdDongHo);
+                        });
                     }
-                    // if (lstData != null) {
-                    //     var html = '';
-                    //     var template = $('#data-gio-hang').html();
-                    //     var tong_tien = 0;
 
-                    //     $.each(lstData, function (i, item) {
-                    //         html += Mustache.render(template, {
-                    //             TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.Imei : item.TenDongHo + " 38mm Nữ " + item.Imei,
-                    //             GiaBan: myController.formatCurrency(item.GiaBan),
-                    //             Url_anh: item.Url_anh,
-                    //             GiamGia: item.GiamGia,
-                    //             Id:item.Id,
-                    //             GiaGiam: myController.formatCurrency( String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan)) ),
-                    //             IdChiTietDongHo: item.IdChiTietDongHo
-                    //         });
-                    //         tong_tien +=  parseInt(item.GiaBan);
-                    //     });
-                    //     $('#sub-price').html(myController.formatCurrency(String(tong_tien)));
-                    //     $('#lst_GioHang').html(html);
-                    // }
+
+                }
+            },
+        });
+    },
+
+    LoadAnh: function (IdDongHo) {
+        $.ajax({
+            url: 'http://localhost:3000/Controller/user/Crud/DongHo/LoadAnhDetail.php',
+            method: 'Get',
+            data: {
+                IdDongHo: IdDongHo,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    var lstData = response.datax;
+                    if (lstData != null) {
+                        var html = '';
+                        var template = $('#data-anh-san-pham').html();
+                        $.each(lstData, function (i, item) {
+                            html += Mustache.render(template, {
+                                UrlFile: item.UrlFile,
+                            });
+                        });
+                        $('#lstAnhSanPham').html(html);
+                    }
                 }
             },
         });

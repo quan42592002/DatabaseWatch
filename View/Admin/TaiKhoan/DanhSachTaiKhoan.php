@@ -20,7 +20,6 @@
                 <div class="" style="width: 100%;">
                     <table class="styled-table">
                         <tr>
-                            <th style="text-align: center;">STT</th>
                             <th style="text-align: center;">Quyền</th>
                             <th style="text-align: center;">Tên đầy đủ</th>
                             <th style="text-align: center;">Email</th>
@@ -37,12 +36,11 @@
                                 $i = 1;
                                 // Truy cập mảng $users
                                 foreach ($listUser  as $user) {
-                                    $trang_thai = $user['TrangThai'] == 1 ? "Hoạt động" : "Bị khoá";
-                                    $loai_tai_khoan = $user['LoaiTaiKhoan'] == 0 ? "Admin" : "Customer";
+                                    $trang_thai = $user['TrangThai'] == 1 ? "<label class='label-success'>active</label>" : "<label class='label-danger'>lock</label>";
+                                    $loai_tai_khoan = $user['LoaiTaiKhoan'] == 1 ? "<label class='label-success'>Admin</label>" : "<label class='label-danger'>Client</label>";
 
                                     $str = "
                                     <tr>
-                                        <td>" . $i . "</td>
                                         <td>" . $loai_tai_khoan . "</td>
                                         <td>" . $user['TenDayDu'] . "</td>
                                         <td>" . $user['Email'] . "</td>

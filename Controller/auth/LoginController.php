@@ -20,36 +20,31 @@ class LoginController
             // thực hiện câu truy vấn an toàn
             $username = $conect->real_escape_string($username);
             $password = $conect->real_escape_string($password);
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-     
-            $sql = "SELECT tbl_user.IdUsers, tbl_user.Username, tbl_user.Password , tbl_userrole.IdRole ,tbl_user.TenDayDu
+            $sql = "SELECT tbl_user.IdUsers, tbl_user.Username, tbl_user.Password , tbl_user.LoaiTaiKhoan ,tbl_user.TenDayDu
             FROM tbl_user 
-            INNER JOIN tbl_userrole ON tbl_user.IdUsers = tbl_userrole.IdUsers
-            WHERE tbl_user.Username = '$username' AND tbl_user.Password = '$password'";
-
+            WHERE tbl_user.Username = '$username' ";
             $result = $conect->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $_SESSION['Username'] = $row['Username'];
-                    $_SESSION['IdUsers'] = $row['IdUsers'];
-                    $_SESSION['HoTen'] = $row['TenDayDu'];
-                    $_SESSION['IdRole'] = $row['IdRole'];
-                    echo '<script>window.location.href="http://localhost:3000/main.php";</script>';
-                    exit;
+                    if (password_verify($password, $row['Password'])) {
+                        $_SESSION['Username'] = $row['Username'];
+                        $_SESSION['IdUsers'] = $row['IdUsers'];
+                        $_SESSION['HoTen'] = $row['TenDayDu'];
+                        $_SESSION['IdRole'] = $row['LoaiTaiKhoan'];
+                        echo '<script>window.location.href="http://localhost:3000/main.php";</script>';
+                        exit;
+                    } else {
+                        $_SESSION['error'] = "Mật khẩu không chính xác";
+                    }
                 }
-            }else{
-                $_SESSION['error'] = "Tài khoản hoặc mật khẩu không chính xác";
+            } else {
+                $_SESSION['error'] = "Tài khoản không chính xác";
             }
-    
-           
         } catch (\Throwable $th) {
-            //throw $th;
+            //throw $th;    
         }
-
-       
     }
 }
-
-
-?>

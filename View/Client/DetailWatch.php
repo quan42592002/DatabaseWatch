@@ -1,7 +1,6 @@
-<input type="hidden"  id="IdChiTietDongHo" value=
-"<?php 
-        echo  $_GET['IdChiTietDongHo'];
-  ?>">
+<input type="hidden" id="IdChiTietDongHo" value="<?php
+                                                    echo  $_GET['IdChiTietDongHo'];
+                                                    ?>">
 <div class="main-full page">
     <div class="main-container">
         <ol class="page-menu">
@@ -32,7 +31,7 @@
             </a>
             <div class="save">
                 <i class="bi bi-heart"></i>
-                lưu sản phẩm          
+                lưu sản phẩm
             </div>
         </div>
         <div class="main-container">
@@ -42,29 +41,17 @@
                     <div class="image image-theme image-loaded image-drag">
                         <div class="image-stage-outer image-height" style="height: auto;">
                             <div class="image-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 4690px;">
-                                
                                 <!-- sub-image-detail -->
-                                <div class="sub-image-detail" style="width: 670px;">
-                                    <!-- 1 -->
-                                    <div class="picture-detail">
-                                       <img src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="">
-                                    </div>
-                                    <!-- 2 -->
-                                    <div class="picture-detail">
-                                        <img src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="">
-                                     </div>
-                                     <!-- 3 -->
-                                     <div class="picture-detail">
-                                        <img src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg   " alt="">
-                                     </div>
+                                <div class="sub-image-detail" style="width: 670px;" id="lstAnhSanPham">
+
                                 </div>
                                 <script>
-                                    $(document).ready(function(){
+                                    $(document).ready(function() {
                                         $('.sub-image-detail').slick({
-                                             infinite: true,
-                                              slidesToShow: 1,
-                                                    slidesToScroll: 1
-                                                });
+                                            infinite: true,
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        });
                                     });
                                 </script>
                             </div>
@@ -83,46 +70,9 @@
                 <div class="data-slide-2">
                     <div data-tab="3" id="thumb-images-gallery-sp" class="data-slide-2-item item active">
                         <picture class="item-border">
-                            <source type="image/jpeg" data-srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg">
-                            <img class=" lazyloaded" width="120" height="120" src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            data-src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="Olym Pianus OP990-45ADGS-GL-X - Hình 1" style="width: 68.400px; height: 68.400px;">
+                            <source type="image/jpeg" data-srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg">
+                            <img class=" lazyloaded" width="120" height="120" src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" data-src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="Olym Pianus OP990-45ADGS-GL-X - Hình 1" style="width: 68.400px; height: 68.400px;">
                         </picture>
-                        <p style="width: 70px; height: 36px;">Hình ảnh sản phẩm</p>
-                    </div>
-                    <div data-tab="2" id="thumb-images-gallery-tt" class="data-slide-2-item item ">
-                        <picture class="item-border">
-                            <source type="image/jpeg" data-srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg">
-                            <img class=" lazyloaded" width="120" height="120" src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            data-src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="Olym Pianus OP990-45ADGS-GL-X - Hình 1" style="width: 68.400px; height: 68.400px;">
-                        </picture>
-                        <p style="width: 70px; height: 36px;">Hình ảnh thực tế</p>
-                    </div>
-                    <div data-s="1" data-video-id="01nqzkWrgg4" data-tab="1" id="thumb-videos" class="data-slide-2-item slider-item item video-item">
-                        <img class="imgytbh" src="https://i1.ytimg.com/vi/01nqzkWrgg4/mqdefault.jpg" alt="No Alt" style="width: 68.400px; height: 68.400px;">
-                        <div class="item-border">
-                            <i class="iconwt-video"></i>
-                        </div>
-                        <p style="width: 70px; height: 18px;">2 Video</p>
-                    </div>
-                    <div data-tab="4" id="thumb-images-gallery-sp" class="data-slide-2-item item thumb-article">
-                        <picture class="item-border">
-                            <source type="image/jpeg" data-srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg">
-                            <img class=" lazyloaded" width="120" height="120" src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            data-src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="Olym Pianus OP990-45ADGS-GL-X - Hình 1" style="width: 68.400px; height: 68.400px;">
-                        </picture>
-                        <p>Thông số sản phẩm</p>
-                    </div>
-                    <div data-tab="6" id="thumb-images-gallery-sp" class="data-slide-2-item item thumb-article">
-                        <picture class="item-border">
-                            <source type="image/jpeg" data-srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg">
-                            <img class=" lazyloaded" width="120" height="120" src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg"
-                            data-src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="Olym Pianus OP990-45ADGS-GL-X - Hình 1" style="width: 68.400px; height: 68.400px;">
-                        </picture>
-                        <p style="width: 70px; height: 36px;">Chứng nhận đại lý</p>
                     </div>
                 </div>
                 <div class="data-slide-3">
@@ -162,7 +112,7 @@
                     <div class="title_dg"> 3 đánh giá</div>
                     <div class="filter_rv">
                         <div class="title_filter_rv">
-                            Lọc đánh giá                       
+                            Lọc đánh giá
                             <i class="bi bi-chevron-down"></i>
                         </div>
                     </div>
@@ -196,7 +146,7 @@
                                     <div class="name">
                                         <span>Lo Duy Long</span>
                                         <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px">  Đã mua hàng</i>
+                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
                                         </label>
                                     </div>
                                     <div class="Address">
@@ -213,16 +163,14 @@
                                         <i>Nhân viên phục vụ chuyên nghiệp</i>
                                         <div class="image-dg">
                                             <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp"
-                                                srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg"
-                                                data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
+                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
+                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
                                             </picture>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="cmt">
-                                        <a  data-rate="1104" href="javascript:void(0)" class="cmt1">
+                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
                                             <i class="iconcom-likeR">
                                                 8 thích
                                             </i>
@@ -240,7 +188,7 @@
                                     <div class="name">
                                         <span>Lo Duy Long</span>
                                         <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px">  Đã mua hàng</i>                                             
+                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
                                         </label>
                                     </div>
                                     <div class="Address">
@@ -257,16 +205,14 @@
                                         <i>Nhân viên phục vụ chuyên nghiệp</i>
                                         <div class="image-dg">
                                             <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp"
-                                                srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg"
-                                                data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
+                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
+                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
                                             </picture>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="cmt">
-                                        <a  data-rate="1104" href="javascript:void(0)" class="cmt1">
+                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
                                             <i class="iconcom-likeR">
                                                 8 thích
                                             </i>
@@ -284,7 +230,7 @@
                                     <div class="name">
                                         <span>Lo Duy Long</span>
                                         <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px">  Đã mua hàng</i>
+                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
                                         </label>
                                     </div>
                                     <div class="Address">
@@ -301,16 +247,14 @@
                                         <i>Nhân viên phục vụ chuyên nghiệp</i>
                                         <div class="image-dg">
                                             <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp"
-                                                srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg"
-                                                data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
+                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
+                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
                                             </picture>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="cmt">
-                                        <a  data-rate="1104" href="javascript:void(0)" class="cmt1">
+                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
                                             <i class="iconcom-likeR">
                                                 8 thích
                                             </i>
@@ -328,7 +272,7 @@
                                     <div class="name">
                                         <span>Lo Duy Long</span>
                                         <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px">  Đã mua hàng</i>
+                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
                                         </label>
                                     </div>
                                     <div class="Address">
@@ -345,16 +289,14 @@
                                         <i>Nhân viên phục vụ chuyên nghiệp</i>
                                         <div class="image-dg">
                                             <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp"
-                                                srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg"
-                                                data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
+                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
+                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
                                             </picture>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="cmt">
-                                        <a  data-rate="1104" href="javascript:void(0)" class="cmt1">
+                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
                                             <i class="iconcom-likeR">
                                                 8 thích
                                             </i>
@@ -371,53 +313,30 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
             <form class="main-right form_right" method="POST" action="https://www.watchstore.vn/cart?v=1">
                 <input type="hidden" name="main-right" value="m7DBLD3IjFrptDyhSw0Tg49wkl9tSTd5eYhNIItI">
                 <div class="box-price">
                     <span class="price">
-                        <strong class="product__price on-sale"> 5.850.000đ</strong>
-                        <span class="linethough product__price product__price--compare"> 8.800.000₫ </span>
-                        <label class="discount">-34%</label>
-                        <input value="8800000" type="hidden" name="price">
-                        <input value="5850000" type="hidden" name="sale_price">
+                        <strong class="product__price on-sale" id="GiaBan"></strong>
+                        <span class="linethough product__price product__price--compare" id="GiaGiam"> 8.800.000₫ </span>
+                        <label class="discount" id="discountSP"></label>
                     </span>
-                    <script>var price = 5850000;</script>
-                    <script id="product-detail" src="https://assets.fundiin.vn/merchant/product-detail.js"></script>
                 </div>
-                <div class="box-promo">
-                    <div class="pr-top"> Khuyến mãi áp dụng từ 10/10/2023 đến 20/10/2023 </div>
-                    <div class="pr-content">
-                        <div class="code coder code-1">
-                            Nhập mã
-                            <span> SWT9200 </span>
-                            đơn >= 8 triệu giảm 200k
-                        </div>
-                        <div class="code coder code-2">
-                            Nhập mã
-                            <span>  SWT9150  </span>
-                            đơn >= 4 triệu giảm 150k
-                        </div>
-                        <div class="code coder code-3">
-                            Nhập mã
-                            <span>  SWT9100  </span>
-                            đơn >= 2 triệu giảm 100k
-                        </div>
-                    </div>
-                </div>
+
                 <div class="box-button area_order">
                     <button type="submit" name="buy" class="btn-buynow " value="0">
-                        Mua ngay - Freeship 
+                        Mua ngay - Freeship
                         <span>Kiểm tra hàng trước khi thanh toán</span>
                     </button>
-                    <button type="submit" name="buy" href="javascript:void(0);"  class="btn-buyFundiin" value="1">
-                        Mua qua Fundiin 
+                    <button type="submit" name="buy" href="javascript:void(0);" class="btn-buyFundiin" value="1">
+                        Mua qua Fundiin
                         <span>Đeo trước trả sau miễn lãi</span>
                     </button>
                 </div>
                 <p class="advise">
-                    Đặt mua/tư vấn (8h30 - 22h30) 
+                    Đặt mua/tư vấn (8h30 - 22h30)
                     <br>
                     <a href="0828745800"> 0828745800</a>
                     <a href="0828745800"> 0828745800</a>
@@ -426,29 +345,29 @@
                 <div class="box-policy">
                     <div class="policy-top"> Chính sách mua hàng tại WatchStore.vn </div>
                     <div class="policy-content">
-                        <p>  
+                        <p>
                             <i class="icon-freeShip"> </i>
                             FreeShip toàn quốc
-                           
+
                         </p>
                         <p>
                             <i class="icon-doitra"></i>
                             Đổi trả hàng trong 7 ngày
-                            
+
                         </p>
-                        <p> 
+                        <p>
                             <i class="icon-camket"></i>
                             Cam kết hàng chính hãng
-                            
+
                         </p>
                         <p>
                             <i class="icon-baohanh"> </i>
                             Chế độ bảo hành 5 năm
-                           
-                        </p>              
+
+                        </p>
                     </div>
                 </div>
-               
+
                 <div id="parameter" class="parameter">
                     <h2 class="par-name">Thông số Olym Pianus OP990-45ADGS-GL-X</h2>
                     <div class="par-content">
@@ -540,9 +459,18 @@
                     </span>
                 </div>
             </form>
+        </div>
     </div>
-</div>
-<link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-left.css">
-<link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-right.css">
-<script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
-<script src="http://localhost:3000/Assets/user/js/DetailWatch.js"></script>
+
+    <!-- cart-product -->
+    <script id="data-anh-san-pham" type="x-tmpl-mustache">
+        <div class="picture-detail">
+            <img src="{{ UrlFile }}" alt="">
+        </div>
+                              
+    </script>
+
+    <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-left.css">
+    <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-right.css">
+    <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
+    <script src="http://localhost:3000/Assets/user/js/DetailWatch.js"></script>

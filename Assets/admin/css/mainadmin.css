@@ -649,3 +649,20 @@ select {
 input[type='checkbox'] {
   transform: scale(2); /* Tùy chỉnh kích thước bằng cách sử dụng transform */
 }
+.label-success{
+  background: #32854d;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    padding: 4px;
+}
+
+.label-danger{
+  background: #af5343;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    padding: 4px;
+}

@@ -87,8 +87,8 @@ var myController = {
 
                         $tfoot.html(
                             '<tr>' +
-                                '<th colspan="3">Tổng tiền</th>' +
-                                '<th colspan="3">'+tien_fomater+'</th>' +
+                                '<th colspan="4">Tổng tiền</th>' +
+                                '<th colspan="4">'+tien_fomater+'</th>' +
                             '</tr>'
                         );
                     }
