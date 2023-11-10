@@ -29,7 +29,7 @@ $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
 
 // Tính tổng số mục trong cơ sở dữ liệu
-$total_items = mysqli_num_rows($conect->query("SELECT * FROM tbl_thuonghieu;"));
+$total_items = mysqli_num_rows($conect->query($sql));
 
 $data = array(
     'datax' => $datax,

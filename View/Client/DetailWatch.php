@@ -467,7 +467,6 @@
         <div class="picture-detail">
             <img src="{{ UrlFile }}" alt="">
         </div>
-                              
     </script>
 
     <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-left.css">

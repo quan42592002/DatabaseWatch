@@ -206,7 +206,7 @@ var myController = {
                 alert("Trình duyệt không hỗ trợ FormData. Upload file thất bại!");
             }
         } else {
-            if (IdThuongHieu == 0) {
+            if (Id == 0) {
                 $.ajax({
                     url: 'http://localhost:3000/Controller/admin/Crud/DanhMuc/InsertData.php',
                     method: 'Post',

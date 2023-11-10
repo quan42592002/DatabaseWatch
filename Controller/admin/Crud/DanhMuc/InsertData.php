@@ -5,20 +5,13 @@ $db = new Database;
 $db->connect();
 $conn = $db->conn;
 
-// Kiểm tra xem kết nối đã thành công hay không
-if (!$conn) {
-    $response = ["status" => false];
-    echo json_encode($response);
-    exit();
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Lấy dữ liệu từ form
     $SoThuTu = $_POST['SoThuTu'];
     $PhanLoai = $_POST['cbPhanLoai'];
     $TenGoi = $_POST['TenGoi'];
 
-    $uploadDir = '../../../../UpLoad/Admin/DanhMuc'; // Thư mục lưu trữ tệp ảnh trên máy chủ
+    $uploadDir = '../../../../UpLoad/Admin/DanhMuc/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
     $file = $_FILES['duong_dan_tai_lieu'];
 
     if ($file['error'][0] === UPLOAD_ERR_OK) {
@@ -30,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Tập tin đã tồn tại.";
             $uploadOk = 0;
         }
-        
+
         if (move_uploaded_file($file['tmp_name'][0], $filePath)) {
             $sql = "INSERT INTO tbl_danhmuchethong (SoThuTu, TenGoi,PhanLoai, UrlAnh,FileName) VALUES (?, ?,?, ?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssss", $SoThuTu, $TenGoi,$PhanLoai, $filePath, $fileName);
+            $stmt->bind_param("sssss", $SoThuTu, $TenGoi, $PhanLoai, $filePath, $fileName);
 
             if ($stmt->execute()) {
                 $response = ["status" => true];
@@ -47,12 +40,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $sql = "INSERT INTO tbl_danhmuchethong (SoThuTu, TenGoi,PhanLoai) VALUES (?, ?,?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $SoThuTu, $TenGoi,$PhanLoai);
+        $stmt->bind_param("sss", $SoThuTu, $TenGoi, $PhanLoai);
 
         if ($stmt->execute()) {
-            $response = ["status" => true];
+            $responsex = ["status" => true];
+            // Trả về dữ liệu dưới dạng JSON
+            header('Content-Type: application/json');
+            echo json_encode($responsex);
         } else {
             $response = ["status" => false];
+            // Trả về dữ liệu dưới dạng JSON
+            header('Content-Type: application/json');
+            echo json_encode($responsex);
         }
     }
 

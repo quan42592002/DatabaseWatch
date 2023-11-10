@@ -10,12 +10,15 @@ var myController = {
         $("#btnXuatBaoCao").off("click").on("click", function () {
             $('#tbl_BaoCao').tableExport({ fileName: 'báo cáo doanh thu', type: 'excel' });
         });
-        
+
         $("#btnpdf").off("click").on("click", function () {
-            $('#tbl_BaoCao').tableExport({ fileName: 'báo cáo doanh thu',type:'pdf',
-            pdfmake:{enabled:true,
-                     docDefinition:{pageOrientation:'landscape'}}
-           });
+            $('#tbl_BaoCao').tableExport({
+                fileName: 'báo cáo doanh thu', type: 'pdf',
+                pdfmake: {
+                    enabled: true,
+                    docDefinition: { pageOrientation: 'landscape' }
+                }
+            });
         });
         $("#cbPhanLoai").off("change").on("change", function () {
 
@@ -73,7 +76,7 @@ var myController = {
                             $("#tbl_BaoCao").bootstrapTable('load', lstTable);
                         } else {
                             $("#tbl_BaoCao").bootstrapTable('removeAll');
-                        }   
+                        }
 
                         $.each(lstTable, function (i, item) {
                             tong_tien += (parseInt(item.GiaBan) - parseInt(item.GiaMua));
@@ -87,8 +90,16 @@ var myController = {
 
                         $tfoot.html(
                             '<tr>' +
-                                '<th colspan="4">Tổng tiền</th>' +
-                                '<th colspan="4">'+tien_fomater+'</th>' +
+                            '<th colspan="4">Tổng tiền nhập</th>' +
+                            '<th colspan="4">' + tien_fomater + '</th>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<th colspan="4">Tổng tiền bán</th>' +
+                            '<th colspan="4">' + tien_fomater + '</th>' +
+                            '</tr>'+
+                            '<tr>' +
+                            '<th colspan="4">Tổng tiền Lãi</th>' +
+                            '<th colspan="4">' + tien_fomater + '</th>' +
                             '</tr>'
                         );
                     }

@@ -168,7 +168,7 @@ var myController = {
                     $.each(datax, function (index, value) {
                         html += "<tr>" +
                             "<td><img src='" + value.Url_anh + "' width='65spx'></td>" +
-                            "<td>" + '<a class="" title="Xem thông tin" style="border-radius: 20px;list-style:none" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" >'+ value.TenDongHo + "</a></td>" +
+                            "<td>" + value.TenDongHo + "</td>" +
                             "<td>" + value.ThuongHieu + "</td>" +
                             "<td>" + value.NamNu + "</td>" +
                             "<td>" + value.GiaMua + "</td>" +
@@ -201,9 +201,6 @@ var myController = {
                     $(".pagination").html(paginationHtml);
                 }
             },
-            error: function (error) {
-                console.log('Error:', error);
-            }
         });
     },
 
