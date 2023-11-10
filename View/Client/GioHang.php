@@ -13,7 +13,7 @@ if (!isset($_SESSION['IdRole'])) {
     <div class="title">
         <h3>GIỎ HÀNG/<a href="?controller=TrangThaiController" style="font-size: 14px;
     font-weight: 600;
-    color: cornflowerblue;">Trạng thái đơn hàng</a></h3>
+    color: cornflowerblue;">Lịch sử đơn hàng</a></h3>
     </div>
     <!-- cart-product -->
     <div class="cart-product">
@@ -33,7 +33,7 @@ if (!isset($_SESSION['IdRole'])) {
                 </div>
                 <div style="padding: 3px;">
                     <label for="" style="font-weight: bold;">Địa chỉ nhận hàng :</label>
-                    <span>Số nhà 117 Kim Lâm, Kim Bài thanh Oai Hà nội</span>
+                    <span>Số nhà 117 Kim Lâm, Kim Bài thanh Oai Hà nội<a href="#" style="text-decoration: none" class="btn btn-danger btn-sm"><i class="bi bi-pencil"></i> Thay đổi</a></span>
                 </div>
                 <div style="padding: 3px">
                     <label for="" style="font-weight: bold;">Số điện thoại :</label>

@@ -1,6 +1,6 @@
 <div class="ent-container ent-flex">
     <div class="tbhh">
-        <div class="alerttb"> <i class="cartnew-tb"></i><strong>Không có sản phẩm nào</strong> </div>
+        <div class="alerttb"> <i class="cartnew-tb"></i><strong>Không có thông tin sản phẩm nào</strong> </div>
         <div class="ordercontent">
             <p>Hiện không có sản phẩm nào trong giỏ hàng của bạn. Bạn có thể đặt hàng trực tiếp qua <b> Holine 032581817</b> hoặc <b><a href="https://zalo.me/4455668531311407892" rel="nofollow" target="_blank">Zalo</a></b>. WatchStore sẽ hỗ trợ bạn.</p>
         </div>
