@@ -32,9 +32,10 @@
         <div id="cssmenu" class="menu-navbar cssmenu">
             <ul>
                 <li> <a href="?controller=DashBoardController"><i class="bi bi-bar-chart"></i> Trang chủ , thống kê</a></li>
-                <li> <a href="?controller=BaoCaoController"><i class="bi bi-bookmarks"></i> Báo cáo </a></li>
+                <li> <a href="?controller=BaoCaoController"><i class="bi bi-bookmarks"></i> Báo cáo doanh thu</a></li>
                 <li> <a href="?controller=DongHoController"><i class="bi bi-app-indicator"></i> Đồng hồ</a></li>
                 <li> <a href="?controller=QuanLyKhoController"><i class="bi bi-box-seam"></i> Quản lý phiếu</a></li>
+                <li> <a href="?controller=DonHangController"><i class="bi bi-cart"></i> Quản lý đơn hàng</a></li>
                 <li> <a href="?controller=HoaDonController"><i class="bi bi-card-text"></i> Hóa Đơn nhập</a></li>
                 <li> <a href="?controller=TimKiemController"><i class="bi bi-funnel"></i> Tìm kiếm</a></li>
                 <li>

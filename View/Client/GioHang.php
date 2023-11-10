@@ -11,24 +11,44 @@ if (!isset($_SESSION['IdRole'])) {
                                             ?>">
 <div class="cart-body">
     <div class="title">
-        <h3>GIỎ HÀNG</h3>
+        <h3>GIỎ HÀNG/<a href="?controller=TrangThaiController" style="font-size: 14px;
+    font-weight: 600;
+    color: cornflowerblue;">Trạng thái đơn hàng</a></h3>
     </div>
     <!-- cart-product -->
     <div class="cart-product">
         <form style="width: 804px;margin-right: 50px;" id="frm" method="post" action="/Cart/Update">
-            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang">
+            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang" >
             </div>
-
         </form>
         <!-- cart-product-left -->
         <!-- END cart-product-right -->
         <!-- cart-product-right -->
-        <div class="cart-product-right">
+        <div class="cart-product-right" style="width: 100%;">
+            <div style=" border-bottom: 1px solid rgb(133, 129, 129);;">
+                <h3 style="margin-bottom: 5px;color: red;">Thông tin cá nhân: </h3>
+                <div style="padding: 3px;">
+                    <label for="" style="font-weight: bold;">Họ tên :</label>
+                    <span>Trần Minh Quân</span>
+                </div>
+                <div style="padding: 3px;">
+                    <label for="" style="font-weight: bold;">Địa chỉ nhận hàng :</label>
+                    <span>Số nhà 117 Kim Lâm, Kim Bài thanh Oai Hà nội</span>
+                </div>
+                <div style="padding: 3px">
+                    <label for="" style="font-weight: bold;">Số điện thoại :</label>
+                    <span>0332581817 </span>
+                </div>
+                <div style="padding: 3px;margin-bottom: 10px">
+                    <label for="" style="font-weight: bold;">Hình thức thanh toán :</label>
+                    <span>Thanh toán khi nhận hàng</span>
+                </div>
+            </div>
             <div style="width: 318px;display:flex;" class="sub-price">
-                <h style="font-size: 14px;font-weight: bold;margin-right: 140px;height:35px;">Tổng tiền</h>
+                <h style="font-size: 14px;font-weight: bold;margin-right: 140px;height:35px;color: red">Tổng tiền</h>
                 <div id="sub-price">0đ</div>
             </div>
-            <button class="pay"> <a style="color:white;" href="/cart/checkout">ĐẶT HÀNG NGAY</a></button>
+            <button class="pay"> <a style="color:white;" href="javascript:myController.DatHang()">ĐẶT HÀNG NGAY</a></button>
 
             <button class="pay"> <a style="color:white;" href="/products/category">TIẾP TỤC MUA HÀNG</a> </button>
         </div>
@@ -58,6 +78,18 @@ if (!isset($_SESSION['IdRole'])) {
 </div>
 
 <style>
+    .alerttb {
+        display: block;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        margin: auto;
+        text-transform: uppercase;
+        color: red;
+    }
+
     /*cart*/
     .sub-price div {
         font-size: 16px;
