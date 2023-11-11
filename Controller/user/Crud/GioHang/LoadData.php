@@ -9,7 +9,7 @@ $UsersId = isset($_GET['UsersId']) ? (int)$_GET['UsersId'] :null;
 
 $sql = "SELECT * FROM tbl_dongho 
     Join tbl_giohang ON tbl_dongho.IdDongHo = tbl_giohang.IdDongHo
-    WHERE (tbl_giohang.IdUsers = $UsersId ) ";
+    WHERE (tbl_giohang.IdUsers = $UsersId )  AND (tbl_GioHang.TrangThai IS NULL) ";
 
 $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
