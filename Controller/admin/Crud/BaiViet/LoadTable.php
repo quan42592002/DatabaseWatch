@@ -7,7 +7,7 @@ $conect = $db->conn;
 
 
 // Truy vấn SQL chỉ lấy các mục cần hiển thị trên trang hiện tại
-$sql = "SELECT * FROM db_dongho.tbl_baiviet;
+$sql = "SELECT * FROM db_dongho.tbl_baivietnoibat;
         ";
 $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);

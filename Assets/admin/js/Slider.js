@@ -32,7 +32,7 @@ var myController = {
     },
 
     resetForm: function () {
-        $("#IdSlider").val(0);
+        $("#IdTopList").val(0);
         $("#duong_dan_tai_lieu").val("");
         $("#urlAnh").attr('src', '');
         $("#nameslider").val("");

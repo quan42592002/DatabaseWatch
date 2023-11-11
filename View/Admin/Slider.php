@@ -11,7 +11,6 @@
             <div class="form-group" style="width: 100%; display: flex;">
 
                 <input type="hidden" class="form-control" id="IdSlider">
-
                 <div class="" style="width: 20%; background: #c7c6c6;height: 168px;">
                     <div class="upload" style="text-align-last: center;margin: 15px;">
                         <img src="" id="urlAnh" alt="" width="130px">

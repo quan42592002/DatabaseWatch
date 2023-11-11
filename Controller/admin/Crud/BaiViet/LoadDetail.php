@@ -8,9 +8,9 @@ $conect = $db->conn;
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Lấy dữ liệu từ form
-    $IdBaiViet = $_GET['IdBaiViet'];
+    $IdTopList = $_GET['IdTopList'];
 
-    $sql = "SELECT * FROM tbl_baiviet Where IdBaiViet = '$IdBaiViet';";
+    $sql = "SELECT * FROM tbl_baiviet Where IdTopList = '$IdTopList';";
 
     $result = $conect->query($sql);
     $datax = $result->fetch_assoc();
