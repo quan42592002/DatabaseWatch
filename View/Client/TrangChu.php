@@ -521,7 +521,9 @@
 
 
 </div>
+<script src="http://localhost:3000/Assets/user/js/SearchKey.js"></script>
 <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
+
 <script src="http://localhost:3000/Assets/user/js/trangtruAjax.js"></script>
 
 

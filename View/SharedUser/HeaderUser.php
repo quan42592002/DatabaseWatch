@@ -141,9 +141,37 @@
         <div class="search-acount" style="display: flex;">
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">
-                <input style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid #bababa" type="text" placeholder="Tìm đồng hồ theo tên,hãng...">
+                <input style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid #bababa" type="text" id="input_key" placeholder="Tìm đồng hồ theo tên,hãng...">
                 <i style="position:absolute;top:9px;font-size: 18px;right:12px;" class="bi bi-search"></i>
+                <div id="show-product-search" class="show-product-search">
+                    <!-- title -->
+                    <div class="viewed">Có phải bạn muốn tìm</div>
+
+                    <!-- BEGIN List product -->
+                    <div id="list-productkey" class="list-pk">
+                
+                     </div> 
+                               <!--END List product -->
+                </div>
             </div>
+
+
+            <script id="data-pk" type="x-tmpl-mustache">
+            <a class="product-key" href="">
+                    <img src="{{url}}" alt="">
+                     <div class="infor">
+                        <div class="name-pk"> {{TenDongHo}} </div>
+                      
+                        <span class="showgia">   
+                        <strong style="color: #ED1C24;font-weight: bold;line-height: 24px;">{{GiaBan}}</strong>
+                        <span class="linethough">{{GiaBan}}</span>
+                        <label class="discount-pk">{{GiamGia}}%</label>
+                        </span>
+                    </div>       
+                    </a>
+                
+            </script>
+
             <!--End search-product -->
             <div class="admin-login"><i class="bi bi-person-circle iconuser" style="color: #020101;"></i>
                 <div class="admin-sub">

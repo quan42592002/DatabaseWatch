@@ -13,7 +13,6 @@ var myController = {
             success: function (response) {
               if (response.status == true) {
                 var lstDongHo = response.lstDongHo;
-
                 if (lstDongHo != null) {
                     var html = '';
                     var template = $('#data-dong-ho').html();
