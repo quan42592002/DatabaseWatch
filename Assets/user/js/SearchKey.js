@@ -27,10 +27,13 @@ var myController={
                         var template = $('#data-pk').html();
                         $.each(listdata, function (i, item) {
                             html += Mustache.render(template, {
-                                url:item.Url_anh,
-                                TenDongHo: item.TenDongHo,
-                                // GiaBan: item.GiaBan,
-                                // GiamGia:item.GiamGia,
+                                TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.MaDongHo : item.TenDongHo + " 38mm Nữ " + item.MaDongHo,
+                                GiaBan: myEventHome.formatCurrency(item.GiaBan),
+                                url: item.Url_anh,
+                                GiamGia: item.GiamGia,
+                                GiaGiam: myEventHome.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
+                                IdChiTietDongHo: item.IdChiTietDongHo,
+                                IdDongHo: item.IdDongHo
                             });
                         });
     
@@ -59,5 +62,10 @@ var myController={
    
         
     },
+    formatCurrency: function (number) {
+        var n = number.split('').reverse().join("");
+        var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+        return n2.split('').reverse().join('') + ' VNĐ';
+    }
 }
 myController.init();
