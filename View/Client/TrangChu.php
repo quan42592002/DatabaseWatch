@@ -179,35 +179,7 @@
 </div>
 <!-- END HIGH-CLASS-PRODUCT -->
 <script id="data-dong-ho" type="x-tmpl-mustache">
-<div class="flashsale-product">
-      <div class="flashsale-product-main">
-        <div class="img-fls-product"><a href=""><img src="{{Url_anh}}" alt=""></a> </div>
-        <div class="name-fls-product">
-          <a href="javascript:myController.DetailChiTiet({{IdChiTietDongHo}})" style="color:black"><h3>{{TenDongHo}}</h3></a>
-        </div>
-        <div class="price-fls-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">{{GiaGiam}}</a>
-              <div class="fls-discount">-{{GiamGia}}%</div>
-            </li>
-          </ul>
-        </div>
-        <div class="fls-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="javascript:myController.AddShopping({{IdDongHo}})">
-            <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
-                Thêm vào giỏ hàng
-              </span></button>
-          </a>
-        </div>
-      </div>
-    </div>
+
 </script>
 
 <script id="data-dong-ho-main" type="x-tmpl-mustache">
@@ -232,7 +204,7 @@
           <i class="bi bi-star-half"></i>
           <i class="bi bi-star"></i>
           <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="javascript:myController.AddShopping({{IdDongHo}})">
+          <a href="javascript:myEventHome.AddShopping({{IdDongHo}})">
             <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
                 Thêm vào giỏ hàng
               </span></button>
@@ -401,7 +373,6 @@
   });
 </script>
 <!--END flashsale -->
-
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css
 " rel="stylesheet">
