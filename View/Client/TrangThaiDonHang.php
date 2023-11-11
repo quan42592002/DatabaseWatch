@@ -1,64 +1,40 @@
-<div class="ent-container ent-flex">
-    <div class="tbhh">
-        <div class="alerttb"> <i class="cartnew-tb"></i><strong>Không có thông tin sản phẩm nào</strong> </div>
-        <div class="ordercontent">
-            <p>Hiện không có sản phẩm nào trong giỏ hàng của bạn. Bạn có thể đặt hàng trực tiếp qua <b> Holine 032581817</b> hoặc <b><a href="https://zalo.me/4455668531311407892" rel="nofollow" target="_blank">Zalo</a></b>. WatchStore sẽ hỗ trợ bạn.</p>
+    <!-- <div class="cart-body">
+        <div class="title">
+            <h3><a href="?controller=TrangThaiController" style="font-size: 14px;
+    font-weight: 600;
+    color: cornflowerblue;">Lịch sử đơn hàng</a></h3>
         </div>
-        <div class="timetakegoods"> <button onclick="history.back()">Quay lại</button> </div>
-        <div class="timetakegoods" style="float: right;"> <a href="http://localhost:3000/main.php?controller=TrangChuController" class="buyanother"> Về trang chủ </a> </div>
+        <section>
+            <div>
+                <div style="display: flex;">
+                    <h4>Ngày mua hàng: 11/10/2023</h4>
+                    <h4 style="margin-left: 51%;">Trạng thái: <span style="color:red">Đơn hàng đang được xét duyệt</span></h4>
+                </div>
+                <div class="order-item">
+                    <img src="https://placekitten.com/300/200" alt="Product 1">
+                    <h2>Product 1</h2>
+                    <p>Giá: $50.00</p>
+                    <p>Số lượng: 1</p>
+                </div>
+
+                <div class="order-item">
+                    <img src="https://placekitten.com/300/201" alt="Product 2">
+                    <h2>Product 2</h2>
+                    <p>Giá: $40.00</p>
+                    <p>Số lượng: 2</p>
+                </div>
+            </div>
+        </section>
+    </div> -->
+
+    <div class="ent-container ent-flex" id="hidden-list">
+        <div class="tbhh">
+            <div class="alerttb"> <i class="cartnew-tb"></i><strong>Không có thông tin sản phẩm nào</strong> </div>
+            <div class="ordercontent">
+                <p>Hiện không có sản phẩm nào trong giỏ hàng của bạn. Bạn có thể đặt hàng trực tiếp qua <b> Holine 032581817</b> hoặc <b><a href="https://zalo.me/4455668531311407892" rel="nofollow" target="_blank">Zalo</a></b>. WatchStore sẽ hỗ trợ bạn.</p>
+            </div>
+            <div class="timetakegoods"> <button onclick="history.back()">Quay lại</button> </div>
+            <div class="timetakegoods" style="float: right;"> <a href="http://localhost:3000/main.php?controller=TrangChuController" class="buyanother"> Về trang chủ </a> </div>
+        </div>
     </div>
-    <style>
-        .tbhh {
-            max-width: 600px;
-            margin: auto;
-            margin-top: 60px;
-        }
-
-        .alerttb {
-            display: block;
-            overflow: hidden;
-            background-color: #f5f5f5;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            margin: auto;
-            text-transform: uppercase;
-            color: red;
-        }
-
-        body {
-            background-color: #fff;
-        }
-
-        .center_header {
-            border-bottom: 1px solid #ddd;
-        }
-
-        .ordercontent p {
-            line-height: 1.8;
-            color: #333;
-            padding: 10px 0;
-        }
-
-        .timetakegoods {
-            text-align: center;
-            padding: 10px 10px 20px;
-            color: #288ad6;
-            display: block;
-            overflow: hidden;
-            border: 1px solid #288ad6;
-            background-color: #fff;
-            border-radius: 4px;
-            padding: 10px;
-            width: calc(45% - 5px);
-            float: left;
-        }
-
-        .timetakegoods button {
-            color: #288ad6;
-            border: 0;
-            background: #fff;
-        }
-
-    </style>
-</div>
+  <link rel="stylesheet" href="http://localhost:3000/Assets/css/trangthaidon.css">
