@@ -4,12 +4,11 @@ var myController={
         myController.loaddata();
     },
     event:function(){
-        $("#input_key").off("input").on("input", function () {
+        $("#input_key").off("input").on("input", function(){
             myController.loaddata();
             $(".show-product-search").attr("style", "display:block;");
-
         });
-        
+       
     },
     loaddata:function(){
         var input_key=$("#input_key").val();

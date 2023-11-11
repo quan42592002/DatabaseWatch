@@ -141,9 +141,9 @@
         <div class="search-acount" style="display: flex;">
             <!--Begin search-product -->
             <div id="seach-product" style="position: relative;">
-                <input style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid #bababa" type="text" id="input_key" placeholder="Tìm đồng hồ theo tên,hãng...">
+                <input onkeyup="ok();" style="width:220px;height:30px;margin-top:4px;border-radius:8px;border:1px solid #bababa" type="text" id="input_key" placeholder="Tìm đồng hồ theo tên,hãng...">
                 <i style="position:absolute;top:9px;font-size: 18px;right:12px;" class="bi bi-search"></i>
-                <div id="show-product-search" class="show-product-search">
+                <div id="show-product-search" style="box-shadow: 0px 0px 15px -7px;" class="show-product-search">
                     <!-- title -->
                     <div class="viewed">Có phải bạn muốn tìm</div>
 
@@ -155,7 +155,14 @@
                 </div>
             </div>
 
+            <script language="javascript">
+                function ok(){var key = document.getElementById("input_key").value;
+             if(key==""){
+            $(".show-product-search").attr("style", "display:none;");
+             }}
+             
 
+            </script>
             <script id="data-pk" type="x-tmpl-mustache">
             <a class="product-key" href="">
                     <img src="{{url}}" alt="">
