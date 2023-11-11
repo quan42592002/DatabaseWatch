@@ -7,12 +7,12 @@ $conn = $db->conn;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Lấy dữ liệu từ form
-    $IdChiTietDongHo = $_POST['IdChiTietDongHo'];
+    $IdDongHo = $_POST['IdDongHo'];
     $UsersId = $_POST['UsersId'];
 
-    $sql = "INSERT INTO tbl_GioHang (IdChiTietDongHo, IdUsers) VALUES (?,?)";
+    $sql = "INSERT INTO tbl_GioHang (IdDongHo, IdUsers) VALUES (?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $IdChiTietDongHo, $UsersId);
+    $stmt->bind_param("ss", $IdDongHo, $UsersId);
 
     if ($stmt->execute()) {
         $response = ["status" => true];

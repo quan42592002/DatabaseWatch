@@ -1,5 +1,4 @@
 <?php
-include __DIR__ . '../../../Modal/Helper/SetUser.php';
 include __DIR__ . '../../../Modal/Database.php';
 // Gọi đến kết nối mysql
 class LoginController

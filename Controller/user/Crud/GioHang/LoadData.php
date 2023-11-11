@@ -5,7 +5,7 @@ $db = new Database;
 $db->connect();
 $conect = $db->conn;
 
-$UsersId = isset($_GET['UsersId']) ? (int)$_GET['UsersId'] : 0;
+$UsersId = isset($_GET['UsersId']) ? (int)$_GET['UsersId'] :null;
 
 $sql = "SELECT * FROM tbl_chitietdongho 
     Join tbl_dongho ON tbl_chitietdongho.IdDongHo = tbl_dongho.IdDongHo
@@ -14,6 +14,7 @@ $sql = "SELECT * FROM tbl_chitietdongho
 
 $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
+
 $data = array(
     'lstGioHang' => $datax,
     'status' => true,

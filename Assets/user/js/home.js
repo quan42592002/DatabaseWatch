@@ -5,7 +5,7 @@ var myController = {
 
     },
 
-    AddShopping: function (IdChiTietDongHo) {
+    AddShopping: function (IdDongHo) {
         var UsersId = $("#UsersId").val();
         if (UsersId == "" || UsersId == null || UsersId == undefined) {
             Swal.fire({
@@ -19,7 +19,7 @@ var myController = {
             url: 'http://localhost:3000/Controller/user/Crud/GioHang/AddGioHang.php',
             method: 'Post',
             data: {
-                IdChiTietDongHo: IdChiTietDongHo,
+                IdDongHo: IdDongHo,
                 UsersId: UsersId,
             },
             dataType: 'json',
@@ -45,14 +45,10 @@ var myController = {
     },
 
     LoadDongHo: function () {
-        var UsersId = $("#UsersId").val();
         $.ajax({
             // đường dẫn xử lý 
             url: 'http://localhost:3000/Controller/user/Crud/DongHo/LoadDongHo.php',
             method: 'Get', // 
-            data: {
-                UsersId: UsersId
-            },
             dataType: 'json',
             success: function (response) {
                 if (response.status == true) {
@@ -64,7 +60,7 @@ var myController = {
 
                         $.each(lstDongHo, function (i, item) {
                             html += Mustache.render(template, {
-                                TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.Imei : item.TenDongHo + " 38mm Nữ " + item.Imei,
+                                TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.MaDongHo : item.TenDongHo + " 38mm Nữ " + item.MaDongHo,
                                 GiaBan: myController.formatCurrency(item.GiaBan),
                                 Url_anh: item.Url_anh,
                                 GiamGia: item.GiamGia,

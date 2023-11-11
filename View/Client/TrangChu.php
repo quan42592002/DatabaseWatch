@@ -179,32 +179,33 @@
 </div>
 <!-- END HIGH-CLASS-PRODUCT -->
 <script id="data-dong-ho" type="x-tmpl-mustache">
-  <div class="flashsale-product">
+<div class="flashsale-product">
       <div class="flashsale-product-main">
-        <!-- img -->
-        <div class="img-fls-product"> <a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
+        <div class="img-fls-product"><a href=""><img src="{{Url_anh}}" alt=""></a> </div>
         <div class="name-fls-product">
-          <h3>{{TenDongHo}}</h3>
+          <a href="javascript:myController.DetailChiTiet({{IdChiTietDongHo}})" style="color:black"><h3>{{TenDongHo}}</h3></a>
         </div>
-        <!-- price -->
         <div class="price-fls-product">
           <ul>
             <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >{{GiaGiam}}₫</a> <div class="fls-discount">-25%</div></li>
-
+            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">{{GiaGiam}}</a>
+              <div class="fls-discount">-{{GiamGia}}%</div>
+            </li>
           </ul>
         </div>
-        <!-- rating -->
         <div class="fls-rating">
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-half"></i>
           <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
+          <i style="font-size: 14px;font-style: normal;">9</i>
+          <a href="javascript:myController.AddShopping({{IdDongHo}})">
+            <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
+                Thêm vào giỏ hàng
+              </span></button>
+          </a>
         </div>
-
       </div>
     </div>
 </script>
@@ -231,7 +232,7 @@
           <i class="bi bi-star-half"></i>
           <i class="bi bi-star"></i>
           <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="javascript:myController.AddShopping({{IdChiTietDongHo}})">
+          <a href="javascript:myController.AddShopping({{IdDongHo}})">
             <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
                 Thêm vào giỏ hàng
               </span></button>

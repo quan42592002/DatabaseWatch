@@ -35,12 +35,16 @@ var myController = {
                         });
                         $('#sub-price').html(myController.formatCurrency(String(tong_tien)));
                         $('#lst_GioHang').html(html);
-                    }else{
+                    } else {
                         var html = '<div class="alerttb"><div><img src="/UpLoad/Public/empty-cart.png" alt="" width="200px"></div><i class="cartnew-tb"></i><strong>Không có sản phẩm trong giỏ hàng</strong></div>';
                         $('#lst_GioHang').html(html);
                     }
                 }
             },
+            error: function (error) {
+                var html = '<div class="alerttb"><div><img src="/UpLoad/Public/empty-cart.png" alt="" width="200px"></div><i class="cartnew-tb"></i><strong>Không có sản phẩm trong giỏ hàng</strong></div>';
+                $('#lst_GioHang').html(html);
+            }
         });
     },
     RemoveCard: function (Id) {
