@@ -18,7 +18,7 @@ if (!isset($_SESSION['IdRole'])) {
     <!-- cart-product -->
     <div class="cart-product">
         <form style="width: 804px;margin-right: 50px;" id="frm" method="post" action="/Cart/Update">
-            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang" >
+            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang">
             </div>
         </form>
         <!-- cart-product-left -->
@@ -71,6 +71,11 @@ if (!isset($_SESSION['IdRole'])) {
                 </div>
                 <div class="box-price">
                     <p>{{GiaBan}}</p>
+                    <div>
+                        <button type="button">+</button>
+                        <input type="number" value="{{ SoLuongMua }}" class="form-control" style="width:30%;text-align: center;font-weight: bold;">
+                        <button type="button">-</button>
+                    </div>
                 </div>
             </div>
         </div>

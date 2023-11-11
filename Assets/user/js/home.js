@@ -27,11 +27,7 @@ var myEventHome = {
                     title: "Thành công!",
                     text: "Thêm thành công vào giỏ hàng!Hãy nhập vào giỏ hàng mua ngay nhé",
                     icon: "success"
-                }).then((result) => {
-                    if (result.value == true) {
-                        window.location.href = "http://localhost:3000/main.php";
-                    }
-                });
+                })
             },
             Error: function (response) {
                 alert("Có lỗi sảy ra")

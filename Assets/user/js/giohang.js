@@ -1,5 +1,5 @@
+$(document).ready(function() {
 var myController = {
-
     init: function () {
         myController.LoadData();
     },
@@ -23,11 +23,12 @@ var myController = {
 
                         $.each(lstGioHang, function (i, item) {
                             html += Mustache.render(template, {
-                                TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.Imei : item.TenDongHo + " 38mm Nữ " + item.Imei,
+                                TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.MaDongHo : item.TenDongHo + " 38mm Nữ " + item.MaDongHo,
                                 GiaBan: myController.formatCurrency(item.GiaBan),
                                 Url_anh: item.Url_anh,
                                 GiamGia: item.GiamGia,
                                 Id: item.Id,
+                                SoLuongMua: item.SoLuongMua,
                                 GiaGiam: myController.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
                                 IdChiTietDongHo: item.IdChiTietDongHo
                             });
@@ -125,3 +126,4 @@ var myController = {
     }
 }
 myController.init();
+});
