@@ -1,8 +1,7 @@
-var myController = {
+var myEventHome = {
 
     init: function () {
-        myController.LoadDongHo();
-
+        myEventHome.LoadDongHo();
     },
 
     AddShopping: function (IdDongHo) {
@@ -61,10 +60,10 @@ var myController = {
                         $.each(lstDongHo, function (i, item) {
                             html += Mustache.render(template, {
                                 TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.MaDongHo : item.TenDongHo + " 38mm Nữ " + item.MaDongHo,
-                                GiaBan: myController.formatCurrency(item.GiaBan),
+                                GiaBan: myEventHome.formatCurrency(item.GiaBan),
                                 Url_anh: item.Url_anh,
                                 GiamGia: item.GiamGia,
-                                GiaGiam: myController.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
+                                GiaGiam: myEventHome.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
                                 IdChiTietDongHo: item.IdChiTietDongHo,
                                 IdDongHo: item.IdDongHo
                             });
@@ -84,4 +83,4 @@ var myController = {
     }
 
 }
-myController.init();
+myEventHome.init();
