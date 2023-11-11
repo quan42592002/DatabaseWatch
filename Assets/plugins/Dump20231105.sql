@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `tbl_baiviet`
+--
+
+DROP TABLE IF EXISTS `tbl_baiviet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_baiviet` (
+  `IdBaiViet` int NOT NULL AUTO_INCREMENT,
+  `TenBaiViet` text,
+  `NoiDung` text,
+  PRIMARY KEY (`IdBaiViet`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_baiviet`
+--
+
+LOCK TABLES `tbl_baiviet` WRITE;
+/*!40000 ALTER TABLE `tbl_baiviet` DISABLE KEYS */;
+INSERT INTO `tbl_baiviet` VALUES (2,'Trang Chủ Bottom','<p><img alt=\"\" src=\"https://wscdn.vn/upload/original-image/mau-dong-ho-rolex-nu-dep-nhat.jpg?size=721x400&amp;fomat=webp\" style=\"height:55px; width:100px\" />sfsagsgdsfg</p>\n');
+/*!40000 ALTER TABLE `tbl_baiviet` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_chitietdondat`
 --
 
@@ -25,11 +50,11 @@ DROP TABLE IF EXISTS `tbl_chitietdondat`;
 CREATE TABLE `tbl_chitietdondat` (
   `IdChiTietDonDat` bigint unsigned NOT NULL AUTO_INCREMENT,
   `SoLuong` int DEFAULT NULL,
-  `IdDonDat` bigint NOT NULL,
+  `IdDonDat` bigint DEFAULT NULL,
   PRIMARY KEY (`IdChiTietDonDat`),
   KEY `fk_tbl_ChiTietDonDat_tbl_DonDat1_idx` (`IdDonDat`),
   CONSTRAINT `fk_tbl_ChiTietDonDat_tbl_DonDat1` FOREIGN KEY (`IdDonDat`) REFERENCES `tbl_dondat` (`IdDonDat`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,7 +75,6 @@ DROP TABLE IF EXISTS `tbl_chitietdongho`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_chitietdongho` (
   `IdChiTietDongHo` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `MaDongHo` varchar(250) DEFAULT NULL,
   `Imei` varchar(45) DEFAULT NULL,
   `BaoHanh` int DEFAULT NULL,
   `NgayBaoHanhTu` date DEFAULT NULL,
@@ -65,7 +89,7 @@ CREATE TABLE `tbl_chitietdongho` (
   CONSTRAINT `fk_tbl_chitietdongho_tbl_chitietdondat1` FOREIGN KEY (`IdChiTietDonDat`) REFERENCES `tbl_chitietdondat` (`IdChiTietDonDat`),
   CONSTRAINT `fk_tbl_chitietdongho_tbl_chitietphieunhap1` FOREIGN KEY (`IdChiTietPhieuNhap`) REFERENCES `tbl_chitietphieunhap` (`IdChiTietPhieuNhap`),
   CONSTRAINT `fk_tbl_ChiTietDongHo_tbl_DongHo1` FOREIGN KEY (`IdDongHo`) REFERENCES `tbl_dongho` (`IdDongHo`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +98,7 @@ CREATE TABLE `tbl_chitietdongho` (
 
 LOCK TABLES `tbl_chitietdongho` WRITE;
 /*!40000 ALTER TABLE `tbl_chitietdongho` DISABLE KEYS */;
-INSERT INTO `tbl_chitietdongho` VALUES (4,'OP990-45ADGS-GL-X','OP990-45ADGS-GL-X-0',24,NULL,NULL,1,NULL,3),(5,NULL,'OP990-45ADGS-GL-X-1',24,NULL,NULL,1,NULL,3),(6,NULL,'OP990-45ADGS-GL-X-2',24,NULL,NULL,1,NULL,3),(7,NULL,'OP990-45ADGS-GL-X-3',24,NULL,NULL,1,NULL,3),(8,NULL,'OP990-45ADGS-GL-X-4',24,NULL,NULL,1,NULL,3),(9,NULL,'OP990-45ADGS-GL-X-5',24,NULL,NULL,1,NULL,3),(15,NULL,'OP990-45ADGS-GL-X-6',24,NULL,NULL,1,NULL,3),(16,NULL,'OP990-45ADGS-GL-X-7',24,NULL,NULL,1,NULL,3),(17,NULL,'OP990-45ADGS-GL-X-8',24,NULL,NULL,1,NULL,3),(18,NULL,'OP990-45ADGS-GL-X-9',24,NULL,NULL,1,NULL,3),(19,NULL,'OP990-45ADGS-GL-X-10',24,NULL,NULL,1,NULL,3),(20,NULL,'OP990-45ADGS-GL-X-11',24,NULL,NULL,1,NULL,3),(21,NULL,'OP990-45ADGS-GL-X-12',24,NULL,NULL,1,NULL,3),(22,NULL,'BI1054-12E-0',24,NULL,NULL,2,NULL,5),(23,NULL,'BI1054-12E-1',24,NULL,NULL,2,NULL,5),(24,NULL,'BI1054-12E-2',24,NULL,NULL,2,NULL,5),(25,NULL,'OP990-45ADGS-GL-T-0',24,NULL,NULL,3,NULL,5),(26,NULL,'OP990-45ADGS-GL-T-1',24,NULL,NULL,3,NULL,5),(27,NULL,'OP990-45ADGS-GL-T-2',24,NULL,NULL,3,NULL,5),(28,NULL,'OP990-45ADGS-GL-T-3',24,NULL,NULL,3,NULL,5),(29,NULL,'OP990-45ADGS-GL-T-4',24,NULL,NULL,3,NULL,5),(30,NULL,'RA-AA0B03L19B-0',24,NULL,NULL,4,NULL,NULL),(31,NULL,'OP990-45ADGS-GL-X-13',24,NULL,NULL,1,NULL,NULL),(32,NULL,'OP990-45ADGS-GL-X-14',24,NULL,NULL,1,NULL,NULL);
+INSERT INTO `tbl_chitietdongho` VALUES (37,'AE-1200WHD-1AVDF-0',24,NULL,NULL,9,NULL,7),(38,'AE-1200WHD-1AVDF-1',24,NULL,NULL,9,NULL,7),(39,'MTP-1374L-1AVDF-0',24,NULL,NULL,10,NULL,7),(40,'MTP-1374L-1AVDF-1',24,NULL,NULL,10,NULL,7),(41,'EFV-600L-2AVUDF-0',24,NULL,NULL,11,NULL,7),(42,'EFV-600L-2AVUDF-1',24,NULL,NULL,11,NULL,7),(43,'EFV-600L-2AVUDF-2',24,NULL,NULL,11,NULL,7),(44,'LW-204-4ADF-0',24,NULL,NULL,12,NULL,7),(45,'LW-204-4ADF-1',24,NULL,NULL,12,NULL,7),(46,'RA-AA0B02R19B-0',24,NULL,NULL,13,NULL,7),(47,'RA-AA0B02R19B-1',24,NULL,NULL,13,NULL,7),(48,'RA-AA0B02R19B-2',24,NULL,NULL,13,NULL,7);
 /*!40000 ALTER TABLE `tbl_chitietdongho` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +118,7 @@ CREATE TABLE `tbl_chitietphieunhap` (
   PRIMARY KEY (`IdChiTietPhieuNhap`),
   KEY `fk_tbl_ChiTietPhieuNhap_tbl_PhieuNhap1_idx` (`IdPhieu`),
   CONSTRAINT `fk_tbl_ChiTietPhieuNhap_tbl_PhieuNhap1` FOREIGN KEY (`IdPhieu`) REFERENCES `tbl_phieunhap` (`IdPhieu`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,40 +127,8 @@ CREATE TABLE `tbl_chitietphieunhap` (
 
 LOCK TABLES `tbl_chitietphieunhap` WRITE;
 /*!40000 ALTER TABLE `tbl_chitietphieunhap` DISABLE KEYS */;
-INSERT INTO `tbl_chitietphieunhap` VALUES (3,13,0,'MP01',4),(4,8,0,'MP03',4),(5,8,0,'MP03',4);
+INSERT INTO `tbl_chitietphieunhap` VALUES (7,12,0,'PN01',6);
 /*!40000 ALTER TABLE `tbl_chitietphieunhap` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_client`
---
-
-DROP TABLE IF EXISTS `tbl_client`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_client` (
-  `IdClient` bigint NOT NULL AUTO_INCREMENT,
-  `HoTen` text,
-  `DiaChi` text,
-  `SoDienThoai` text,
-  `CanCuocCongDan` text,
-  `GioiTinh` text,
-  `NgaySinh` datetime DEFAULT NULL,
-  `IdUsers` bigint NOT NULL,
-  PRIMARY KEY (`IdClient`),
-  KEY `fk_tbl_client_tbl_user1_idx` (`IdUsers`),
-  CONSTRAINT `fk_tbl_client_tbl_user1` FOREIGN KEY (`IdUsers`) REFERENCES `tbl_user` (`IdUsers`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_client`
---
-
-LOCK TABLES `tbl_client` WRITE;
-/*!40000 ALTER TABLE `tbl_client` DISABLE KEYS */;
-INSERT INTO `tbl_client` VALUES (1,'Trần Minh Quân','Kim Lâm Kim Bai','0332581817','033255788','Nam','2002-09-05 00:00:00',1);
-/*!40000 ALTER TABLE `tbl_client` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -156,7 +148,7 @@ CREATE TABLE `tbl_danhmuchethong` (
   `FileName` text,
   `IsDisLay` tinyint DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +157,7 @@ CREATE TABLE `tbl_danhmuchethong` (
 
 LOCK TABLES `tbl_danhmuchethong` WRITE;
 /*!40000 ALTER TABLE `tbl_danhmuchethong` DISABLE KEYS */;
-INSERT INTO `tbl_danhmuchethong` VALUES (1,1,'Dây da',NULL,'Danh mục loại dây',NULL,NULL,NULL),(2,2,'Dây vàng 24k',NULL,'Danh mục loại dây',NULL,NULL,NULL),(3,3,'Dây Bạc',NULL,'Danh mục loại dây',NULL,NULL,NULL),(4,4,'Day cao su trơn',NULL,'Danh mục loại dây',NULL,NULL,NULL),(5,1,'Trẻ trung',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(6,2,'Nữ tính',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(7,3,'Nam tính',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(8,4,'Thể Thao',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(9,5,'Trung Niên',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(10,1,'Orient',NULL,'Danh mục thương hiệu',NULL,NULL,NULL),(11,2,'Panius',NULL,'Danh mục thương hiệu',NULL,NULL,NULL),(12,3,'HubLog',NULL,'Danh mục thương hiệu',NULL,NULL,NULL),(13,4,'Citizen',NULL,'Danh mục thương hiệu',NULL,NULL,NULL),(14,5,'Rolex',NULL,'Danh mục thương hiệu',NULL,NULL,NULL),(15,5,'Dây rằn ri',NULL,'Danh mục loại dây','../../../../UpLoad/Admin/DanhMuc1699176451_bg.jpg','1699176451_bg.jpg',NULL);
+INSERT INTO `tbl_danhmuchethong` VALUES (16,1,'Casio',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699616995_CS-1362181789-1668935694.jpeg','1699616995_CS-1362181789-1668935694.jpeg',NULL),(17,2,'Citizen',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699617013_logo-citizen.jpeg','1699617013_logo-citizen.jpeg',NULL),(18,3,'Olym-Pianus',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699617027_logo-Olym-Pianus.jpeg','1699617027_logo-Olym-Pianus.jpeg',NULL),(19,4,'Orient',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699617040_logo-orient.jpeg','1699617040_logo-orient.jpeg',NULL),(20,5,'Seiko',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699617066_logo-seiko.jpeg','1699617066_logo-seiko.jpeg',NULL),(21,6,'Thomas-Earnshaw',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699617117_logo-Thomas-Earnshaw.jpeg','1699617117_logo-Thomas-Earnshaw.jpeg',NULL),(22,7,'Tissot',NULL,'Danh mục thương hiệu','../../../../UpLoad/Admin/DanhMuc/DanhMuc1699617136_logo-Tissot.jpeg','1699617136_logo-Tissot.jpeg',NULL),(23,1,'Dây da',NULL,'Danh mục loại dây',NULL,NULL,NULL),(24,2,'Dây kim loại',NULL,'Danh mục loại dây',NULL,NULL,NULL),(25,3,'Dây cao su',NULL,'Danh mục loại dây',NULL,NULL,NULL),(26,4,'Dây dù/vải',NULL,'Danh mục loại dây',NULL,NULL,NULL),(27,5,'Dây Nhựa ',NULL,'Danh mục loại dây',NULL,NULL,NULL),(28,6,'Nhựa phối kim loại',NULL,'Danh mục loại dây',NULL,NULL,NULL),(29,7,'Thép không gỉ mạ vàng PVD',NULL,'Danh mục loại dây',NULL,NULL,NULL),(30,8,'Dây Titanium',NULL,'Danh mục loại dây',NULL,NULL,NULL),(31,1,'Quân đội',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(32,2,'Thể Thao',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(33,3,'Sang trọng',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(34,4,'Dân văn phòng',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL),(35,5,'Cổ điển vinatax',NULL,'Danh mục kiểu dáng',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_danhmuchethong` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,14 +171,11 @@ DROP TABLE IF EXISTS `tbl_dondat`;
 CREATE TABLE `tbl_dondat` (
   `IdDonDat` bigint NOT NULL AUTO_INCREMENT,
   `LanDat` int DEFAULT NULL,
-  `ThoiGian` datetime DEFAULT NULL,
-  `TrangTraiThanhToan` text,
+  `ThoiGian` date DEFAULT NULL,
   `TongTien` decimal(10,0) DEFAULT NULL,
-  `IdClient` bigint NOT NULL,
-  PRIMARY KEY (`IdDonDat`),
-  KEY `fk_tbl_DonDat_tbl_client1_idx` (`IdClient`),
-  CONSTRAINT `fk_tbl_DonDat_tbl_client1` FOREIGN KEY (`IdClient`) REFERENCES `tbl_client` (`IdClient`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `IdUsers` bigint DEFAULT NULL,
+  PRIMARY KEY (`IdDonDat`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,6 +197,7 @@ DROP TABLE IF EXISTS `tbl_dongho`;
 CREATE TABLE `tbl_dongho` (
   `IdDongHo` bigint NOT NULL AUTO_INCREMENT,
   `TenDongHo` text,
+  `MaDongHo` varchar(150) DEFAULT NULL,
   `ThuongHieu` text,
   `NamNu` text,
   `SoLuong` int DEFAULT NULL,
@@ -222,7 +212,7 @@ CREATE TABLE `tbl_dongho` (
   `ChongNuoc` tinyint DEFAULT NULL,
   `TrangThaiBan` tinyint DEFAULT NULL,
   PRIMARY KEY (`IdDongHo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,8 +221,34 @@ CREATE TABLE `tbl_dongho` (
 
 LOCK TABLES `tbl_dongho` WRITE;
 /*!40000 ALTER TABLE `tbl_dongho` DISABLE KEYS */;
-INSERT INTO `tbl_dongho` VALUES (1,'Đồng Hồ Olym Pianus','Orient','Nam',15,'Nam tính',20000,30000,'',20,NULL,'../../../../UpLoad/DongHo/1698345205_OP990-45ADGS-GL-X-1-1654832217252.png','1698345205_OP990-45ADGS-GL-X-1-1654832217252.png',1,0),(2,'Đồng Hồ Citizen','HubLog','Nam',3,'Trẻ trung',300000,200000,'Dây Bạc',20,NULL,'../../../../UpLoad/DongHo/1698604174_Bi1054-12E-773718459-520019565.png','1698604174_Bi1054-12E-773718459-520019565.png',1,NULL),(3,'Đồng Hồ Orient','Orient','Nam',5,'Nam tính',403999,585000,'Dây vàng 24k',30,NULL,'../../../../UpLoad/DongHo/1698859266_RA-AA0B03L19B-956301929-469466003.png.webp','1698859266_RA-AA0B03L19B-956301929-469466003.png.webp',1,NULL),(4,'Đồng Hồ Casio','Rolex','Nam',1,'Nữ tính',NULL,30000,'Dây Bạc',40,NULL,'../../../../UpLoad/DongHo/1699038409_KHUNG-SP-6676612-1785849039.webp','1699038409_KHUNG-SP-6676612-1785849039.webp',0,NULL);
+INSERT INTO `tbl_dongho` VALUES (9,'Đồng Hồ Casio','AE-1200WHD-1AVDF','Casio','Nam',2,'Thể Thao',900000,1090000,'Dây kim loại',24,NULL,'../../../../UpLoad/DongHo/1699618077_1-KHUNG-SP-6676612-1785849039.webp','1699618077_1-KHUNG-SP-6676612-1785849039.webp',1,NULL),(10,'Đồng Hồ Casio','MTP-1374L-1AVDF','Casio','Nam',2,'Sang trọng',1370000,1670000,'Dây da',20,NULL,'../../../../UpLoad/DongHo/1699618618_1-KHUNG-SP-1-1818542633-1853976209.webp','1699618618_1-KHUNG-SP-1-1818542633-1853976209.webp',1,NULL),(11,'Đồng Hồ Casio','EFV-600L-2AVUDF','Casio','Nam',3,'Sang trọng',2320000,2820000,'Dây da',20,NULL,'../../../../UpLoad/DongHo/1699618802_1-KHUNG-SP-1129271049-505289889.webp','1699618802_1-KHUNG-SP-1129271049-505289889.webp',1,NULL),(12,'Đồng Hồ Casio','LW-204-4ADF','Casio','Nữ',2,'Sang trọng',720000,850000,'Dây kim loại',21,NULL,'../../../../UpLoad/DongHo/1699619002_LW-204-4ADF.webp','1699619002_LW-204-4ADF.webp',1,NULL),(13,'Đồng Hồ Orient','RA-AA0B02R19B','Orient','Nam',3,'Sang trọng',4000000,5850000,'Dây kim loại',25,NULL,'../../../../UpLoad/DongHo/1699619182_RA-AA0B02R19B-2081811590-287106387.webp','1699619182_RA-AA0B02R19B-2081811590-287106387.webp',1,NULL);
 /*!40000 ALTER TABLE `tbl_dongho` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_giohang`
+--
+
+DROP TABLE IF EXISTS `tbl_giohang`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_giohang` (
+  `Id` bigint NOT NULL AUTO_INCREMENT,
+  `SoLuong` int DEFAULT NULL,
+  `TrangThai` tinyint DEFAULT NULL,
+  `IdUsers` bigint DEFAULT NULL,
+  `IdDongHo` bigint DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_giohang`
+--
+
+LOCK TABLES `tbl_giohang` WRITE;
+/*!40000 ALTER TABLE `tbl_giohang` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_giohang` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -279,7 +295,7 @@ CREATE TABLE `tbl_phieunhap` (
   PRIMARY KEY (`IdPhieu`),
   KEY `fk_tbl_DongHo_tbl_user1_idx` (`IdUsers`),
   CONSTRAINT `fk_tbl_DongHo_tbl_user1` FOREIGN KEY (`IdUsers`) REFERENCES `tbl_user` (`IdUsers`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,7 +304,7 @@ CREATE TABLE `tbl_phieunhap` (
 
 LOCK TABLES `tbl_phieunhap` WRITE;
 /*!40000 ALTER TABLE `tbl_phieunhap` DISABLE KEYS */;
-INSERT INTO `tbl_phieunhap` VALUES (4,'MP01',NULL,'2023-11-02',1,1);
+INSERT INTO `tbl_phieunhap` VALUES (6,'PN01',NULL,'2023-11-10',1,1);
 /*!40000 ALTER TABLE `tbl_phieunhap` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -358,7 +374,7 @@ CREATE TABLE `tbl_storeupload` (
   `IdDongHo` bigint DEFAULT NULL,
   `IdClient` bigint DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -367,7 +383,7 @@ CREATE TABLE `tbl_storeupload` (
 
 LOCK TABLES `tbl_storeupload` WRITE;
 /*!40000 ALTER TABLE `tbl_storeupload` DISABLE KEYS */;
-INSERT INTO `tbl_storeupload` VALUES (1,'../../../../UpLoad/DongHo/DongHoStore/1699116841_mqdefault.jpg','1699116841_mqdefault.jpg','true',1,NULL),(2,'../../../../UpLoad/DongHo/DongHoStore/1699116874_Op990-45ags-gl-x.webp','1699116874_Op990-45ags-gl-x.webp','true',1,NULL),(3,'../../../../UpLoad/DongHo/DongHoStore/1699116876_OP990-45ADGS-GL-X-1-1654832239373.webp','1699116876_OP990-45ADGS-GL-X-1-1654832239373.webp','true',1,NULL),(4,'../../../../UpLoad/DongHo/DongHoStore/1699174445_mqdefault.jpg','1699174445_mqdefault.jpg',NULL,2,NULL),(5,'../../../../UpLoad/DongHo/DongHoStore/1699174445_Op990-45ags-gl-x.webp','1699174445_Op990-45ags-gl-x.webp',NULL,2,NULL),(6,'../../../../UpLoad/DongHo/DongHoStore/1699174445_OP990-45ADGS-GL-X-1-1654832239373.webp','1699174445_OP990-45ADGS-GL-X-1-1654832239373.webp',NULL,2,NULL);
+INSERT INTO `tbl_storeupload` VALUES (7,'../../../../UpLoad/DongHo/DongHoStore/1699618461_1-KHUNG-SP-6676612-1785849039.webp','1699618461_1-KHUNG-SP-6676612-1785849039.webp',NULL,9,NULL),(8,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-1.webp','1699618470_AE-1200WHD-1AVDF-1.webp',NULL,9,NULL),(9,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-2.webp','1699618470_AE-1200WHD-1AVDF-2.webp',NULL,9,NULL),(10,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-3.webp','1699618470_AE-1200WHD-1AVDF-3.webp',NULL,9,NULL),(11,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-4.webp','1699618470_AE-1200WHD-1AVDF-4.webp',NULL,9,NULL),(12,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-5.webp','1699618470_AE-1200WHD-1AVDF-5.webp',NULL,9,NULL),(13,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-6.webp','1699618470_AE-1200WHD-1AVDF-6.webp',NULL,9,NULL),(14,'../../../../UpLoad/DongHo/DongHoStore/1699618470_AE-1200WHD-1AVDF-7.webp','1699618470_AE-1200WHD-1AVDF-7.webp',NULL,9,NULL),(15,'../../../../UpLoad/DongHo/DongHoStore/1699618665_1-KHUNG-SP-1-1818542633-1853976209.webp','1699618665_1-KHUNG-SP-1-1818542633-1853976209.webp',NULL,10,NULL),(16,'../../../../UpLoad/DongHo/DongHoStore/1699618665_CASIO-MTP-1374L-1AVDF-2.webp','1699618665_CASIO-MTP-1374L-1AVDF-2.webp',NULL,10,NULL),(17,'../../../../UpLoad/DongHo/DongHoStore/1699618665_CASIO-MTP-1374L-1AVDF-3.webp','1699618665_CASIO-MTP-1374L-1AVDF-3.webp',NULL,10,NULL),(18,'../../../../UpLoad/DongHo/DongHoStore/1699618665_CASIO-MTP-1374L-1AVDF-4.webp','1699618665_CASIO-MTP-1374L-1AVDF-4.webp',NULL,10,NULL),(19,'../../../../UpLoad/DongHo/DongHoStore/1699618665_CASIO-MTP-1374L-1AVDF-5.webp','1699618665_CASIO-MTP-1374L-1AVDF-5.webp',NULL,10,NULL),(20,'../../../../UpLoad/DongHo/DongHoStore/1699618818_1-KHUNG-SP-1129271049-505289889.webp','1699618818_1-KHUNG-SP-1129271049-505289889.webp',NULL,11,NULL),(21,'../../../../UpLoad/DongHo/DongHoStore/1699618819_EFV-600L-2A-4-1624509175802.webp','1699618819_EFV-600L-2A-4-1624509175802.webp',NULL,11,NULL),(22,'../../../../UpLoad/DongHo/DongHoStore/1699618819_EFV-600L-2AVUDF-1.webp','1699618819_EFV-600L-2AVUDF-1.webp',NULL,11,NULL),(23,'../../../../UpLoad/DongHo/DongHoStore/1699618819_EFV-600L-2AVUDF-2.webp','1699618819_EFV-600L-2AVUDF-2.webp',NULL,11,NULL),(24,'../../../../UpLoad/DongHo/DongHoStore/1699618819_EFV-600L-2AVUDF-3.webp','1699618819_EFV-600L-2AVUDF-3.webp',NULL,11,NULL),(25,'../../../../UpLoad/DongHo/DongHoStore/1699618819_EFV-600L-2AVUDF-4.webp','1699618819_EFV-600L-2AVUDF-4.webp',NULL,11,NULL),(26,'../../../../UpLoad/DongHo/DongHoStore/1699619021_LW-204-4A-3-1642134814130.webp','1699619021_LW-204-4A-3-1642134814130.webp',NULL,12,NULL),(27,'../../../../UpLoad/DongHo/DongHoStore/1699619021_LW-204-4A-5-1642134819765.webp','1699619021_LW-204-4A-5-1642134819765.webp',NULL,12,NULL),(28,'../../../../UpLoad/DongHo/DongHoStore/1699619021_LW-204-4A-6-1642134824443.webp','1699619021_LW-204-4A-6-1642134824443.webp',NULL,12,NULL),(29,'../../../../UpLoad/DongHo/DongHoStore/1699619021_LW-204-4A-7-1642134827297.webp','1699619021_LW-204-4A-7-1642134827297.webp',NULL,12,NULL),(30,'../../../../UpLoad/DongHo/DongHoStore/1699619021_LW-204-4A-8-1642134829619.webp','1699619021_LW-204-4A-8-1642134829619.webp',NULL,12,NULL),(31,'../../../../UpLoad/DongHo/DongHoStore/1699619021_LW-204-4ADF.webp','1699619021_LW-204-4ADF.webp',NULL,12,NULL),(32,'../../../../UpLoad/DongHo/DongHoStore/1699619292_RA-AA0B02R19B-2.webp','1699619292_RA-AA0B02R19B-2.webp',NULL,13,NULL),(33,'../../../../UpLoad/DongHo/DongHoStore/1699619292_RA-AA0B02R19B-3.webp','1699619292_RA-AA0B02R19B-3.webp',NULL,13,NULL),(34,'../../../../UpLoad/DongHo/DongHoStore/1699619292_RA-AA0B02R19B-4.webp','1699619292_RA-AA0B02R19B-4.webp',NULL,13,NULL),(35,'../../../../UpLoad/DongHo/DongHoStore/1699619292_RA-AA0B02R19B-5.webp','1699619292_RA-AA0B02R19B-5.webp',NULL,13,NULL),(36,'../../../../UpLoad/DongHo/DongHoStore/1699619292_RA-AA0B02R19B-2081811590-287106387.webp','1699619292_RA-AA0B02R19B-2081811590-287106387.webp',NULL,13,NULL),(37,'../../../../UpLoad/DongHo/DongHoStore/1699619292_sk-1636365185503.webp','1699619292_sk-1636365185503.webp',NULL,13,NULL);
 /*!40000 ALTER TABLE `tbl_storeupload` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -385,7 +401,7 @@ CREATE TABLE `tbl_thuonghieu` (
   `UrlAnh` text,
   `FileName` text,
   PRIMARY KEY (`IdThuongHieu`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -394,7 +410,6 @@ CREATE TABLE `tbl_thuonghieu` (
 
 LOCK TABLES `tbl_thuonghieu` WRITE;
 /*!40000 ALTER TABLE `tbl_thuonghieu` DISABLE KEYS */;
-INSERT INTO `tbl_thuonghieu` VALUES (1,1,'Rolex Swiss Made','http://localhost:3000/UpLoad/ThuongHieu/CS-1362181789-1668935694.jpeg',NULL),(2,2,'Citizen','http://localhost:3000/UpLoad/ThuongHieu/logo-citizen.jpeg',NULL),(3,3,'Orient','http://localhost:3000/UpLoad/ThuongHieu/logo-orient.jpeg',NULL),(4,4,'Seven Tive','http://localhost:3000/UpLoad/ThuongHieu/logo-seiko.jpeg',NULL),(5,5,'HubLob','../../../../UpLoad/ThuongHieu/1697863136_logo-Hublot.jpeg','1697863136_logo-Hublot.jpeg');
 /*!40000 ALTER TABLE `tbl_thuonghieu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -415,8 +430,13 @@ CREATE TABLE `tbl_user` (
   `CauHoiBaoMat` text,
   `CauTraLoi` text,
   `CountPassworld` int DEFAULT '0',
+  `LoaiTaiKhoan` int DEFAULT NULL,
+  `SoDienThoai` varchar(20) DEFAULT NULL,
+  `DiaChi` text,
+  `TrangThai` tinyint DEFAULT NULL,
+  `TenDayDu` text,
   PRIMARY KEY (`IdUsers`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -425,7 +445,7 @@ CREATE TABLE `tbl_user` (
 
 LOCK TABLES `tbl_user` WRITE;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` VALUES (1,'admin','Phanmem@123','quan.tm.1954@aptechlearning.edu.vn',NULL,'425902',NULL,NULL,0),(5,'client','Phanmem@123',NULL,NULL,NULL,NULL,NULL,0);
+INSERT INTO `tbl_user` VALUES (1,'admin','$2y$10$dX0TtwImBc7MoR9RTIRJG.UQa1nifNL7SdoYFkjq0c9/TktKW7gNe','quan.tm.1954@aptechlearning.edu.vn',NULL,'425902',NULL,NULL,0,1,NULL,NULL,1,NULL),(5,'quantran','$2y$10$dX0TtwImBc7MoR9RTIRJG.UQa1nifNL7SdoYFkjq0c9/TktKW7gNe','quanma4405@gmail.com',NULL,NULL,NULL,NULL,0,0,'094324352','Tổ 3 Phường Chiềng Sinh, TP Sơn la',1,'Trần Minh Quân'),(6,'ChuongPham2002','$2y$10$dX0TtwImBc7MoR9RTIRJG.UQa1nifNL7SdoYFkjq0c9/TktKW7gNe','chuongphenh4405@gmail.com','2023-11-10 06:51:56',NULL,NULL,NULL,0,4,'0332581817','Tổ 4, Phường Chiềng Lề, TP Sơn La',1,'Phạm Hữu Chương');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -467,4 +487,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-05 22:39:28
+-- Dump completed on 2023-11-11 15:45:35
