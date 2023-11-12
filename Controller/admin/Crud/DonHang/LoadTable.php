@@ -9,11 +9,10 @@ $IdUsers =  isset($_GET['IdUsers']) ? (int)$_GET['IdUsers'] : 0;
 
 if ($IdUsers == 0) {
     // Truy vấn SQL chỉ lấy các mục cần hiển thị trên trang hiện tại
-    $sql = "SELECT tbl_user.IdUsers , tbl_giohang.Id , tbl_user.TenDayDu , tbl_user.DiaChi, tbl_user.SoDienThoai , tbl_chitietdongho.*,tbl_dongho.*
+    $sql = "SELECT tbl_user.IdUsers , tbl_giohang.Id , tbl_user.TenDayDu , tbl_user.DiaChi, tbl_user.SoDienThoai ,tbl_dongho.*,tbl_giohang.*
 FROM tbl_giohang
 Join tbl_user ON tbl_giohang.IdUsers = tbl_user.IdUsers
-Join tbl_chitietdongho ON tbl_chitietdongho.IdChiTietDongHo = tbl_giohang.IdChiTietDongHo
-Join tbl_dongho ON tbl_chitietdongho.IdDongHo = tbl_dongho.IdDongHo
+Join tbl_dongho ON tbl_giohang.IdDongHo = tbl_dongho.IdDongHo
 Where tbl_giohang.TrangThai = false
         ";
     $result = $conect->query($sql);

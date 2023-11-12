@@ -1,11 +1,11 @@
-var myController={
+var myKey={
     init:function(){
-        myController.event();
-        myController.loaddata();
+        myKey.event();
+        myKey.loaddata();
     },
     event:function(){
         $("#input_key").off("input").on("input", function () {
-            myController.loaddata();
+            myKey.loaddata();
             $(".show-product-search").attr("style", "display:block;");
         });
         
@@ -60,4 +60,4 @@ var myController={
         
     },
 }
-myController.init();
+myKey.init();

@@ -23,13 +23,21 @@ if ($order_gia =="1") {
 $start = (int)(($page - 1) * $items_per_page);
 
 // Truy vấn SQL chỉ lấy các mục cần hiển thị trên trang hiện tại
-$sql = "SELECT * FROM tbl_dongho ".$SortGia. " LIMIT $start, $items_per_page" ;
+$sql = "SELECT 
+tbl_dongho.*,
+COUNT(CASE WHEN tbl_chitietdongho.IdChiTietDonDat IS NOT NULL THEN 1 END) AS SoLuongBan
+FROM 
+tbl_dongho
+LEFT JOIN 
+tbl_chitietdongho ON tbl_dongho.IdDongHo = tbl_chitietdongho.IdDongHo
+GROUP BY 
+tbl_dongho.IdDongHo ".$SortGia. " LIMIT $start, $items_per_page" ;
 
 $result = $conect->query($sql);
 $datax = $result->fetch_all(MYSQLI_ASSOC);
 
 // Tính tổng số mục trong cơ sở dữ liệu
-$total_items = mysqli_num_rows($conect->query($sql));
+$total_items = mysqli_num_rows($conect->query('SELECT * FROM tbl_dongho'));
 
 $data = array(
     'datax' => $datax,

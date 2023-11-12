@@ -18,7 +18,7 @@ if (!isset($_SESSION['IdRole'])) {
     <!-- cart-product -->
     <div class="cart-product">
         <form style="width: 804px;margin-right: 50px;" id="frm" method="post" action="/Cart/Update">
-            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang" >
+            <div style="overflow: auto; margin: 0px;" class="cart-product-left" id="lst_GioHang">
             </div>
         </form>
         <!-- cart-product-left -->
@@ -48,9 +48,9 @@ if (!isset($_SESSION['IdRole'])) {
                 <h style="font-size: 14px;font-weight: bold;margin-right: 140px;height:35px;color: red">Tổng tiền</h>
                 <div id="sub-price">0đ</div>
             </div>
-            <button class="pay"> <a style="color:white;" href="javascript:myController.DatHang()">ĐẶT HÀNG NGAY</a></button>
+            <button class="pay"> <a style="color:white;" href="javascript:myGioHang.DatHang()">ĐẶT HÀNG NGAY</a></button>
 
-            <button class="pay"> <a style="color:white;" href="/products/category">TIẾP TỤC MUA HÀNG</a> </button>
+            <button class="pay"> <a style="color:white;" href="?controller=DanhSachSPController">TIẾP TỤC MUA HÀNG</a> </button>
         </div>
         <!-- cart-product-right -->
 
@@ -63,7 +63,7 @@ if (!isset($_SESSION['IdRole'])) {
             <div class="sub-product">
                 <ul style="width: 160px;">
                     <li> <a style="font-weight: bold ;color:black" href="">{{TenDongHo}}</a> </li>
-                    <li style="cursor: pointer;color:rgb(232, 24, 84) ;"> <a style="cursor: pointer;color:rgb(232, 24, 84) ;" href="javascript:myController.RemoveCard({{Id}})"><i class="bi bi-trash2"></i> Xóa</a> </li>
+                    <li style="cursor: pointer;color:rgb(232, 24, 84) ;"> <a style="cursor: pointer;color:rgb(232, 24, 84) ;" href="javascript:myGioHang.RemoveCard({{Id}})"><i class="bi bi-trash2"></i> Xóa</a> </li>
                 </ul>
 
                 <div class="box-price">
@@ -71,6 +71,12 @@ if (!isset($_SESSION['IdRole'])) {
                 </div>
                 <div class="box-price">
                     <p>{{GiaBan}}</p>
+                    <div>
+                    <button class="quantity-btn increase-btn" data-operation="increase" type="button">+</button>
+                    <input type="number" value="{{ SoLuongMua }}"  class="form-control quantity-input" style="width:30%;text-align: center;font-weight: bold;">
+                    <input type="hidden" value="{{ Id }}" class="form-control id_update">
+                    <button class="quantity-btn decrease-btn" data-operation="decrease" type="button">-</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,3 +116,26 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js
 "></script>
 <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
 <script src="http://localhost:3000/Assets/user/js/giohang.js"></script>
+<script>
+    $(document).ready(function() {
+        // Bắt sự kiện click cho nút tăng số lượng
+        $(".increase-btn").off('click').on("click", function() {
+            var id_update = $(this).siblings(".id_update").val();
+            var CbPhanLoai = 1;
+            myGioHang.UpdateSoLuong(id_update,CbPhanLoai);
+        });
+
+        // Bắt sự kiện click cho nút giảm số lượng
+        $(".decrease-btn").off('click').on("click", function() {
+            var id_update = $(this).siblings(".id_update").val();
+            var inputElement = $(this).siblings(".quantity-input");
+            var currentValue = parseInt(inputElement.val());
+            if (currentValue == 0) {
+                alert("Bạn hãy bấm vào nút xóa");
+                return;
+            }
+            var CbPhanLoai = 0;
+            myGioHang.UpdateSoLuong(id_update,CbPhanLoai);
+        });
+    });
+</script>

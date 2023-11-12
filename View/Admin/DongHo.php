@@ -45,6 +45,8 @@
                             <th style="text-align: center;">Phân loại</th>
                             <th style="text-align: center;">Giá mua</th>
                             <th style="text-align: center;">Giá bán</th>
+                            <th style="text-align: center;">Số lượng còn</th>
+                            <th style="text-align: center;">Số lượng Bán</th>
                             <th style="text-align: center;">Chức năng</th>
                         </tr>
                         <tbody id="tbl_DongHo">
@@ -84,12 +86,21 @@
                     <label for="" class="form-label">Tên đồng hồ</label>
                     <input type="text" class="form-control" id="TenDongHo" placeholder="">
                 </div>
-                <div class="form-group p-1">
-                    <label for="" class="form-label">Phân loại (Nam/Nữ)</label>
-                    <select name="" id="NamNu" class="form-control ">
-                        <option value="Nam">Nam</option>
-                        <option value="Nữ">Nữ</option>
-                    </select>
+
+                <div class="form-group p-1" style="display: flex;">
+                    <div style="padding-top: 0px;width: 40%;margin-right: 21px;">
+                        <label for="" class="form-label">Phân loại (Nam/Nữ)</label>
+                        <select name="" id="NamNu" class="form-control ">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                    <div style="padding-top: 0px; width: 57%;">
+                        <label for="" class="form-label">Thương hiệu</label>
+                        <select name="" id="ThuongHieu" class="form-control js-example-basic-single">
+                            <option value="">-- Chọn Thương Hiệu</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Kiểu dáng</label>
@@ -112,11 +123,10 @@
                 </div>
             </div>
             <div class="" style="width: 40%;margin-left: 20px;">
+
                 <div class="form-group p-1" style="padding-top: 0px;">
-                    <label for="" class="form-label">Thương hiệu</label>
-                    <select name="" id="ThuongHieu" class="form-control js-example-basic-single">
-                        <option value="">-- Chọn Thương Hiệu</option>
-                    </select>
+                    <label for="" class="form-label">Mã đồng hồ</label>
+                    <input type="text" class="form-control" id="MaDongHo" placeholder="">
                 </div>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Số lượng</label>

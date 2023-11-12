@@ -204,7 +204,7 @@
           <i class="bi bi-star-half"></i>
           <i class="bi bi-star"></i>
           <i style="font-size: 14px;font-style: normal;">9</i>
-          <a href="javascript:myEventHome.AddShopping({{IdDongHo}})">
+          <a href="javascript:myEventHome.AddShopping({{IdDongHo}} , {{ SoLuong }})">
             <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
                 Thêm vào giỏ hàng
               </span></button>

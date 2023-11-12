@@ -22,6 +22,9 @@
         $GiamGia = $jsonData->GiamGia;
         $ChongNuoc = $jsonData->ChongNuoc == "1" ? 1 : 0;
         $ThuongHieu = $jsonData->ThuongHieu;
+        $MaDongHo = $jsonData->MaDongHo;
+        $response = [];
+
 
         $uploadDir = '../../../../UpLoad/DongHo/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
         $file = $_FILES['duong_dan_tai_lieu'];
@@ -37,14 +40,15 @@
             }
 
 
-            $sql = "UPDATE tbl_dongho SET TenDongHo=?,ThuongHieu=?,NamNu=?, KieuDang=?, GiaMua=?, GiaBan=?
+            $sql = "UPDATE tbl_dongho SET TenDongHo=?,MaDongHo=?,ThuongHieu=?,NamNu=?, KieuDang=?, GiaMua=?, GiaBan=?
             , LoaiDay=?, GiamGia=?,Url_anh=?, FileName=? , ChongNuoc=?
             WHERE IdDongHo =? ";
 
             $stmt = $conn->prepare($sql);
             $stmt->bind_param(
-                "sssssssssss" . "s",
+                "ssssssssssss" . "s",
                 $TenDongHo,
+                $MaDongHo,
                 $ThuongHieu,
                 $NamNu,
                 $KieuDang,
@@ -58,7 +62,6 @@
                 $IdDongHo,
             );
 
-            $response = [];
             if ($stmt->execute()) {
                 move_uploaded_file($file['tmp_name'][0], $filePath);
                 $response["status"] = true;
@@ -68,15 +71,17 @@
 
             header('Content-Type: application/json');
             echo json_encode($response);
+            exit;
         } else {
-            $sql = "UPDATE tbl_dongho SET TenDongHo=?,ThuongHieu=?,NamNu=?, KieuDang=?, GiaMua=?, GiaBan=?
+            $sql = "UPDATE tbl_dongho SET TenDongHo=?,MaDongHo=?,ThuongHieu=?,NamNu=?, KieuDang=?, GiaMua=?, GiaBan=?
             , LoaiDay=?, GiamGia=? , ChongNuoc=?
             WHERE IdDongHo =? ";
 
             $stmt = $conn->prepare($sql);
             $stmt->bind_param(
-                "sssssssss" . "s",
+                "ssssssssss" . "s",
                 $TenDongHo,
+                $MaDongHo,
                 $ThuongHieu,
                 $NamNu,
                 $KieuDang,
@@ -96,6 +101,7 @@
 
             echo json_encode($response);
             header('Content-Type: application/json');
+            exit;
         }
     }
 

@@ -13,9 +13,6 @@
             <div class="form-group p-1" style="padding-left: 0px; padding-right: 0px;">
                 <button class="btn btn-success" id="btnDuyetDonHang" style="display: flex;margin: 10px;margin-top: 21px; "><i class="bi bi-check-lg" style="margin-right: 10px;"></i>Duyệt đơn hàng</button>
             </div>
-            <div class="form-group p-1" style="padding-left: 0px; padding-right: 0px;">
-                <button class="btn btn-danger" id="btnTuChoi" style="display: flex;margin: 10px;margin-top: 21px; "><i class="bi bi-x-lg" style="margin-right: 10px;"></i>Từ chối</button>
-            </div>
         </div>
 
         <div class="card-body p-2" style="display: flex;">
@@ -24,23 +21,17 @@
                     <table id="tbl_XetDuyet" data-classes="table table-striped table-bordered table-hover" data-toggle="table" data-mobile-responsive="true">
                         <thead>
                             <tr style="background: #b0b0aa;">
-                                <th data-field="Imei">Imei</th>
+                                <th data-field="MaDongHo">Mã đồng hồ</th>
                                 <th data-field="TenDongHo">Tên đồng hồ</th>
-                                <th data-field="GiaBan">Giá bán</th>
+                                <th data-field="SoLuong">Số lượng kho</th>
+                                <th data-field="SoLuongMua">Số lượng mua</th>
                                 <th data-field="TenDayDu">Tên khách hàng</th>
                                 <th data-field="DiaChi">Địa chỉ mua hàng</th>
                                 <th data-field="SoDienThoai">Số điện thoại</th>
                                 <th data-formatter="TrangThaiMua">Trạng thái/Mua</th>
                             </tr>
                         </thead>
-                        <!-- <tfoot>
-                            <tr>
-                                <th data-column="5">Tổng tiền</th>
-                               
-                            </tr>
-                        </tfoot> -->
                     </table>
-
                 </div>
             </div>
         </div>
