@@ -13,19 +13,19 @@
         <div class="card-body p-2" style="display: flex; padding-top: 0;">
             <div class="form-group" style="width: 100%; display: flex;">
                 <div class="" style="width: 100%;">
-                    <table class="styled-table">
-                        <tr>
-                            <th style="text-align: center;">Ảnh</th>
-                            <th style="text-align: center;">Tên đồng hồ</th>
-                            <th style="text-align: center;">Thương hiệu</th>
-                            <th style="text-align: center;">Phân loại</th>
-                            <th style="text-align: center;">Số Lượng</th>
-                            <th style="text-align: center;">Giá mua</th>
-                            <th style="text-align: center;">Giá bán</th>
-                            <th style="text-align: center;">#</th>
-                        </tr>
-                        <tbody id="tbl_DongHo">
-                        </tbody>
+                    <table id="tbl_DongHo" data-classes="table table-striped table-bordered table-hover" data-toggle="table" data-mobile-responsive="true">
+                        <thead>
+                            <tr style="background: #b0b0aa;">
+                                <th data-formatter="Anh" data-sort="true">Ảnh</th>
+                                <th data-field="TenDongHo">Tên đồng hồ</th>
+                                <th data-field="ThuongHieu">Thương hiệu</th>
+                                <th data-field="NamNu">Phân loại</th>
+                                <th data-field="SoLuong">Số lượng</th>
+                                <th data-field="GiaMua" data-formatter="formatCurrency">Giá mua</th>
+                                <th data-field="GiaBan" data-formatter="formatCurrency">Giá bán</th>
+                                <th data-formatter="ChucNang">Chọn</th>
+                            </tr>
+                        </thead>
                     </table>
                 </div>
             </div>
@@ -74,5 +74,8 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.css">
-<script src="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.min.js"></script>
+<link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/bootstrap.css">
+<link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.js"></script>
 <script src="http://localhost:3000/Assets/admin/js/QuanLyKho.js"></script>

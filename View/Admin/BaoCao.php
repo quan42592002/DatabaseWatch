@@ -75,17 +75,9 @@
                                 <th data-field="ThoiGian" >Thời gian</th>
                                 <th data-field="GiaMua" data-formatter="formatCurrency">Giá mua</th>
                                 <th data-field="GiaBan" data-formatter="formatCurrency">Giá bán</th>
-                                <!-- <th data-field="TienLai" data-formatter="TienLaiFomater">Tiền lãi</th> -->
-                                <!-- <th data-field="TrangThai">Trạng thái</th> -->
                                 <th data-field="Username">Khách mua</th>
                             </tr>
                         </thead>
-                        <!-- <tfoot>
-                            <tr>
-                                <th data-column="5">Tổng tiền</th>
-                               
-                            </tr>
-                        </tfoot> -->
                     </table>
                    
                 </div>

@@ -151,59 +151,44 @@ var myController = {
     },
 
     LoadTable: function (page = 1) {
+        $(document).ready(function () {
 
-        var order_gia = $("#order_gia").val();
+            var order_gia = $("#order_gia").val();
 
-        $.ajax({
-            url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadTable.php?page=' + page,
-            method: 'GET',
-            data: {
-                order_gia: order_gia,
-            },
-            dataType: 'json',
-            success: function (response) {
-                if (response.status) {
-                    var datax = response.datax;
-                    var html = "";
+            $.ajax({
+                url: 'http://localhost:3000/Controller/admin/Crud/DongHo/LoadTable.php?page=' + page,
+                method: 'GET',
+                data: {
+                    order_gia: order_gia,
+                },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status) {
+                        var datax = response.datax;
 
-                    $.each(datax, function (index, value) {
-                        html += "<tr>" +
-                            "<td><img src='" + value.Url_anh + "' width='65spx'></td>" +
-                            "<td>" + value.TenDongHo + "</td>" +
-                            "<td>" + value.ThuongHieu + "</td>" +
-                            "<td>" + value.NamNu + "</td>" +
-                            "<td>" + myController.formatCurrency(value.GiaMua) + "</td>" +
-                            "<td>" + myController.formatCurrency(value.GiaBan) + "</td>" +
-                            "<td>" + value.SoLuong + "</td>" +
-                            "<td>" + value.SoLuongBan + "</td>" +
-                            "<td>" +
-                            '<div style="width:135px">' +
-                            '<a class="btn btn-primary btn-sm" title="Xem thông tin" style="border-radius: 20px;" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
-                            '<a class="btn btn-success btn-sm" title="Xem thông tin" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.LoadDetailFile(' + value.IdDongHo + ')" ><i class="bi bi-file-earmark-plus"></i></a>' +
-                            '<a class="btn btn-danger btn-sm" title="Xóa đồng hồ" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
-                            '</div>' +
-                            "</td>" +
-                            "</tr>";
-                    });
-
-                    $("#tbl_DongHo").html(html);
-
-                    // Phân trang
-                    var totalPages = Math.ceil(response.total_items / response.items_per_page);
-                    var currentPage = response.current_page;
-
-                    var paginationHtml = "";
-                    for (var i = 1; i <= totalPages; i++) {
-                        if (i === currentPage) {
-                            paginationHtml += '<a href="javascript:myController.LoadTable(' + i + ')" style="background-color: #0056b3;">' + i + '</a>';
+                        if (datax != null) {
+                            $("#tbl_DongHo").bootstrapTable('load', datax);
                         } else {
-                            paginationHtml += '<a href="javascript:myController.LoadTable(' + i + ')">' + i + '</a>';
+                            $("#tbl_DongHo").bootstrapTable('removeAll');
                         }
-                    }
 
-                    $(".pagination").html(paginationHtml);
-                }
-            },
+                        // Phân trang
+                        var totalPages = Math.ceil(response.total_items / response.items_per_page);
+                        var currentPage = response.current_page;
+
+                        var paginationHtml = "";
+                        for (var i = 1; i <= totalPages; i++) {
+                            if (i === currentPage) {
+                                paginationHtml += '<a href="javascript:myController.LoadTable(' + i + ')" style="background-color: #0056b3;">' + i + '</a>';
+                            } else {
+                                paginationHtml += '<a href="javascript:myController.LoadTable(' + i + ')">' + i + '</a>';
+                            }
+                        }
+
+                        $(".pagination").html(paginationHtml);
+                    }
+                },
+            });
         });
     },
 
@@ -739,3 +724,26 @@ var myController = {
     }
 };
 myController.init();
+
+function formatCurrency(number) {
+    var n = number.split('').reverse().join("");
+    var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+    return n2.split('').reverse().join('') + ' VNĐ';
+}
+
+function Anh(e, value, row, index) {
+    return [
+        '<div style="85px">',
+        "<img src='" + value.Url_anh + "' width='65spx'>",
+        '</div>'
+    ].join('');
+};
+function ChucNang(e, value, row, index) {
+    return [
+        '<div style="85px">',
+        '<a class="btn btn-primary btn-sm" title="Xem thông tin" style="border-radius: 20px;" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
+        '<a class="btn btn-success btn-sm" title="Xem thông tin" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.LoadDetailFile(' + value.IdDongHo + ')" ><i class="bi bi-file-earmark-plus"></i></a>' +
+        '<a class="btn btn-danger btn-sm" title="Xóa đồng hồ" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +
+        '</div>'
+    ].join('');
+};

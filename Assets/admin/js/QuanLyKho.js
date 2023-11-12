@@ -109,7 +109,7 @@ var myController = {
         }
 
         var lstCheckedItem = "";
-      
+
         $(".allCK").each(function (e, data) {
             if (data.checked == true) {
                 var id = data.id.substring(4);;
@@ -123,7 +123,7 @@ var myController = {
             url: 'http://localhost:3000/Controller/admin/Crud/NhapHang/SaveData.php',
             method: 'Post',
             data: {
-                lstCheckedItem:lstCheckedItem,
+                lstCheckedItem: lstCheckedItem,
                 IdUsers: IdUsers,
                 MaPhieuNhap: MaPhieuNhap,
                 SoluongNhap: SoluongNhap,
@@ -141,34 +141,46 @@ var myController = {
     },
 
     LoadTable: function () {
-        $.ajax({
-            url: 'http://localhost:3000/Controller/admin/Crud/NhapHang/LoadTable.php',
-            method: 'GET',
-            dataType: 'json',
-            success: function (response) {
-                if (response.status) {
-                    var datax = response.datax;
-                    var html = "";
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://localhost:3000/Controller/admin/Crud/NhapHang/LoadTable.php',
+                method: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status) {
+                        var datax = response.datax;
 
-                    $.each(datax, function (index, value) {
-                        html += "<tr><td><img src='" + value.Url_anh + "' width='65spx'></td>" +
-                            "<td>" + value.TenDongHo + "</td>" +
-                            "<td>" + value.ThuongHieu + "</td>" +
-                            "<td>" + value.NamNu + "</td>" +
-                            "<td>" + value.SoLuong + "</td>" +
-                            "<td>" + value.GiaMua + "</td>" +
-                            "<td>" + value.GiaBan + "</td>" +
-                            "<td> <input type='checkbox' class='allCK'  id='chk_" + value.IdDongHo + "'></td>" +
-                            "</tr>";
-                    });
-
-                    $("#tbl_DongHo").html(html);
-
-                    myController.RegesterEvent();
-                }
-            },
+                        if (datax != null) {
+                            $("#tbl_DongHo").bootstrapTable('load', datax);
+                        } else {
+                            $("#tbl_DongHo").bootstrapTable('removeAll');
+                        }
+                        myController.RegesterEvent();
+                    }
+                },
+            });
         });
     },
 
 };
 myController.init();
+function formatCurrency(number) {
+    var n = number.split('').reverse().join("");
+    var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+    return n2.split('').reverse().join('') + ' VNĐ';
+}
+
+function Anh(e, value, row, index) {
+    return [
+        '<div style="85px">',
+        "<img src='" + value.Url_anh + "' width='65spx'>",
+        '</div>'
+    ].join('');
+};
+function ChucNang(e, value, row, index) {
+    return [
+        '<div style="85px">',
+        "<input type='checkbox' class='allCK'  id='chk_" + value.IdDongHo + "'>",
+        '</div>'
+    ].join('');
+};
