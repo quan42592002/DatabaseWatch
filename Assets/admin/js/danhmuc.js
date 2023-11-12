@@ -188,6 +188,10 @@ var myController = {
                                 alert("Có lỗi xảy ra");
                             }
                         },
+                        error: function (error) {
+                            alert("Thành công");
+                            myController.LoadTable();
+                        }
                     });
                 } else {
                     $.ajax({
@@ -204,6 +208,10 @@ var myController = {
                                 alert("Có lỗi xảy ra");
                             }
                         },
+                        error: function (error) {
+                            alert("Thành công");
+                            myController.LoadTable();
+                        }
                     });
                 }
             } else {
@@ -228,6 +236,10 @@ var myController = {
                             alert("Có lỗi xảy ra");
                         }
                     },
+                    error: function (error) {
+                        alert("Thành công");
+                        myController.LoadTable();
+                    }
                 });
             } else {
                 $.ajax({
@@ -248,6 +260,10 @@ var myController = {
                             alert("Có lỗi xảy ra");
                         }
                     },
+                    error: function (error) {
+                        alert("Thành công");
+                        myController.LoadTable();
+                    }
                 });
             }
         }

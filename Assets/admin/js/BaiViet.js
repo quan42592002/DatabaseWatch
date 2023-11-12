@@ -13,6 +13,9 @@ var myController = {
         $("#NoiDung").val("");
         $("#CreateDate").val("");
         $("#TrangThai").prop('checked', false);
+        $("#urlAnh").attr('src', "http://localhost:3000/UpLoad/Public/3135715.png");
+        $("#urlAnh").css('border-radius', '0%');
+        $("#urlAnh").css('width', '30%');
         myController.ChangeForm();
     },
 
@@ -40,37 +43,6 @@ var myController = {
         $("#btn_SaveDataBaiViet").off("click").on("click", function () {
             myController.SaveBaiViet();
         });
-        // $('#btn_SaveDataBaiViet').on('click', function () {
-        //     var content = CKEDITOR.instances['content'].getData();
-        //     var TenBaiViet = $('#TenBaiViet').val();
-        //     var IdBaiViet = $('#IdBaiViet').val();
-
-        //     if (IdBaiViet <=0) {
-        //         return;
-        //     }
-        //     if (content == "") {
-        //         alert("Bạn chưa có bài viết");
-        //         return;
-        //     }
-        //     $.ajax({
-        //         url: 'http://localhost:3000/Controller/admin/Crud/BaiViet/UpdateBaiViet.php',
-        //         method: 'Post',
-        //         data: {
-        //             TenBaiViet: TenBaiViet,
-        //             content: content,
-        //         },
-        //         dataType: 'json',
-        //         success: function (response) {
-        //             if (response.status) {
-        //                 alert("Thêm mới thành công");
-        //             }
-        //         },
-        //         error: function (error) {
-        //             console.log('Error:', error);
-        //         }
-        //     });
-
-        // });
 
         $("#btn_SaveTopList").off("click").on("click", function () {
             myController.SaveData();

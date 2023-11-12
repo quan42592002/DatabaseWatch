@@ -16,9 +16,11 @@
                                                                 }
                                                                 ?>">
                     <div class="" style="width: 50%;margin-right: 20px;padding: 10px;border: 1px solid #bcbcbc;padding-top: 0px;">
-                        <div class="" style="width: 100%; background: #c7c6c6;height: 168px;">
+                        <div class="" style="width: 100%;
+                            background: #448aff;
+                            height: 168px;">
                             <!-- <div class="upload" style="text-align-last: center;margin: 15px;"> -->
-                                <img src="" id="urlAnh" alt="" style="width:100%;height:100%;">
+                            <img src="" id="urlAnh" alt="" style="width:100%;height:100%;">
                             <!-- </div> -->
                         </div>
                         <input type="hidden" class="form-control" id="IdTopList">
@@ -28,7 +30,7 @@
                                 <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
                             </div>
                         </div>
-                        
+
                         <div class="form-group p-1" style="padding-top: 0px;">
                             <label for="" class="form-label">Tiêu đề</label>
                             <input type="text" class="form-control" id="TieuDe" placeholder="Nhập tiêu đề">
@@ -55,7 +57,7 @@
                         <table id="tbl_BaiViet" data-classes="table table-striped table-bordered table-hover" data-toggle="table" data-mobile-responsive="true">
                             <thead>
                                 <tr style="background: #b0b0aa;">
-                                    <th data-field="TieuDe" >Tiêu đề</th>
+                                    <th data-field="TieuDe">Tiêu đề</th>
                                     <th data-formatter="ChucNang" data-width="100px">#</th>
                                 </tr>
                             </thead>
