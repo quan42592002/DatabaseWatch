@@ -104,3 +104,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/css/dashboard.css">
+<script src="http://localhost:3000/Assets/admin/js/Home.js"></script>
