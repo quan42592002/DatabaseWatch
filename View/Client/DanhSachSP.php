@@ -194,14 +194,32 @@
       });
     </script>
 </div>
-<div class="filter-box-item">Thương hiệu<i class="bi bi-caret-down-fill"></i></div>
-<div class="filter-box-item">Giá<i class="bi bi-caret-down-fill"></i></div>
-<div class="filter-box-item">Đối tượng sử dụng<i class="bi bi-caret-down-fill"></i></div>
+<div class="filter-box-item">Thương hiệu
+   <select id="LocThuongHieu">
+  <option style="text-align: center;" value="">--Chọn--</option>
+  <option value="Casio">Casio</option>
+  <option value="Citizen">Citizen</option>
+  <option value="Olym-Pianus">Olym-Pianus</option>
+  <option value="Orient">Orient</option>
+  <option value="Seiko">Seiko</option>
+  <option value="Thomas-Earnshaw">Thomas-Earnshaw</option>
+  <option value="Tissot">Tissot</option>
+</select></div>
+<div class="filter-box-item">Giá 
+  <select id="LocGia">
+  <option style="text-align: center;" value="">--Chọn--</option>
+  <option value="1">Dưới 3 triệu</option>
+  <option value="2">3-6 Triệu</option>
+  <option value="3">6-12 Triệu</option>
+  <option value="4">12-35 Triệu</option>
+</select></div>
+
+<!-- <div class="filter-box-item">Đối tượng sử dụng<i class="bi bi-caret-down-fill"></i></div>
 <div class="filter-box-item">Loại đồng hồ<i class="bi bi-caret-down-fill"></i></div>
 <div class="filter-box-item">Mặt đồng hồ<i class="bi bi-caret-down-fill"></i></div>
 <div class="filter-box-item">Chất liệu<i class="bi bi-caret-down-fill"></i></div>
 <div class="filter-box-item">Màu sắc<i class="bi bi-caret-down-fill"></i></div>
-<div class="filter-box-item">Tính năng<i class="bi bi-caret-down-fill"></i></div>
+<div class="filter-box-item">Tính năng<i class="bi bi-caret-down-fill"></i></div> -->
 </div>
 <!-- BEGIN  filterbox -->
 
@@ -219,25 +237,34 @@
     <h1>393 WatchStore Xả Kho - Mua đồng hồ giá tốt</h1>
     <!-- BEGIN ARRANG -->
     
-    <div id="a" class="arrang-hdh" >Sắp xếp theo: Giảm giá nhiều <i class="bi bi-caret-down-fill"></i>
+    <div id="a" class="arrang-hdh" >Sắp xếp theo:
         <!-- BEGIN sub-filter-checkbox -->
 
-        <div id="b" class="sub-arrang-hdh" >
-            <ul>
+        <select name="" id="SapXep">
+          <option value=""><i class="bi bi-sort-up"></i>Chọn</option>
+              <option value="1"><i class="bi bi-sort-up"></i> Giá thấp đến cao</option>
+              <option value="2"><i class="bi bi-sort-down"></i> Giá cao đến thấp</option>
+              <option value="3">Khuyến mãi nhiều nhất</option>
+              <option value="4">Sản phẩm bán chạy</option>
+
+        </select>
+        <!-- <div id="b" class="sub-arrang-hdh" > -->
+            <!-- <ul>
                 <li><a href=""><i class="bi bi-award-fill"></i> Nổi bật</a> </li>
                 <li><a href=""><i class="bi bi-patch-check"></i> Bán chạy nhất</a> </li>
                 <li><a href=""><i class="bi bi-sort-up"></i> Giá thấp đến cao</a> </li>
                 <li><a href=""><i class="bi bi-sort-down"></i> Giá cao đến thấp</a> </li>
                 <li><a href="">% Khuyến mãi</a> </li>
-            </ul>
-        </div>
-        <script>
+            </ul> -->
+           
+        <!-- </div> -->
+        <!-- <script>
           $(document).ready(function(){
        $("#a").click(function(){
          $("#b").slideToggle("fast");
        });
      });
-         </script>
+         </script> -->
 
         <!--END sub-filter-checkbox -->
 
@@ -248,450 +275,48 @@
 <!-- END hdh -->
  
 <!-- BEGIN DSSP-main -->
-<div class="dssp-main">
+<div id="dssp-main" style="height: 1125px;" class="dssp-main">
 
   <!-- 1 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
-    <!-- 2 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
-    <!-- 3 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
-    <!-- 4 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
-    <!-- 5 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
-    <!-- 6 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 7 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 8 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 9 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 10 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 11 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 12 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 13 -->
-    <div class="dssp-product">
-      <div class="dssp-product-main">
-        <!-- img -->
-        <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-        <!-- name -->
-        <div class="name-dssp-product">
-          <h3>Orient 43mm Nam FAG00003W0</h3>
-        </div>
-        <!-- price -->
-        <div class="price-dssp-product">
-          <ul>
-            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-          </ul>
-        </div>
-        <!-- rating -->
-        <div class="dssp-rating">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <i class="bi bi-star"></i>
-          <i style="font-size: 14px;font-style: normal;" >9</i>
-        </div>
-    
-      </div>
-    </div>
-    <!-- 14 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
-    <!-- 15 -->
-    <div class="dssp-product">
-        <div class="dssp-product-main">
-          <!-- img -->
-          <div class="img-dssp-product"><a href=""><img src="/UpLoad/Product/fls-product1.png" alt=""></a> </div>
-          <!-- name -->
-          <div class="name-dssp-product">
-            <h3>Orient 43mm Nam FAG00003W0</h3>
-          </div>
-          <!-- price -->
-          <div class="price-dssp-product">
-            <ul>
-              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">6.030.000₫</a></li>
-              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >8.050.000₫</a> <div class="fls-discount">-25%</div></li>
-    
-            </ul>
-          </div>
-          <!-- rating -->
-          <div class="dssp-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-            <i style="font-size: 14px;font-style: normal;" >9</i>
-          </div>
-    
-        </div>
-      </div>
+   
+   
 
 </div>
+
+<script id="data-danhsach" type="x-tmpl-mustache">
+<div class="dssp-product">
+        <div class="dssp-product-main">
+          <div class="img-dssp-product"><a href=""><img src="{{url}}" alt=""></a> </div>
+          <div class="name-dssp-product">
+            <h3>{{TenDongHo}}&nbsp{{MaDongHo}} </h3>
+          </div>
+          <div class="price-dssp-product">
+            <ul>
+              <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
+              <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through" >{{GiaGiam}} VNĐ</a>
+               <div class="fls-discount">-{{GiamGia}}%</div></li>
+    
+            </ul>
+          </div>
+          <div class="dssp-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i style="font-size: 14px;font-style: normal;" >9</i>
+          </div>
+    
+        </div>
+      </div>
+</script>
 
 <!-- END DSSP-main -->
 
 <!-- BEGIN CATEGORY --> 
- 
+<div class="pagination" style="text-align: center;">
+  
+  </div>
 <div style="display: grid;" class="category">
     <div style="    font-size: 16px;
     padding-top: 10px;
@@ -737,3 +362,5 @@
   </div>
   <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
 <script src="http://localhost:3000/Assets/user/js/brand.js"></script>
+<script src="http://localhost:3000/Assets/user/js/DanhSachSp.js"></script>
+
