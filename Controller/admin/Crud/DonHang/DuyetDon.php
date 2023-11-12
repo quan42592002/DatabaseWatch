@@ -40,31 +40,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $conn->query($sql_check);
 
     if ($result->num_rows > 0) {
-        // while ($row = $result->fetch_assoc()) {
-        //     $lastInsertId = $row['IdPhieu'];
+        while ($row = $result->fetch_assoc()) {
+            $IdDonDat = $row['IdDonDat'];
 
-        //     $sql_insert_ctphieu = "INSERT INTO tbl_chitietphieunhap (MaPhieuNhap , SoluongNhap , SoLuongBan ,IdPhieu ) VALUES ('$MaPhieuNhap','$SoluongNhap',0 ,'$lastInsertId')";
-        //     if ($conn->query($sql_insert_ctphieu) === TRUE) {
+            $sql_insert_ctDonDat = "INSERT INTO tbl_chitietdondat (SoLuong , IdDonDat) VALUES ('$SoLuongDonDat','$IdDonDat')";
+            if ($conn->query($sql_insert_ctDonDat) === TRUE) {
 
-        //         $Idchitietphieunhap = $conn->insert_id;
+                $IdChiTietDonDat = $conn->insert_id;
 
-        //         // Lưu bảng chi tiết đồng hồ
-        //         // Tách đồng hồ
-        //         $chuoi_moi = rtrim($lstCheckedItem, ",");
+                $result_giohang_x = $conn->query($sql_gio_hang);
+                if ($result_giohang_x->num_rows > 0) {
+                    while ($rowx = $result_giohang_x->fetch_assoc()) {
+                        $SoLuongMua = (int)$rowx['SoLuongMua'] ;
+                        $IdDongHo = $rowx['IdDongHo'];
 
-        //         $_lstIdDongHo = explode(",", $chuoi_moi);
+                        $sql = "UPDATE tbl_chitietdongho
+                        SET IdChiTietDonDat = ?, NgayBaoHanhTu = ?, NgayBaoHanhDen = ?
+                        WHERE IdChiTietDonDat IS NULL AND IdDongHo = ?
+                        LIMIT ?";
 
-        //         foreach ($_lstIdDongHo as $value) {
-        //             $sql_update_dongho = "UPDATE tbl_chitietdongho SET IdChiTietPhieuNhap = '$Idchitietphieunhap' WHERE IdDongHo = $value ";
-        //             $conn->query($sql_update_dongho);
-        //         }
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("sssss", $IdChiTietDonDat, $currentDate, $oneYearDate, $IdDongHo, $SoLuongMua);
 
-        //         $response = ["status" => true];
-        //         // Trả về dữ liệu dưới dạng JSON
-        //         header('Content-Type: application/json');
-        //         echo json_encode($response);
-        //     }
-        // }
+                        if ($stmt->execute()) {
+                            $sql = "UPDATE tbl_dongho
+                            SET SoLuong =  SoLuong - ?
+                            WHERE IdDongHo = ?";
+    
+                            $stmt1 = $conn->prepare($sql);
+                            $stmt1->bind_param("is", $SoLuongMua, $IdDongHo);
+                            $stmt1->execute();
+                        } else {
+                            $response = ["status" => false, "error" => $stmt->error];
+                        }
+                    }
+                }
+
+                $sql_update_giohang = "UPDATE tbl_giohang SET TrangThai = true WHERE tbl_giohang.IdUsers = $IdUsers AND tbl_giohang.TrangThai = false ";
+                $conn->query($sql_update_giohang);
+
+                $response = ["status" => true];
+                header('Content-Type: application/json');
+                echo json_encode($response);
+            }
+        }
     } else {
 
         $sql_insert_dondat = "INSERT INTO tbl_dondat (ThoiGian , LanDat,TongTien , IdUsers ) VALUES ('$currentDate',1,'$TongTien','$IdUsers')";

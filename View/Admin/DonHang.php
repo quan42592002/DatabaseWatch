@@ -31,14 +31,7 @@
                                 <th data-formatter="TrangThaiMua">Trạng thái/Mua</th>
                             </tr>
                         </thead>
-                        <!-- <tfoot>
-                            <tr>
-                                <th data-column="5">Tổng tiền</th>
-                               
-                            </tr>
-                        </tfoot> -->
                     </table>
-
                 </div>
             </div>
         </div>

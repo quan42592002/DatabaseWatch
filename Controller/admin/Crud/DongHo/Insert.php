@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $GiamGia = $jsonData->GiamGia;
     $ChongNuoc = $jsonData->ChongNuoc == "1" ? 1 : 0;
     $ThuongHieu = $jsonData->ThuongHieu;
+    $MaDongHo = $jsonData->MaDongHo;
 
     $uploadDir = '../../../../UpLoad/DongHo/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
     $file = $_FILES['duong_dan_tai_lieu'];
@@ -36,13 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadOk = 0;
         }
 
-        $sql = "INSERT INTO tbl_dongho (IdDongHo,TenDongHo, ThuongHieu, NamNu,SoLuong,KieuDang,GiaMua,GiaBan,
-        LoaiDay,GiamGia,Url_anh,FileName,ChongNuoc) VALUES (?,?, ?, ?,?,?, ?, ?,?,?, ?, ?,?)";
+        $sql = "INSERT INTO tbl_dongho (IdDongHo,TenDongHo, MaDongHo,ThuongHieu, NamNu,SoLuong,KieuDang,GiaMua,GiaBan,
+        LoaiDay,GiamGia,Url_anh,FileName,ChongNuoc) VALUES (?,?,?, ?, ?,?,?, ?, ?,?,?, ?, ?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
-            "sssssssssssss",
+            "ssssssssssssss",
             $IdDongHo,
             $TenDongHo,
+            $MaDongHo,
             $ThuongHieu,
             $NamNu,
             $SoLuong,
@@ -67,12 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode($response);
         }
     } else {
-        $sql = "INSERT INTO tbl_dongho (TenDongHo, ThuongHieu, NamNu,SoLuong,KieuDang,GiaMua,GiaBan,
+        $sql = "INSERT INTO tbl_dongho (TenDongHo,MaDongHo, ThuongHieu, NamNu,SoLuong,KieuDang,GiaMua,GiaBan,
         LoaiDay,GiamGia,ChongNuoc) VALUES (?,?, ?, ?,?,?, ?, ?,?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
-            "ssssssssss",
+            "sssssssssss",
             $TenDongHo,
+            $MaDongHo,
             $ThuongHieu,
             $NamNu,
             $SoLuong,
