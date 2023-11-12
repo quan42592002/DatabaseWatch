@@ -33,36 +33,42 @@ var myController = {
         });
 
         $("#btn_ChangeForm").off("click").on("click", function () {
-            myController.ChangeForm();
+            myController.ResetForm();
         });
-
-        $('#btn_SaveData').on('click', function () {
-            var content = CKEDITOR.instances['content'].getData();
-            var TenBaiViet = $('#TenBaiViet').val();
-
-            if (content == "") {
-                alert("Bạn chưa có bài viết");
-                return;
-            }
-            $.ajax({
-                url: 'http://localhost:3000/Controller/admin/Crud/BaiViet/SaveData.php',
-                method: 'Post',
-                data: {
-                    TenBaiViet: TenBaiViet,
-                    content: content,
-                },
-                dataType: 'json',
-                success: function (response) {
-                    if (response.status) {
-                        alert("Thêm mới thành công");
-                    }
-                },
-                error: function (error) {
-                    console.log('Error:', error);
-                }
-            });
-
+        $("#btn_SaveDataBaiViet").off("click").on("click", function () {
+            myController.SaveBaiViet();
         });
+        // $('#btn_SaveDataBaiViet').on('click', function () {
+        //     var content = CKEDITOR.instances['content'].getData();
+        //     var TenBaiViet = $('#TenBaiViet').val();
+        //     var IdBaiViet = $('#IdBaiViet').val();
+
+        //     if (IdBaiViet <=0) {
+        //         return;
+        //     }
+        //     if (content == "") {
+        //         alert("Bạn chưa có bài viết");
+        //         return;
+        //     }
+        //     $.ajax({
+        //         url: 'http://localhost:3000/Controller/admin/Crud/BaiViet/UpdateBaiViet.php',
+        //         method: 'Post',
+        //         data: {
+        //             TenBaiViet: TenBaiViet,
+        //             content: content,
+        //         },
+        //         dataType: 'json',
+        //         success: function (response) {
+        //             if (response.status) {
+        //                 alert("Thêm mới thành công");
+        //             }
+        //         },
+        //         error: function (error) {
+        //             console.log('Error:', error);
+        //         }
+        //     });
+
+        // });
 
         $("#btn_SaveTopList").off("click").on("click", function () {
             myController.SaveData();
@@ -86,14 +92,11 @@ var myController = {
         var CreateDate = $("#CreateDate").val();
         var NguoiTao = $("#NguoiTao").val();
         var TrangThai = $("#TrangThai").prop('checked');
-
         var files = $("#duong_dan_tai_lieu")[0].files;
-
-        if (files.length <= 0) {
+        if (files.length <= 0 && IdTopList == 0) {
             alert("Bạn chưa chọn file ảnh");
             return;
         }
-
         // Tạo đối tượng FormData để gửi dữ liệu và tệp ảnh
         var formData = new FormData();
         formData.append('IdTopList', IdTopList);
@@ -123,14 +126,66 @@ var myController = {
                     if (response.status == true) {
                         alert("Cập nhập thành công");
                         myController.LoadTable();
-                        myController.resetForm();
+                        myController.ResetForm();
 
                     }
                 },
             });
+        } else {
+            $.ajax({
+                url: 'http://localhost:3000/Controller/admin/Crud/BaiViet/EditTopList.php',
+                method: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.status == true) {
+                        alert("Sửa thành công");
+                        myController.LoadTable();
+                        myController.ResetForm();
+                    }
+                }, error: function (error) {
+                    alert("Sửa thành công");
+                    myController.LoadTable();
+                    myController.ResetForm();
+                }
+            });
         }
     },
 
+    SaveBaiViet: function () {
+        var content = CKEDITOR.instances['content'].getData();
+        var TenBaiViet = $('#TenBaiViet').val();
+        var IdBaiViet = $('#IdBaiViet').val();
+
+        if (IdBaiViet <= 0) {
+            return;
+        }
+        if (content == "") {
+            alert("Bạn chưa có bài viết");
+            return;
+        }
+
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/BaiViet/UpdateBaiViet.php',
+            method: 'Post',
+            data: {
+                TenBaiViet: TenBaiViet,
+                content: content,
+                IdBaiViet: IdBaiViet,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    alert("Thêm mới thành công");
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+
+    },
     LoadTable: function () {
         $(document).ready(function () {
             $.ajax({
@@ -153,8 +208,44 @@ var myController = {
             });
         });
     },
+    LoadDetail: function (IdTopList) {
+        $.ajax({
+            url: 'http://localhost:3000/Controller/admin/Crud/BaiViet/Detail.php',
+            method: 'Get',
+            data: {
+                //truyền vào detailphp
+                IdTopList: IdTopList,
 
-    FormChiTiet:function(IdTopList){
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status) {
+                    var datax = response.datax;
+                    if (datax != null) {
+
+                        $("#urlAnh").attr('src', datax.UrlAnh);
+                        $("#urlAnh").css('width', '100%');
+                        $("#urlAnh").css('border-radius', '0%');
+                        $("#IdTopList").val(datax.IdTopList);
+                        $("#TieuDe").val(datax.TieuDe);
+                        $("#NoiDung").val(datax.NoiDung);
+                        $("#CreateDate").val(datax.CreateDate);
+                        if (datax.TrangThai == 1) {
+                            $("#TrangThai").prop('checked', true);
+                        } else {
+                            $("#TrangThai").prop('checked', false);
+                        }
+
+
+                    }
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    },
+    FormChiTiet: function (IdTopList) {
         if (IdTopList <= 0) {
             return;
         }
@@ -183,12 +274,13 @@ var myController = {
         });
     },
 
+
 };
 myController.init();
 
 function ChucNang(e, value, row, index) {
     return [
-        '<div style="">',
+        '<div style="85px">',
         '<a href="javaScript:myController.LoadDetail(' + value.IdTopList + ')" class="btn btn-primary btn-sm"><i class="bi bi-pencil mr-0"></i></a>',
         '<a  style="margin-left:10px" href="javaScript:myController.FormChiTiet(' + value.IdTopList + ')" class="btn btn-success btn-sm ml-1"><i class="bi bi-postcard"></i></a>',
         '</div>'

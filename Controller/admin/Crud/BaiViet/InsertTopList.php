@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $NoiDung=$_POST['NoiDung'];
     $CreateDate=$_POST['CreateDate'];
     $NguoiTao=$_POST['NguoiTao'];
-    $TrangThai=$_POST['TrangThai'] = 'false' ? 0 : 1 ;
+    $TrangThai=$_POST['TrangThai'] = false ? 0 : 1 ;
     $response = [];
 
 

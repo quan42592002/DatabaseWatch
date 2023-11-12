@@ -120,7 +120,7 @@ var myController = {
                         $("#createdate").val(record.CreateDate);
                         $("#urlAnh").attr('src', record.UrlSlider);
                         $("#urlAnh").css('width', '100%')
-                        $("#urlAnh").css('border-radius', '0%')
+                        $("#urlAnh").css('border-radius','0%')
 
                     }
                 }
