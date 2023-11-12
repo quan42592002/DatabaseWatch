@@ -1,5 +1,5 @@
-<input type="hidden" id="IdChiTietDongHo" value="<?php
-                                                    echo  $_GET['IdChiTietDongHo'];
+<input type="hidden" id="IdDongHo" value="<?php
+                                                    echo  $_GET['IdDongHo'];
                                                     ?>">
 <div class="main-full page">
     <div class="main-container">

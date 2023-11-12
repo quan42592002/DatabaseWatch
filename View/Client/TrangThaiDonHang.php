@@ -9,37 +9,28 @@
     font-weight: 600;
     color: cornflowerblue;">Lịch sử đơn hàng</a></h3>
     </div>
-    <div id="lstHistory">
-
+    <div>
+        <section>
+            <div id="lstHistory">
+            </div>
+        </section>
     </div>
 
 </div>
 
-<script id="data-gio-hang" type="x-tmpl-mustache">
-    <section>
-        <div>
-            <div style="display: flex;">
-                <h4>Ngày mua hàng: 11/10/2023</h4>
-                <h4 style="margin-left: 51%;">Trạng thái: <span style="color:red">Đơn hàng đang được xét duyệt</span></h4>
-            </div>
-            <div class="order-item">
-                <img src="https://placekitten.com/300/200" alt="Product 1">
-                <h2>Product 1</h2>
-                <p>Giá: $50.00</p>
-                <p>Số lượng: 1</p>
-            </div>
-
-            <div class="order-item">
-                <img src="https://placekitten.com/300/201" alt="Product 2">
-                <h2>Product 2</h2>
-                <p>Giá: $40.00</p>
-                <p>Số lượng: 2</p>
-            </div>
+<script id="data-history" type="x-tmpl-mustache">
+    <div class="order-item" style="display: block;">
+        <div  style="display: flex;">
+        <img src="{{ Url_anh }}" alt="">
+        <h4>{{TenDongHo}} / <span style="color:red">{{TrangThaiFalse}}</span> <span style="color:green">{{TrangThaiTrue}}</span>/Số lượng : {{SoLuongMua}}</h4>
+    </div>
+        <div class="box-price" style="margin: 0;">
+            <p style="color:#8a8a8a">Giá bán : {{ GiaBan }}</p>
         </div>
-    </section>
+    </div>
 </script>
 
-<!-- <div class="ent-container ent-flex" id="hidden-list">
+<div class="ent-container ent-flex" id="hidden-list">
         <div class="tbhh">
             <div class="alerttb"> <i class="cartnew-tb"></i><strong>Không có thông tin sản phẩm nào</strong> </div>
             <div class="ordercontent">
@@ -48,7 +39,7 @@
             <div class="timetakegoods"> <button onclick="history.back()">Quay lại</button> </div>
             <div class="timetakegoods" style="float: right;"> <a href="http://localhost:3000/main.php?controller=TrangChuController" class="buyanother"> Về trang chủ </a> </div>
         </div>
-    </div> -->
+    </div>
 <link rel="stylesheet" href="http://localhost:3000/Assets/css/trangthaidon.css">
 <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
-<link rel="stylesheet" href="http://localhost:3000/Assets/user/js/HistoryCard.js">
+<script src="http://localhost:3000/Assets/user/js/History.js"></script>

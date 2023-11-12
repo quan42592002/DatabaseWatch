@@ -1,12 +1,12 @@
-var myGioHang = {
+var myHistory = {
     init: function () {
-        myGioHang.LoadData();
+        myHistory.LoadData();
     },
 
     LoadData: function () {
         var UsersId = $("#UsersId").val();
         $.ajax({
-            url: 'http://localhost:3000/Controller/user/Crud/GioHang/LoadData.php',
+            url: 'http://localhost:3000/Controller/user/Crud/GioHang/HistoryCardUser.php',
             method: 'Get',
             data: {
                 UsersId: UsersId
@@ -14,37 +14,41 @@ var myGioHang = {
             dataType: 'json',
             success: function (response) {
                 if (response.status) {
-                    var lstGioHang = response.lstGioHang;
-                    if (lstGioHang.length > 0) {
+                    var lstDonHang = response.lstDonHang;
+                   
+                    if (lstDonHang.length > 0) {
+                        $("#hidden-list-1").show();
+                        $("#hidden-list").hide();
                         var html = '';
-                        var template = $('#data-gio-hang').html();
+                        var template = $('#data-history').html();
                         var tong_tien = 0;
 
-                        $.each(lstGioHang, function (i, item) {
+                        $.each(lstDonHang, function (i, item) {
                             html += Mustache.render(template, {
                                 TenDongHo: item.NamNu == "Nam" ? item.TenDongHo + " 42mm Nam " + item.MaDongHo : item.TenDongHo + " 38mm Nữ " + item.MaDongHo,
-                                GiaBan: myGioHang.formatCurrency(String(parseInt(item.GiaBan * item.SoLuongMua))),
+                                GiaBan: myHistory.formatCurrency(String(parseInt(item.GiaBan * item.SoLuongMua))),
                                 Url_anh: item.Url_anh,
                                 GiamGia: item.GiamGia,
+                                TrangThaiTrue: item.TrangThai == 1 ? " Đặt hàng thành công " : "" , 
+                                TrangThaiFalse: item.TrangThai == 0 ? " Đang xử lý " : "" , 
                                 Id: item.Id,
                                 SoLuongMua: item.SoLuongMua,
-                                GiaGiam: myGioHang.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
+                                GiaGiam: myHistory.formatCurrency(String(parseInt(((item.GiaBan * item.GiamGia) / 100)) + parseInt(item.GiaBan))),
                                 IdChiTietDongHo: item.IdChiTietDongHo
                             });
                             tong_tien += parseInt(item.GiaBan * item.SoLuongMua);
                         });
-                        $('#sub-price').html(myGioHang.formatCurrency(String(tong_tien)));
-                        $('#lst_GioHang').html(html);
+                        $('#sub-price').html(myHistory.formatCurrency(String(tong_tien)));
+                        $('#lstHistory').html(html);
                     } else {
-                        var html = '<div class="alerttb"><div><img src="/UpLoad/Public/empty-cart.png" alt="" width="200px"></div><i class="cartnew-tb"></i><strong>Không có sản phẩm trong giỏ hàng</strong></div>';
-                        $('#lst_GioHang').html(html);
+                        $("#hidden-list-1").hide();
+                        $("#hidden-list").show();
+                    
                     }
-                    myGioHang.Event();
                 }
             },
             error: function (error) {
-                var html = '<div class="alerttb"><div><img src="/UpLoad/Public/empty-cart.png" alt="" width="200px"></div><i class="cartnew-tb"></i><strong>Không có sản phẩm trong giỏ hàng</strong></div>';
-                $('#lst_GioHang').html(html);
+              
             }
         });
     },
@@ -56,5 +60,5 @@ var myGioHang = {
         return n2.split('').reverse().join('') + ' VNĐ';
     }
 }
-myGioHang.init();
+myHistory.init();
 

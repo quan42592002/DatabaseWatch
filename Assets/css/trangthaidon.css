@@ -1,6 +1,8 @@
 section {
     padding: 1rem;
     border: 1px dashed #288ad6;
+    overflow-y: scroll;
+    height: 526px;
 }
 
 .order-item {

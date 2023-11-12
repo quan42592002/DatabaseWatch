@@ -29,8 +29,8 @@ var myKey={
                             html += Mustache.render(template, {
                                 url:item.Url_anh,
                                 TenDongHo: item.TenDongHo,
-                                // GiaBan: item.GiaBan,
-                                // GiamGia:item.GiamGia,
+                                GiaBan: myKey.formatCurrency(String(item.GiaBan)),
+                                GiamGia:item.GiamGia,
                             });
                         });
     
@@ -41,5 +41,11 @@ var myKey={
             }
         });
     },
+
+    formatCurrency: function (number) {
+        var n = number.split('').reverse().join("");
+        var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+        return n2.split('').reverse().join('') + ' VNĐ';
+    }
 }
 myKey.init();
