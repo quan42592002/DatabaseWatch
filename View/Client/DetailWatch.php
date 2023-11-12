@@ -1,475 +1,201 @@
 <input type="hidden" id="IdDongHo" value="<?php
-                                                    echo  $_GET['IdDongHo'];
-                                                    ?>">
-<div class="main-full page">
-    <div class="main-container">
-        <ol class="page-menu">
-            <li>
-                <a href="">
-                    <span>
-                        <i class="bi bi-house-door-fill"></i>
-                    </span>
-                </a>
-                <span class="next"> > </span>
-            </li>
-            <li>
-                <a href="">
-                    <span id="TenDongHo"></span>
-                </a>
-            </li>
-        </ol>
-        <h1 class="title" id="TenDongHoMain"></h1>
-        <div class="box-title">
-            <a href="" class="title-evaluate">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-                4
-                <span>đánh giá</span>
-            </a>
-            <div class="save">
-                <i class="bi bi-heart"></i>
-                lưu sản phẩm
+                                            echo  $_GET['IdDongHo'];
+                                            ?>">
+<input type="hidden" id="UsersId" value="<?php
+                                            if (isset($_SESSION['IdRole'])) {
+                                                echo $_SESSION['IdUsers'];
+                                            }
+                                            ?>">
+<!-- body-product -->
+<div class="body-product" style="margin-top: 35px;">
+    <!--body-product-left -->
+    <div class="body-product-left">
+        <!-- product-item -->
+        <div class="product-item">
+            <!-- image-item -->
+            <div onload="onload()" class="image-product-item">
+                <div class="img-slide">
+                    <div class="">
+                        <div class="img-show">
+                            <img id="urlFlieAnh" src="" alt="">
+                        </div>
+                        <ul class="sub-img-show flashsale-main" id="lstAnhSanPham">
+
+                        </ul>
+
+                    </div>
+                    <div class="img-slide2">
+                        <div class="img-show">
+                            <img id="slide-show" src="Image_dalis/galaxy-s7-edge-1black.jpg" alt="">
+                        </div>
+                        <ul class="sub-img-show">
+                            <li><img style="border: none;" id="img1" onclick="change_img('img5')" src="http://localhost:3000/UpLoad/DongHo/1699618077_1-KHUNG-SP-6676612-1785849039.webp" alt=""></li>
+                            <li><img style="border: none;" id="img2" onclick="change_img('img6')" src="http://localhost:3000/UpLoad/DongHo/1699618077_1-KHUNG-SP-6676612-1785849039.webp" alt=""></li>
+                            <li><img style="border: none;" id="img3" onclick="change_img('img7')" src="http://localhost:3000/UpLoad/DongHo/1699618077_1-KHUNG-SP-6676612-1785849039.webp" alt=""></li>
+
+
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <!-- END image-item -->
+            <!-- sub-item -->
+            <div class="sub-item">
+                <div class="name-item" id="TenDongHoMain"> </div>
+                <!-- status brand -->
+                <ul class="status-brand">
+                    <li>Số lượng: &nbsp; <h style="font-weight: bold;" id="SoLuong">Còn hàng</h>
+                    </li>
+                    <li>Thương hiệu: &nbsp; <h style="font-weight: bold;" id="ThuongHieu"></h>
+                    </li>
+                </ul>
+                <!--end status brand -->
+                <div style="display: flex;">
+                    <h4>Giá bán:<h2 id="GiaBan" style="margin-top: 12px;
+    margin-left: 15px;"></h2>
+                    </h4>
+                </div>
+                <div style="display: flex; color: gray;">
+                    <h4 style="margin-top: 5px;">Giá Giảm:<h2 id="GiaGiam" style="text-decoration: line-through;margin-top: 0px;
+    margin-left: 15px;"></h2>
+                    </h4>
+                </div>
+                <!-- quantity -->
+                <div class="quantity">
+                    <div id="btnThemGio">
+                    </div>
+                    <div class="" style="margin-left: 10px;"><a class="btn btn-primary" href="">MUA NGAY</a> </div>
+                </div>
+                <!--End quantity -->
+            </div>
+
+            <!-- END sub-item -->
         </div>
-        <div class="main-container">
-            <div class="main-left">
-                <!-- date-slide1 -->
-                <div class="data-slide-1">
-                    <div class="image image-theme image-loaded image-drag">
-                        <div class="image-stage-outer image-height" style="height: auto;">
-                            <div class="image-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 4690px;">
-                                <!-- sub-image-detail -->
-                                <div class="sub-image-detail" style="width: 670px;" id="lstAnhSanPham">
+        <!--END-product-item -->
 
-                                </div>
-                                <script>
-                                    $(document).ready(function() {
-                                        $('.sub-image-detail').slick({
-                                            infinite: true,
-                                            slidesToShow: 1,
-                                            slidesToScroll: 1
-                                        });
-                                    });
-                                </script>
-                            </div>
-                        </div>
-                        <div class="image-nav">
-                            <button type="button" role="presentation" class="image-prev disabled">
-                                <i class="leftPrePro"></i>
-                            </button>
-                            <button type="button" role="presentation" class="image-prev disabled">
-                                <i class="rightNextPro"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- End dataslide1 -->
-                <div class="data-slide-2">
-                    <div data-tab="3" id="thumb-images-gallery-sp" class="data-slide-2-item item active">
-                        <picture class="item-border">
-                            <source type="image/jpeg" data-srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" srcset="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg">
-                            <img class=" lazyloaded" width="120" height="120" src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" data-src="https://wscdn.vn/upload/original-image/uploads/images/OP990-45ADGS-GL-X-1-1654832239373.jpg?size=800x800&fomat=jpeg" alt="Olym Pianus OP990-45ADGS-GL-X - Hình 1" style="width: 68.400px; height: 68.400px;">
-                        </picture>
-                    </div>
-                </div>
-                <div class="data-slide-3">
-                    <a href="/collections/dong-ho-olym-pianus-chinh-hang">
-                        <picture class="data-slide-3-logo">
-                            <img data-id="206359" class="img_list_206359" src="https://www.watchstore.vn/upload/original-image/logo-Olym-Pianus.jpg" alt>
-                        </picture>
-                    </a>
-                    <p>
-                        "Olym Pianus là tên một dòng đồng hồ đến từ thương hiệu Olympia, ra đời vào những năm 50 của thế kỷ 20, tại Thụy Sĩ."
-                    </p>
-                    <p>
-                        <a href="https://www.watchstore.vn/blogs/news/dong-ho-olym-pianus-cua-nuoc-nao--co-tot-khong--335">Xem thêm >>></a>
-                    </p>
-                </div>
-                <div id="data-slide-6" class="comdetail data-slide-6 ent-left formkh">
-                    <h2 class="evaluate">Đánh giá review Olym Pianus OP990-45ADGS-GL-X</h2>
-                    <div class="toprt">
-                        <div class="crt ent-flex">
-                            <div class="star-left">
-                                <span class="lt-f"> 5 </span>
-                                <span class="istar">
-                                    <i class="bi bi-star-fill" style="margin-right: 10px;"></i>
-                                    <i class="bi bi-star-fill" style="margin-right: 10px;"></i>
-                                    <i class="bi bi-star-fill" style="margin-right: 10px;"></i>
-                                    <i class="bi bi-star-fill" style="margin-right: 10px;"></i>
-                                    <i class="bi bi-star-fill" style="margin-right: 10px;"></i>
-                                </span>
-                            </div>
-                            <a class="click_show_cmt"> Viết đánh giá </a>
-                        </div>
-                        <div class="text_rv">
-                            <i class="bi bi-check-circle"></i>
-                            WatchStore cam kết 100% đánh giá đều đến từ khách đã mua hàng
-                        </div>
-                    </div>
-                    <div class="title_dg"> 3 đánh giá</div>
-                    <div class="filter_rv">
-                        <div class="title_filter_rv">
-                            Lọc đánh giá
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                    </div>
-                    <div class="arrow-filter" style="display: none;"></div>
-                    <div class="ul_item_rv" style="display: none;">
-                        <div data-v="2" class="ul_item_rv_item dis100">
-                            <span class="i_star">
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                            </span>
-                            <span class="pt_star">100%</span>
-                        </div>
-                        <div data-v="1" class="ul_item_rv_item dis0">
-                            <span class="i_star">
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star"></i>
-                                <i class="icontt-star-dark"></i>
-                            </span>
-                            <span class="pt_star">0%</span>
-                        </div>
-                    </div>
-                    <div class="list ratingLst danhgia">
-                        <div class="cont_bl_t">
-                            <div class="cont_bl">
-                                <div id="r-3268danhgia" class="par">
-                                    <div class="name">
-                                        <span>Lo Duy Long</span>
-                                        <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
-                                        </label>
-                                    </div>
-                                    <div class="Address">
-                                        <span> Thanh Chăn - Điện Biên </span>
-                                    </div>
-                                    <div class="star">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </span>
-                                        <i>Nhân viên phục vụ chuyên nghiệp</i>
-                                        <div class="image-dg">
-                                            <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
-                                            </picture>
-                                        </div>
-                                    </div>
+        <div class="describe">
+            <ul>
+                <li style="border-bottom:4px solid red;" id="s-b1">Mô tả sản phẩm</li>
+                <li id="s-b2">Giới thiệu</li>
+            </ul>
+        </div>
 
-                                    <div class="cmt">
-                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
-                                            <i class="iconcom-likeR">
-                                                8 thích
-                                            </i>
-                                        </a>
-                                        <a id="1104" data-class="danhgia" href="javascript:void(0)" class="cmt2">
-                                            <i class="iconcom-tl">
-                                                Trả lời
-                                            </i>
-                                        </a>
-                                        <span> | </span>
-                                        <a class="date">11/04/2023</a>
-                                    </div>
-                                </div>
-                                <div id="r-3268danhgia" class="par">
-                                    <div class="name">
-                                        <span>Lo Duy Long</span>
-                                        <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
-                                        </label>
-                                    </div>
-                                    <div class="Address">
-                                        <span> Thanh Chăn - Điện Biên </span>
-                                    </div>
-                                    <div class="star">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </span>
-                                        <i>Nhân viên phục vụ chuyên nghiệp</i>
-                                        <div class="image-dg">
-                                            <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
-                                            </picture>
-                                        </div>
-                                    </div>
 
-                                    <div class="cmt">
-                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
-                                            <i class="iconcom-likeR">
-                                                8 thích
-                                            </i>
-                                        </a>
-                                        <a id="1104" data-class="danhgia" href="javascript:void(0)" class="cmt2">
-                                            <i class="iconcom-tl">
-                                                Trả lời
-                                            </i>
-                                        </a>
-                                        <span> | </span>
-                                        <a class="date">11/04/2023</a>
-                                    </div>
-                                </div>
-                                <div id="r-3268danhgia" class="par">
-                                    <div class="name">
-                                        <span>Lo Duy Long</span>
-                                        <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
-                                        </label>
-                                    </div>
-                                    <div class="Address">
-                                        <span> Thanh Chăn - Điện Biên </span>
-                                    </div>
-                                    <div class="star">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </span>
-                                        <i>Nhân viên phục vụ chuyên nghiệp</i>
-                                        <div class="image-dg">
-                                            <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
-                                            </picture>
-                                        </div>
-                                    </div>
 
-                                    <div class="cmt">
-                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
-                                            <i class="iconcom-likeR">
-                                                8 thích
-                                            </i>
-                                        </a>
-                                        <a id="1104" data-class="danhgia" href="javascript:void(0)" class="cmt2">
-                                            <i class="iconcom-tl">
-                                                Trả lời
-                                            </i>
-                                        </a>
-                                        <span> | </span>
-                                        <a class="date">11/04/2023</a>
-                                    </div>
-                                </div>
-                                <div id="r-3268danhgia" class="par">
-                                    <div class="name">
-                                        <span>Lo Duy Long</span>
-                                        <label class="tt">
-                                            <i class="bi bi-check-circle-fill" margin-right="4px"> Đã mua hàng</i>
-                                        </label>
-                                    </div>
-                                    <div class="Address">
-                                        <span> Thanh Chăn - Điện Biên </span>
-                                    </div>
-                                    <div class="star">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </span>
-                                        <i>Nhân viên phục vụ chuyên nghiệp</i>
-                                        <div class="image-dg">
-                                            <picture>
-                                                <source type="image/webp" data-srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp" srcset="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=webp">
-                                                <img class=" ls-is-cached lazyloaded" width="133" height="100" src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" data-src="https://wscdn.vn/upload-kh/original-image/uploads/comments/78f3bcc6-e1cc-4e43-b9bd-3f303ad2cf98.jpeg?size=800xauto&fomat=jpeg" alt="">
-                                            </picture>
-                                        </div>
-                                    </div>
+    </div>
+    <!-- END body-product-left -->
 
-                                    <div class="cmt">
-                                        <a data-rate="1104" href="javascript:void(0)" class="cmt1">
-                                            <i class="iconcom-likeR">
-                                                8 thích
-                                            </i>
-                                        </a>
-                                        <a id="1104" data-class="danhgia" href="javascript:void(0)" class="cmt2">
-                                            <i class="iconcom-tl">
-                                                Trả lời
-                                            </i>
-                                        </a>
-                                        <span> | </span>
-                                        <a class="date">11/04/2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <form class="main-right form_right" method="POST" action="https://www.watchstore.vn/cart?v=1">
-                <input type="hidden" name="main-right" value="m7DBLD3IjFrptDyhSw0Tg49wkl9tSTd5eYhNIItI">
-                <div class="box-price">
-                    <span class="price">
-                        <strong class="product__price on-sale" id="GiaBan"></strong>
-                        <span class="linethough product__price product__price--compare" id="GiaGiam"> 8.800.000₫ </span>
-                        <label class="discount" id="discountSP"></label>
-                    </span>
-                </div>
 
-                <div class="box-button area_order">
-                    <button type="submit" name="buy" class="btn-buynow " value="0">
-                        Mua ngay - Freeship
-                        <span>Kiểm tra hàng trước khi thanh toán</span>
-                    </button>
-                    <button type="submit" name="buy" href="javascript:void(0);" class="btn-buyFundiin" value="1">
-                        Mua qua Fundiin
-                        <span>Đeo trước trả sau miễn lãi</span>
-                    </button>
-                </div>
-                <p class="advise">
-                    Đặt mua/tư vấn (8h30 - 22h30)
-                    <br>
-                    <a href="0828745800"> 0828745800</a>
-                    <a href="0828745800"> 0828745800</a>
-                    <a href="0828745800"> 0828745800</a>
-                </p>
-                <div class="box-policy">
-                    <div class="policy-top"> Chính sách mua hàng tại WatchStore.vn </div>
-                    <div class="policy-content">
-                        <p>
-                            <i class="icon-freeShip"> </i>
-                            FreeShip toàn quốc
-
-                        </p>
-                        <p>
-                            <i class="icon-doitra"></i>
-                            Đổi trả hàng trong 7 ngày
-
-                        </p>
-                        <p>
-                            <i class="icon-camket"></i>
-                            Cam kết hàng chính hãng
-
-                        </p>
-                        <p>
-                            <i class="icon-baohanh"> </i>
-                            Chế độ bảo hành 5 năm
-
-                        </p>
-                    </div>
-                </div>
-
-                <div id="parameter" class="parameter">
-                    <h2 class="par-name">Thông số Olym Pianus OP990-45ADGS-GL-X</h2>
-                    <div class="par-content">
-                        <table class="par-list">
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianus dcd</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">114</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianus dsadas</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianus aaaaaa</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td class="list-name">Thương Hiệu</td>
-                                    <td class="list-content">
-                                        <a href="/collections/dong-ho-olym-pianus-chinh-hang">Olym Pianussadsd</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <span class="btn-parameter xemthem">
-                        Xem đầy đủ thông số
-                    </span>
-                </div>
-            </form>
+    <!-- body-product-right -->
+    <div class="body-product-right">
+        <div class="profile-item">
+            <ul>
+                <li>Chất liệu: Da bò thật</li>
+                <li>Độ dầy: 0.6 ~ 0.8mm</li>
+                <li>Trọng lượng : 14g</li>
+                <li>Công nghệ: Cắt, khắc bằng Laser cho độ chính xác tuyệt đối trên sản phẩm</li>
+                <li>May thủ công hoàn toàn với những đôi bàn tay khéo léo, mỗi đường kim mũi chỉ thể hiện sự
+                    tâm huyết của người nghệ sĩ trên tác phẩm của mình, mang đến trải nghiệm tốt nhất cho
+                    người dùng</li>
+                <li>Sản xuất: Việt Nam.</li>
+            </ul>
         </div>
     </div>
+    <!-- END body-product-right -->
+</div>
 
-    <!-- cart-product -->
-    <script id="data-anh-san-pham" type="x-tmpl-mustache">
-        <div class="picture-detail">
-            <img src="{{ UrlFile }}" alt="">
+<!-- end-body-product -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+<div class="similar-product">
+    <div class="title-similar-product">SẢN PHẨM CÙNG LOẠI</div>
+    <div class="item-similar-product">
+        <div class="high-class">
+            <div class="high-class-main" id="lstDuLieu" style="    position: absolute;
+    top: 0px;
+    left: 119px;">
+                <!-- 1 -->
+
+            </div>
         </div>
+    </div>
+    <!--  -->
+</div>
+<script id="data-anh-san-pham" type="x-tmpl-mustache">
+    <li><img style="border: none;" src="{{ UrlFile }}" alt=""></li>
     </script>
+<script id="data-dong-ho-main" type="x-tmpl-mustache">
+    <div class="flashsale-product">
+      <div class="flashsale-product-main">
+        <div class="img-fls-product"><a href=""><img src="{{Url_anh}}" alt=""></a> </div>
+        <div class="name-fls-product">
+          <a href="javascript:myEventHome.DetailChiTiet({{IdDongHo}})" style="color:black"><h3>{{TenDongHo}}</h3></a>
+        </div>
+        <div class="price-fls-product">
+          <ul>
+            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
+            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">{{GiaGiam}}</a>
+              <div class="fls-discount">-{{GiamGia}}%</div>
+            </li>
+          </ul>
+        </div>
+        <div class="fls-rating">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-half"></i>
+          <i class="bi bi-star"></i>
+          <i style="font-size: 14px;font-style: normal;">9</i>
+          <a href="javascript:myEventHome.AddShopping({{IdDongHo}} , {{ SoLuong }})">
+            <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
+                Thêm vào giỏ hàng
+              </span></button>
+          </a>
+        </div>
+      </div>
+    </div>
+</script>
+</div>
 
-    <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-left.css">
-    <link rel="stylesheet" href="http://localhost:3000/Assets/css/chitiet-right.css">
-    <script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
-    <script src="http://localhost:3000/Assets/user/js/DetailWatch.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.luxury').slick({
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 2
+    });
+    $('.flashsale-main').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 500,
+    });
+    $('.high-class-main').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 51100,
+    });
+  });
+</script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js
+"></script>
+<link rel="stylesheet" href="http://localhost:3000/Assets/css/product.css">
+<script src="http://localhost:3000/Assets/user/js/mutasche.min.js"></script>
+<script src="http://localhost:3000/Assets/user/js/DetailWatch.js"></script>
