@@ -36,28 +36,10 @@ var myKey={
     
                         $('#list-productkey').html(html);
                     }
-             
-                    // $.each(listdata, function (i, item) {
-                    //     html += '<a class="product-key" href="">'+
-                    //    "<img src='"+ item.Url_anh+"'>"+
-                    //    '<div class="infor">'+
-                    //     '<div class="name-pk">'+item.TenDongHo +'</div>'+
-                    //     '<span class="showgia">'+   
-                    //     '<strong style="color: #ED1C24;font-weight: bold;line-height: 24px;">'+item.GiaBan+'</strong>'+
-                    //     "<span class='linethough'>"+item.GiaBan+"</span>"+
-                    //     "<label class='discount-pk'>"+item.GiamGia+"</label>"+
-                    //     "</span>"+
-                    //     "</div>"+       
-                    //     "</a>"
-                    // });
-
-
                 }
 
             }
         });
-   
-        
     },
 }
 myKey.init();

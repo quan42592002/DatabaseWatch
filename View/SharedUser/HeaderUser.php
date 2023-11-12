@@ -10,7 +10,7 @@
         <nav class="navbar header-navbar">
             <div id="cssmenu" class="menu-navbar">
                 <ul>
-                    <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Xả kho</span></a></li>
+                    <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Sản phẩm</span></a></li>
                     <li> <a href="/gioi-thieu"><span class="text_menu">Giới thiệu</span></a></li>
                     <li class="display-sub-menu" style="position: relative;"> <a href="/collections/dong-ho-nam-chinh-hang"><span class="text_menu">Menu <i class="bi bi-chevron-down"></i></span></a>
 
