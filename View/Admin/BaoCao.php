@@ -43,21 +43,24 @@
                 <label for="" class="form-label">Chọn năm :</label>
                 <select name="" id="cbNam" class="form-control">
                     <option value="">--Chọn theo năm--</option>
-                    <option value="1">Tháng 2019</option>
-                    <option value="2">Tháng 2020</option>
-                    <option value="3">Tháng 2021</option>
-                    <option value="4">Tháng 2022</option>
-                    <option value="5">Tháng 2023</option>
+                    <option value="2019">Năm 2019</option>
+                    <option value="2020">Năm 2020</option>
+                    <option value="2021">Năm 2021</option>
+                    <option value="2022">Năm 2022</option>
+                    <option value="2023">Năm 2023</option>
                 </select>
             </div>
 
-
+            <div class="form-group p-1" style="padding-left: 0px; padding-right: 0px;">
+                <button class="btn btn-primary" id="btnLoc" style="display: flex;margin: 10px;margin-top: 21px; "><i class="bi bi-funnel" style="margin-right: 10px;"></i>Lọc</button>
+            </div>
             <div class="form-group p-1" style="padding-left: 0px; padding-right: 0px;">
                 <button class="btn btn-secondary" id="btnXuatBaoCao" style="display: flex;margin: 10px;margin-top: 21px; "><i class="bi bi-save" style="margin-right: 10px;"></i>Xuất dạng exel</button>
             </div>
             <div class="form-group p-1" style="padding-left: 0px;">
                 <button class="btn btn-danger" id="btnpdf" style="display: flex;margin: 10px;margin-top: 21px; "><i class="bi bi-save" style="margin-right: 10px;"></i>Xuất dạng pdf</button>
             </div>
+
         </div>
 
         <div class="card-body p-2" style="display: flex;">
@@ -69,11 +72,12 @@
                                 <th data-field="Imei">Imei</th>
                                 <th data-field="TenDongHo">Tên đồng hồ</th>
                                 <th data-field="ThuongHieu">Thương hiệu</th>
+                                <th data-field="ThoiGian" >Thời gian</th>
                                 <th data-field="GiaMua" data-formatter="formatCurrency">Giá mua</th>
                                 <th data-field="GiaBan" data-formatter="formatCurrency">Giá bán</th>
-                                <th data-field="TienLai" data-formatter="TienLaiFomater">Giá bán</th>
-                                <th data-field="TrangThai">Trạng thái</th>
-                                <th data-field="TrangThai">Khách mua</th>
+                                <!-- <th data-field="TienLai" data-formatter="TienLaiFomater">Tiền lãi</th> -->
+                                <!-- <th data-field="TrangThai">Trạng thái</th> -->
+                                <th data-field="Username">Khách mua</th>
                             </tr>
                         </thead>
                         <!-- <tfoot>
