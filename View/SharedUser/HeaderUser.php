@@ -10,110 +10,8 @@
         <nav class="navbar header-navbar">
             <div id="cssmenu" class="menu-navbar">
                 <ul>
-                    <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Xả kho</span></a></li>
+                    <li> <a href="?controller=DanhSachSPController"><span class="text_menu" style="color: #DE0D0F;">Sản phẩm</span></a></li>
                     <li> <a href="/gioi-thieu"><span class="text_menu">Giới thiệu</span></a></li>
-                    <li class="display-sub-menu" style="position: relative;"> <a href="/collections/dong-ho-nam-chinh-hang"><span class="text_menu">Menu <i class="bi bi-chevron-down"></i></span></a>
-
-
-                        <!-- BEGIN SUB-menu-->
-                        <div class="sub-menu">
-                            <ul style="display: flex;" class="sub-menu-main">
-                                <!-- 1 -->
-                                <li style="margin-right:15px;">
-                                    <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Phổ biến nhất</span></a>
-                                    <ul>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-
-
-
-                                    </ul>
-                                </li>
-                                <!-- END 1 -->
-                                <!-- 2 -->
-                                <li style="margin-right:15px;">
-                                    <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Hàng cao cấp</span></a>
-                                    <ul>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-                                        <li><a style="line-height: 30px;" href="">Longines</a></li>
-
-
-
-                                    </ul>
-                                </li>
-
-                                <!-- 3 -->
-                                <li style="margin-right:15px;">
-                                    <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Các hãng khác</span></a>
-                                    <ul>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-                                        <li><a style="line-height: 30px;" href="">I&W Carnival</a></li>
-
-                                    </ul>
-                                </li>
-
-                                <!-- 4 -->
-                                <li style="margin-right:15px;">
-                                    <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Phân loại đồng đồ</span></a>
-                                    <ul>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-
-
-
-                                    </ul>
-                                </li>
-
-                                <!-- 5 -->
-                                <li style="margin-right:15px;">
-                                    <a style="line-height: 30px;border-bottom: 1px solid #E0E0E0;" href=""> <span>Phong cách</span></a>
-                                    <ul>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-                                        <li><a style="line-height: 30px;" href="">Casino</a></li>
-
-
-
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </div>
                         <script>
                             $('document').ready(function() {
                                 $('.display-sub-menu').hover(function() {
@@ -172,7 +70,6 @@
                       
                         <span class="showgia">   
                         <strong style="color: #ED1C24;font-weight: bold;line-height: 24px;">{{GiaBan}}</strong>
-                        <span class="linethough">{{GiaBan}}</span>
                         <label class="discount-pk">{{GiamGia}}%</label>
                         </span>
                     </div>       

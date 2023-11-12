@@ -8,11 +8,10 @@ $conect = $db->conn;
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Lấy dữ liệu từ form
-    $IdChiTietDongHo = $_GET['IdChiTietDongHo'];
+    $IdDongHo = $_GET['IdDongHo'];
 
-    $sql = "SELECT * FROM tbl_chitietdongho
-    JOIN tbl_dongho ON tbl_chitietdongho.IdDongHo = tbl_dongho.IdDongHo
-    Where IdChiTietDongHo = $IdChiTietDongHo;";
+    $sql = "SELECT * FROM tbl_dongho
+    Where IdDongHo = $IdDongHo;";
 
     $result = $conect->query($sql);
     $datax = $result->fetch_assoc();

@@ -29,35 +29,23 @@ var myKey={
                             html += Mustache.render(template, {
                                 url:item.Url_anh,
                                 TenDongHo: item.TenDongHo,
-                                // GiaBan: item.GiaBan,
-                                // GiamGia:item.GiamGia,
+                                GiaBan: myKey.formatCurrency(String(item.GiaBan)),
+                                GiamGia:item.GiamGia,
                             });
                         });
     
                         $('#list-productkey').html(html);
                     }
-             
-                    // $.each(listdata, function (i, item) {
-                    //     html += '<a class="product-key" href="">'+
-                    //    "<img src='"+ item.Url_anh+"'>"+
-                    //    '<div class="infor">'+
-                    //     '<div class="name-pk">'+item.TenDongHo +'</div>'+
-                    //     '<span class="showgia">'+   
-                    //     '<strong style="color: #ED1C24;font-weight: bold;line-height: 24px;">'+item.GiaBan+'</strong>'+
-                    //     "<span class='linethough'>"+item.GiaBan+"</span>"+
-                    //     "<label class='discount-pk'>"+item.GiamGia+"</label>"+
-                    //     "</span>"+
-                    //     "</div>"+       
-                    //     "</a>"
-                    // });
-
-
                 }
 
             }
         });
-   
-        
     },
+
+    formatCurrency: function (number) {
+        var n = number.split('').reverse().join("");
+        var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+        return n2.split('').reverse().join('') + ' VNĐ';
+    }
 }
 myKey.init();

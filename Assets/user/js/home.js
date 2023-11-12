@@ -54,8 +54,8 @@ var myEventHome = {
         });
     },
 
-    DetailChiTiet: function (IdChiTietDongHo) {
-        window.open('http://localhost:3000/main.php?controller=DetailWatchController&&IdChiTietDongHo=' + IdChiTietDongHo, '_self');
+    DetailChiTiet: function (IdDongHo) {
+        window.open('http://localhost:3000/main.php?controller=DetailWatchController&&IdDongHo=' + IdDongHo, '_self');
     },
 
     LoadDongHo: function () {

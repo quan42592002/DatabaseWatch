@@ -19,7 +19,6 @@ class LoginController
             // thực hiện câu truy vấn an toàn
             $username = $conect->real_escape_string($username);
             $password = $conect->real_escape_string($password);
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             $sql = "SELECT tbl_user.IdUsers, tbl_user.Username, tbl_user.Password , tbl_user.LoaiTaiKhoan ,tbl_user.TenDayDu
             FROM tbl_user 

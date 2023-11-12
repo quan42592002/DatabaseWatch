@@ -5,12 +5,12 @@ var myController = {
     },
 
     LoadDetail: function () {
-        var IdChiTietDongHo = $("#IdChiTietDongHo").val();
+        var IdDongHo = $("#IdDongHo").val();
         $.ajax({
             url: 'http://localhost:3000/Controller/user/Crud/DongHo/LoadDetail.php',
             method: 'Get',
             data: {
-                IdChiTietDongHo: IdChiTietDongHo,
+                IdDongHo: IdDongHo,
             },
             dataType: 'json',
             success: function (response) {
@@ -18,7 +18,7 @@ var myController = {
                     var lstData = response.lstData;
 
                     if (lstData != null) {
-                        var TenDongHoMain = lstData.NamNu == "Nam" ? lstData.TenDongHo + " 42mm Nam " + lstData.Imei : lstData.TenDongHo + " 38mm Nữ " + lstData.Imei;
+                        var TenDongHoMain = lstData.NamNu == "Nam" ? lstData.TenDongHo + " 42mm Nam " + lstData.MaDongHo : lstData.TenDongHo + " 38mm Nữ " + lstData.MaDongHo;
                         var GiaGiam = myController.formatCurrency(String(parseInt(((lstData.GiaBan * lstData.GiamGia) / 100)) + parseInt(lstData.GiaBan)));
                         $("#TenDongHo").html(lstData.TenDongHo);
                         $("#TenDongHoMain").html(TenDongHoMain);

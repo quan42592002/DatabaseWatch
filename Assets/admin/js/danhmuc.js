@@ -3,7 +3,9 @@ var myController = {
 
     init: function () {
         myController.resetForm();
+        //gọi hàm load table
         myController.LoadTable();
+        // gọi hàm đăng ký xự kiện
         myController.RegesterEvent();
     },
 
@@ -35,6 +37,7 @@ var myController = {
             }
         });
 
+        // cách sự kiện trong jquery
         $("#btn_TaoMoi").off("click").on("click", function () {
             myController.resetForm();
         });
@@ -50,6 +53,7 @@ var myController = {
     },
 
     resetForm: function () {
+        // gián cho các thẻ input giá trị   
         $("#Id").val(0);
         $("#SoThuTu").val("");
         $("#TenGoi").val("");
@@ -227,7 +231,7 @@ var myController = {
                 });
             } else {
                 $.ajax({
-                    url: 'http://localhost:3000/Controller/admin/Crud/ThuongHieu/EditData.php',
+                    url: 'http://localhost:3000/Controller/admin/Crud/DanhMuc/EditData.php',
                     method: 'Post',
                     data: {
                         Id: Id,
