@@ -3,18 +3,7 @@
         <div class="card-header">
             <h3>Thông kê</h3>
         </div>
-        <div style="width: 100%; display: flex">
-            <select name="" id="" class="form-control" style="width: 20%;">
-                <option value="">--Chọn phân loại --</option>
-                <option value="">1. Thống kê theo ngày</option>
-                <option value="">2. Thống kê theo tháng</option>
-                <option value="">2. Thống kê theo năm</option>
-            </select>
-
-            <input type="date" class="form-control" id="GiaBan"  style="width: 20%; margin-left: 10px;">
-
-
-        </div>
+      
         <div class="card-body p-2" style="display: flex;">
             <div class="" style="width: 25%;">
                 <!-- small box -->
@@ -92,25 +81,26 @@
         <h5>Sản phẩm bán chạy </h5>
         <div class="form-group" style="width: 100%; display: flex;">
             <div class="" style="width: 100%;">
-                <table class="styled-table">
-                    <tr>
-                        <th style="text-align: center;">Imeil</th>
-                        <th style="text-align: center;">Bảo hành</th>
-                        <th style="text-align: center;">Ngày bảo hành từ</th>
-                        <th style="text-align: center;">Đến ngày</th>
-                    </tr>
-                    <tbody id="tbl_ChiTietDongHo">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table id="tbl_BaoCao" data-classes="table table-striped table-bordered table-hover" data-toggle="table" data-mobile-responsive="true">
+                        <thead>
+                            <tr style="background: #b0b0aa;">
+                                <th data-field="Imei">Imei</th>
+                                <th data-field="TenDongHo">Tên đồng hồ</th>
+                                <th data-field="ThuongHieu">Thương hiệu</th>
+                                <th data-field="ThoiGian" >Thời gian</th>
+                                <th data-field="GiaMua" data-formatter="formatCurrency">Giá mua</th>
+                                <th data-field="GiaBan" data-formatter="formatCurrency">Giá bán</th>
+                                <th data-field="Username">Khách mua</th>
+                            </tr>
+                        </thead>
+                       
+                    </table>
             </div>
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/bootstrap.css">
+<link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/css/dashboard.css">
