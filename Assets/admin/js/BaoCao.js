@@ -20,6 +20,13 @@ var myController = {
                 }
             });
         });
+
+
+        $("#btnLoc").off("click").on("click", function () {
+            myController.LoadTable();
+        });
+
+
         $("#cbPhanLoai").off("change").on("change", function () {
 
             var cbPhanLoai = $("#cbPhanLoai").val();
@@ -50,20 +57,22 @@ var myController = {
 
     LoadTable: function () {
         $(document).ready(function () {
-            var search_ten = $("#Search_Ten").val();
-            var search_thuonghieu = $("#Search_ThuongHieu").val();
-            var search_loaiday = $("#Search_LoaiDay").val();
-            var search_kieudang = $("#Search_KieuDang").val();
-            var order_soLuong = $("#Order_SoLuong").val();
+            var TuNgay = $("#TuNgay").val();
+            var DenNgay = $("#DenNgay").val();
+            var cbThang = $("#cbThang").val();
+            var cbNam = $("#cbNam").val();
+            var cbPhanLoai = $("#cbPhanLoai").val();
+
+
             $.ajax({
                 url: 'http://localhost:3000/Controller/admin/Crud/BaoCao/LoadTable.php',
                 method: 'Get',
                 data: {
-                    search_ten: search_ten,
-                    search_thuonghieu: search_thuonghieu,
-                    search_loaiday: search_loaiday,
-                    search_kieudang: search_kieudang,
-                    order_soLuong: order_soLuong,
+                    TuNgay: TuNgay,
+                    DenNgay: DenNgay,
+                    cbThang: cbThang,
+                    cbNam: cbNam,
+                    cbPhanLoai: cbPhanLoai,
                 },
                 dataType: 'json',
                 success: function (response) {
@@ -96,7 +105,7 @@ var myController = {
                             '<tr>' +
                             '<th colspan="4">Tổng tiền bán</th>' +
                             '<th colspan="4">' + tien_fomater + '</th>' +
-                            '</tr>'+
+                            '</tr>' +
                             '<tr>' +
                             '<th colspan="4">Tổng tiền Lãi</th>' +
                             '<th colspan="4">' + tien_fomater + '</th>' +

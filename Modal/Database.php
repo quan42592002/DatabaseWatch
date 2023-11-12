@@ -7,7 +7,7 @@ class Database
     private $dbName = 'db_dongho';
     private $user = 'root';
     private $port = 3306;
-    private $password = 'Buimaianh4259';
+    private $password = '123456';
 
     // Hàm kết nối CSDL
     public function connect()
