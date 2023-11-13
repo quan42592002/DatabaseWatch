@@ -2,6 +2,7 @@ var myEventHome = {
 
     init: function () {
         myEventHome.LoadDongHo();
+        myEventHome.LoadBaiViet();
     },
 
     AddShopping: function (IdDongHo, SoLuong) {
@@ -58,6 +59,10 @@ var myEventHome = {
         window.open('http://localhost:3000/main.php?controller=DetailWatchController&&IdDongHo=' + IdDongHo, '_self');
     },
 
+    DetailBaiViet: function (IdTopList) {
+        window.open('http://localhost:3000/main.php?controller=DetailBaiVietController&&IdTopList=' + IdTopList, '_self');
+    },
+
     LoadDongHo: function () {
         $.ajax({
             // đường dẫn xử lý 
@@ -87,6 +92,53 @@ var myEventHome = {
                         });
 
                         $('#lstDuLieuMain').html(html);
+                    }
+                }
+            },
+        });
+    },
+
+    LoadBaiViet:function(){
+        $.ajax({
+            // đường dẫn xử lý 
+            url: 'http://localhost:3000/Controller/user/Crud/DongHo/LoadBaiViet.php',
+            method: 'Get', // 
+            dataType: 'json',
+            success: function (response) {
+                if (response.status == true) {
+                    var lstBaiViet = response.lstBaiViet;
+
+                    if (lstBaiViet != null) {
+                        var html = '';
+                        var html2 = '';
+                        var template = $('#data-bai-viet-chinh').html();
+                        var template2 = $('#data-bai-viet-phu').html();
+
+                        $.each(lstBaiViet, function (i, item) {
+                            if (item.IsBaiVietChinh == 1 ) {
+                                html += Mustache.render(template, {
+                                    IdTopList:item.IdTopList,
+                                    TieuDe:item.TieuDe,
+                                    UrlAnh:item.UrlAnh,
+                                    NoiDung:item.NoiDung,
+                                    NguoiTao:item.NguoiTao,
+                                    CreateDate:item.CreateDate
+                                });
+                            }else{
+                                html2 += Mustache.render(template2, {
+                                    IdTopList:item.IdTopList,
+                                    TieuDe:item.TieuDe,
+                                    UrlAnh:item.UrlAnh,
+                                    NoiDung:item.NoiDung,
+                                    NguoiTao:item.NguoiTao,
+                                    CreateDate:item.CreateDate
+                                });
+                            }
+                           
+                        });
+
+                        $('#lstBaiVietChinh').html(html);
+                        $('#lstBaiVietPhu').html(html2);
                     }
                 }
             },

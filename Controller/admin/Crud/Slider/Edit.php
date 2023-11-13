@@ -5,12 +5,7 @@ $db = new Database;
 $db->connect();
 $conn = $db->conn;
 
-// Kiểm tra xem kết nối đã thành công hay không
-if (!$conn) {
-    $response = ["status" => false];
-    echo json_encode($response);
-    exit();
-}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $name_slider = $_POST['nameSlider'];

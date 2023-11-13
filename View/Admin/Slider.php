@@ -19,7 +19,7 @@
                 <div class="" style="width: 30%;margin-left: 20px;">
                     <div class="form-group p-1" style="padding-top: 0px;">
                         <label for="" class="form-label">Tên Slider</label>
-                        <select id="nameslider" class="form-control"    >
+                        <select id="nameslider" class="form-control">
                         <option value="">-- Chọn phân loại --</option>
                             <option value="Trang Chủ">1. Trang Chủ</option>
                             <option value="Trang Shop">2. Trang Shop</option>
@@ -32,7 +32,7 @@
                     <div class="form-group" style="padding: 12px;">
                         <label class="control-label">Chọn tài liệu:</label>
                         <div class="input-group col-md-12">
-                            <input type="file" id="duong_dan_tai_lieu" name="duong_dan_tai_lieu" class="form-control" />
+                            <input type="file" id="duong_dan_tai_lieu" class="form-control" multiple/>
                         </div>
                     </div>
                 </div>

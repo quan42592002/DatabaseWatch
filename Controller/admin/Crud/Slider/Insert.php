@@ -6,13 +6,14 @@ $db = new Database;
 $db->connect();
 $conn = $db->conn;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] =='POST') {
     // Lấy dữ liệu từ form
 
     $name_slider = $_POST['nameSlider'];
     $create_date=$_POST['createdate'];
     $uploadDir = '../../../../UpLoad/Admin/Slider/'; // Thư mục lưu trữ tệp ảnh trên máy chủ
     $file = $_FILES['duong_dan_tai_lieu'];
+    
     if ($file['error'][0] === UPLOAD_ERR_OK) {
         $fileName = time() . '_' . $file['name'][0];
         $filePath = $uploadDir . $fileName; // tạo đường dẫn
@@ -36,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } 
         header('Content-Type: application/json');
         echo json_encode($response);
-            
+    }
         
-    }else {
+    else {
 
         $sql = "INSERT INTO  tbl_slider(NameSlider, CreateDate) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
@@ -56,14 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode($response);
     }
 
-
-
-  
-        
 }
-
-
-
-
-
 ?>
