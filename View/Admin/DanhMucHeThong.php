@@ -11,6 +11,7 @@
                 <option value="Danh mục loại dây">1. Danh mục loại dây</option>
                 <option value="Danh mục kiểu dáng">2. Danh mục kiểu dáng</option>
                 <option value="Danh mục thương hiệu">3. Danh mục thương hiệu</option>
+                <option value="SliderTrangChu">4.Slider Trang Chủ</option>
             </select>
         </div>
         <div class="card-body p-2" style="display: flex;">

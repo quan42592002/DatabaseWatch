@@ -44,7 +44,6 @@
                         <ul>
                             <li style="list-style: none;"><a href="?controller=DanhMucHeThongController">Danh mục hệ thống</a></li>
                             <li style="list-style: none;"><a href="?controller=TaiKhoanController">Danh sách tài khoản</a></li>
-                            <li style="list-style: none;"><a href="?controller=SliderController">Quản lý slider</a></li>
                             <li style="list-style: none;"><a href="?controller=BaiVietController">Quản lý bài viết</a></li>
                         </ul>
                     </div>

@@ -13,6 +13,7 @@ var myController = {
         $("#NoiDung").val("");
         $("#CreateDate").val("");
         $("#TrangThai").prop('checked', false);
+        $("#IsBaiVietChinh").prop('checked', false);
         $("#urlAnh").attr('src', "http://localhost:3000/UpLoad/Public/3135715.png");
         $("#urlAnh").css('border-radius', '0%');
         $("#urlAnh").css('width', '30%');
@@ -66,6 +67,8 @@ var myController = {
         var CreateDate = $("#CreateDate").val();
         var NguoiTao = $("#NguoiTao").val();
         var TrangThai = $("#TrangThai").prop('checked');
+        var IsBaiVietChinh = $("#IsBaiVietChinh").prop('checked');
+
         var files = $("#duong_dan_tai_lieu")[0].files;
         if (files.length <= 0 && IdTopList == 0) {
             alert("Bạn chưa chọn file ảnh");
@@ -79,6 +82,7 @@ var myController = {
         formData.append('CreateDate', CreateDate);
         formData.append('NguoiTao', NguoiTao);
         formData.append('TrangThai', TrangThai);
+        formData.append('IsBaiVietChinh', IsBaiVietChinh);
 
         for (var x = 0; x < files.length; x++) {
             if (files[x].size >= 52428800) {
@@ -210,8 +214,11 @@ var myController = {
                         } else {
                             $("#TrangThai").prop('checked', false);
                         }
-
-
+                        if (datax.IsBaiVietChinh == 1) {
+                            $("#IsBaiVietChinh").prop('checked', true);
+                        } else {
+                            $("#IsBaiVietChinh").prop('checked', false);
+                        }
                     }
                 }
             },

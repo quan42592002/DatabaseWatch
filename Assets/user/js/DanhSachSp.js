@@ -42,7 +42,7 @@ var myController={
                                 TenDongHo: item.TenDongHo,
                                 MaDongHo:item.MaDongHo,
                                 GiamGia:item.GiamGia,
-                                 GiaBan:myController.formatCurrency(item.GiaBan),
+                                 GiaBan:myController.formatCurrency(String(item.GiaBan)),
                                  GiaGiam: myController.DiscountPrice(item.GiaBan,item.GiamGia),
                             });
                         });

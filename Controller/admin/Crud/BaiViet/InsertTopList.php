@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $CreateDate=$_POST['CreateDate'];
     $NguoiTao=$_POST['NguoiTao'];
     $TrangThai=$_POST['TrangThai'] = false ? 0 : 1 ;
+    $IsBaiVietChinh=$_POST['IsBaiVietChinh'] = false ? 0 : 1 ;
     $response = [];
 
 
@@ -29,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         if (move_uploaded_file($file['tmp_name'][0], $filePath)) {
-            $sql = "INSERT INTO  tbl_baivietnoibat(TieuDe, NoiDung, CreateDate,NguoiTao,UrlAnh,FileName,TrangThai) VALUES (?, ?, ?,?,?, ?,?)";
+            $sql = "INSERT INTO  tbl_baivietnoibat(TieuDe, NoiDung, CreateDate,NguoiTao,UrlAnh,FileName,TrangThai,IsBaiVietChinh) VALUES (?, ?, ?,?,?, ?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssss", $TieuDe, $NoiDung, $CreateDate, $NguoiTao,$filePath,$filePath ,$TrangThai);
+            $stmt->bind_param("ssssssss", $TieuDe, $NoiDung, $CreateDate, $NguoiTao,$filePath,$filePath ,$TrangThai,$IsBaiVietChinh);
 
             if ($stmt->execute()) {
                 $IdTopList = $conn->insert_id;

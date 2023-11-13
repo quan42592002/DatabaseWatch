@@ -1,11 +1,11 @@
 <?php
-if (!isset($_SESSION['IdRole'])) {
+if (!isset($_SESSION['LoaiTaiKhoan'])) {
     echo '<script>window.location.href="http://localhost:3000/main.php?controller=LoginController";</script>';
     exit;
 }
 ?>
 <input type="hidden" id="UsersId" value="<?php
-                                            if (isset($_SESSION['IdRole'])) {
+                                            if (isset($_SESSION['LoaiTaiKhoan'])) {
                                                 echo $_SESSION['IdUsers'];
                                             }
                                             ?>">

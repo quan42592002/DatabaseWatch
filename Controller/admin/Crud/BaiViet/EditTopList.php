@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $CreateDate=$_POST['CreateDate'];
     $NguoiTao=$_POST['NguoiTao'];
     $TrangThai = ($_POST['TrangThai'] == 'false') ? 0 : 1;
+    $IsBaiVietChinh = ($_POST['IsBaiVietChinh'] == 'false') ? 0 : 1;
     $IdTopList=(int)$_POST['IdTopList'];
     $response = [];
 
@@ -29,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         if (move_uploaded_file($file['tmp_name'][0], $filePath)) {
-            $sql = "UPDATE  tbl_baivietnoibat SET TieuDe=?, NoiDung=?, CreateDate=?,NguoiTao=?,UrlAnh=?,FileName=?,TrangThai=? WHERE IdTopList=?";
+            $sql = "UPDATE  tbl_baivietnoibat SET TieuDe=?, NoiDung=?, CreateDate=?,NguoiTao=?,UrlAnh=?,FileName=?,TrangThai=?,IsBaiVietChinh=? WHERE IdTopList=?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssssss", $TieuDe, $NoiDung, $CreateDate, $NguoiTao,$filePath,$filePath ,$TrangThai,$IdTopList);
+            $stmt->bind_param("sssssssss", $TieuDe, $NoiDung, $CreateDate, $NguoiTao,$filePath,$filePath ,$TrangThai,$IsBaiVietChinh,$IdTopList);
             if ($stmt->execute()) {
                 $response = ["status" => true];
             } else {
@@ -41,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode($response);
         } 
     }else{
-        $sql = "UPDATE  tbl_baivietnoibat SET TieuDe=?, NoiDung=?, CreateDate=?,NguoiTao=?,TrangThai=? WHERE IdTopList=?";
+        $sql = "UPDATE  tbl_baivietnoibat SET TieuDe=?, NoiDung=?, CreateDate=?,NguoiTao=?,TrangThai=?,IsBaiVietChinh=? WHERE IdTopList=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $TieuDe, $NoiDung, $CreateDate, $NguoiTao,$TrangThai,$IdTopList);
+        $stmt->bind_param("sssssss", $TieuDe, $NoiDung, $CreateDate, $NguoiTao,$TrangThai,$IsBaiVietChinh,$IdTopList);
         if ($stmt->execute()) {
             $response = ["status" => true];
         } else {

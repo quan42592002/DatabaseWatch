@@ -2,7 +2,7 @@
                                             echo  $_GET['IdDongHo'];
                                             ?>">
 <input type="hidden" id="UsersId" value="<?php
-                                            if (isset($_SESSION['IdRole'])) {
+                                            if (isset($_SESSION['LoaiTaiKhoan'])) {
                                                 echo $_SESSION['IdUsers'];
                                             }
                                             ?>">

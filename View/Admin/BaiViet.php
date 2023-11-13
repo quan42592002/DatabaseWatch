@@ -48,6 +48,10 @@
                             <input type="checkbox" class="allCK" id='TrangThai'>
                         </div>
                         <div class="form-group p-1" style="padding-top: 0px;">
+                            <label for="" class="form-label" style="margin-right: 10px;">Bài viết chính:</label>
+                            <input type="checkbox" class="allCK" id='IsBaiVietChinh'>
+                        </div>
+                        <div class="form-group p-1" style="padding-top: 0px;">
                             <button class="btn btn-primary" id="btn_SaveTopList" style="width: 50%;
     text-align: center;
     margin-left: 106px; ">Cập nhập</button>

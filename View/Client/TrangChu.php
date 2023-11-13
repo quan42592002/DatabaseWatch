@@ -1,5 +1,5 @@
 <input type="hidden" id="UsersId" value="<?php
-                                          if (isset($_SESSION['IdRole'])) {
+                                          if (isset($_SESSION['LoaiTaiKhoan'])) {
                                             echo $_SESSION['IdUsers'];
                                           }
                                           ?>">
@@ -179,7 +179,35 @@
 </div>
 <!-- END HIGH-CLASS-PRODUCT -->
 <script id="data-dong-ho" type="x-tmpl-mustache">
-
+  <div class="flashsale-product">
+      <div class="flashsale-product-main">
+        <div class="img-fls-product"><a href=""><img src="{{Url_anh}}" alt=""></a> </div>
+        <div class="name-fls-product">
+          <a href="javascript:myEventHome.DetailChiTiet({{IdDongHo}})" style="color:black"><h3>{{TenDongHo}}</h3></a>
+        </div>
+        <div class="price-fls-product">
+          <ul>
+            <li> <a style="color:rgb(237,28,36);font-weight: bold;font-size: 16px;" href="">{{GiaBan}}</a></li>
+            <li style="display: flex;"><a style="color:rgb(164,164,164);font-size: 14px;text-decoration-line:line-through">{{GiaGiam}}</a>
+              <div class="fls-discount">-{{GiamGia}}%</div>
+            </li>
+          </ul>
+        </div>
+        <div class="fls-rating">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-half"></i>
+          <i class="bi bi-star"></i>
+          <i style="font-size: 14px;font-style: normal;">9</i>
+          <a href="javascript:myEventHome.AddShopping({{IdDongHo}} , {{ SoLuong }})">
+            <button type="button" title="Thêm vào giỏ hàng" class="action primary buynow"><span>
+                Thêm vào giỏ hàng
+              </span></button>
+          </a>
+        </div>
+      </div>
+    </div>
 </script>
 
 <script id="data-dong-ho-main" type="x-tmpl-mustache">
@@ -225,13 +253,13 @@
 <div class="toplist">
   <!-- left -->
   <div class="toplist-left" id="lstBaiVietChinh">
-  
+
   </div>
   <!--end left -->
 
   <!-- right -->
   <div class="toplist-right" id="lstBaiVietPhu">
-    
+
   </div>
   <!--end right -->
 
@@ -251,20 +279,20 @@
 </script>
 
 <script id="data-bai-viet-phu" type="x-tmpl-mustache">
-    <!-- 1 -->
-    <div class="tl-sub-right">
-      <!-- img -->
-      <div class="tl-sub-right-img">
-        <a href=""><img src="{{UrlAnh}}" alt=""></a>
-      </div>
-      <!-- content -->
-      <div class="tl-content-right">
-        <a href="javascript:myEventHome.DetailBaiViet({{IdTopList}})">
-          <h3 style="margin: 0px;font-size: 15px;">Top 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023</h3>
-        </a>
-        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Điểm danh 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023Thương hiệu Citizen luôn làm người dùng hài...</p>
-      </div>
+  <!-- 1 -->
+  <div class="tl-sub-right">
+    <!-- img -->
+    <div class="tl-sub-right-img">
+      <a href=""><img src="{{UrlAnh}}" alt=""></a>
     </div>
+    <!-- content -->
+    <div class="tl-content-right">
+      <a href="javascript:myEventHome.DetailBaiViet({{IdTopList}})">
+        <h3 style="margin: 0px;font-size: 15px;">Top 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023</h3>
+      </a>
+      <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Điểm danh 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023Thương hiệu Citizen luôn làm người dùng hài...</p>
+    </div>
+  </div>
 </script>
 <!-- BEGIN TOPLIST -->
 
@@ -276,39 +304,6 @@
 <!--END View-search -->
 <div class="viewtag">
   <p>Tìm kiếm nhiều:</p>
-  <a href="">Casino Edifice</a>
-  <a href="">codoithuongngan</a>
-  <a href="">aaa</a>
-  <a href="">dapvocaydan</a>
-  <a href="">hagiangoi</a>
-  <a href="">tam dao</a>
-  <a href="">ba vi</a>
-  <a href="">oique toi</a>
-  <a href="">thaibinhoi</a>
-  <a href="">Edifice</a>
-  <a href="">ánhad</a>
-  <a href="">ssss</a>
-  <a href="">lua</a>
-  <a href="">gao</a>
-  <a href="">thoc</a>
-  <a href="">Com</a>
-  <a href="">Ca</a>
-  <a href="">196 cau giay</a>
-  <a href="">police</a>
-  <a href="">Ton HTuong hương</a>
-  <a href="">Ma Sieu</a>
-  <a href="">ton kien</a>
-  <a href="">vienthieu</a>
-  <a href="">dienvi</a>
-  <a href="">taothao</a>
-  <a href="">Dongtrac</a>
-  <a href="">Luubu</a>
-  <a href="">quanvu</a>
-  <a href="">trieu tulong</a>
-  <a href="">thuan</a>
-  <a href="">phamvietanh</a>
-  <a href="">cocasi</a>
-
 
 
 </div>

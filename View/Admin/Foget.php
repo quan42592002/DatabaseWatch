@@ -1,36 +1,4 @@
-<?php
-include __DIR__ . '../../../Modal/Database.php';
-// Xử lý khi form được submit
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Lấy dữ liệu từ form
-    $username = $_POST['username'];
-    if ($username == "") {
-        $_SESSION['error'] = "Tài khoản không được để chống";
-    } else {
-        $db = new Database();
-        $db->connect();
-        $conect = $db->conn;
-
-        $username = $_POST['username'];
-
-        $sql = "SELECT tbl_user.IdUsers, tbl_user.Username, tbl_user.Password 
-        FROM tbl_user 
-        WHERE Username = '$username'";
-
-        $result = $conect->query($sql);
-
-        if ($result->num_rows > 0) {
-            echo '<script>window.location.href="?controller=FogetQuestionController";</script>';
-            exit;
-        } else {
-            $_SESSION['error'] = "Tài khoản không tồn tại";
-        }
-
-        $db->closeDatabase();
-    }
-}
-
-?>
+<?php  $this->foget();?>
 
 <div class="login" style="margin-top: 40px;">
     <img class="site-icon " src="http://localhost:3000/UpLoad/Public/Login.jpg"  width="580px">
@@ -53,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Tên tài khoản:</label>
-                    <input type="text" class="form-control" name="username" placeholder="Nhập tên tài khoản khôi phục">
+                    <input type="text" class="form-control" name="user_name" placeholder="Nhập tên tài khoản khôi phục">
                 </div>
                 <div class="form-group p-1">
                     <button class="btn btn-primary" style="display: flex;">Yêu cầu khôi phục</button>

@@ -92,6 +92,7 @@ var myEventHome = {
                         });
 
                         $('#lstDuLieuMain').html(html);
+                        $('#lstDuLieu').html(html);
                     }
                 }
             },

@@ -1,6 +1,6 @@
     <?php
     session_start();
-    if (isset($_SESSION['IdRole']) && $_SESSION['IdRole'] == 1) {
+    if (isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] == 1) {
         require('View/SharedAdmin/AHeadCssMenu.php');
         require('View/SharedAdmin/HeaderAdmin.php');
         require('View/SharedAdmin/MenuAdmin.php');
@@ -14,13 +14,13 @@
             <div class="row">
                 <?php
                 if (isset($_GET['controller'])) {
-                    if (isset($_SESSION['IdRole']) && $_SESSION['IdRole'] == 1) {
+                    if (isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] == 1) {
                         require 'Route/admin/web.php';
                     } else {
                         require 'Route/user/web.php';
                     }
                 } else {
-                    if (isset($_SESSION['IdRole']) && $_SESSION['IdRole'] == 1) {
+                    if (isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] == 1) {
                         require('View/Admin/DashBoard.php');
                     } else {
                         require('View/Client/TrangChu.php');
@@ -31,7 +31,7 @@
         </div>
     </div>
     <?php
-    if (isset($_SESSION['IdRole']) && $_SESSION['IdRole'] == 1) {
+    if (isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] == 1) {
         require('View/SharedAdmin/AFooterCssMenu.php');
     } else {
         require('View/SharedUser/UFooterCssMenu.php');

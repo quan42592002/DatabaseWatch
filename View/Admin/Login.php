@@ -5,17 +5,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($username == "" && $password == "") {
-        $_SESSION['error'] = "Tài khoản & mật khẩu không được để chống";
+        $_SESSION['error'] = "Tài khoản & mật khẩu không được để trống";
     } else if ($username == "") {
-        $_SESSION['error'] = "Tài khoản không được để chống";
+        $_SESSION['error'] = "Tài khoản không được để trống";
     } else if ($password == "") {
-        $_SESSION['error'] = "Mật khẩu không được để chống";
+        $_SESSION['error'] = "Mật khẩu không được để trống";
     } else {
         $_SESSION['error'] = null;
-        $result = $this->Login($username, $password);
+        $this->Login($username, $password);
     }
 }
-
 ?>
 
 <div class="login" style="margin-top: 40px;">
@@ -37,6 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "";
                 }
                 ?>
+                 <h3 class="message-done text-center">
+                  <?php
+                   if (isset($_GET['success'])) {
+                          echo urldecode($_GET['success']);
+                      }
+                  ?>
+                 </h3>
                 <div class="form-group p-1">
                     <label for="" class="form-label">Tài khoản</label>
                     <input type="text" class="form-control" name="username" placeholder="Nhập tài khoản ...">
@@ -49,7 +55,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button class="btn btn-primary" style="display: flex;">Đăng nhập</button>
                     <div class="foget-login"><a href="?controller=FogetController">Quên mật khẩu ?</a></div>
                 </div>
+                <p style="text-align: center;">Nếu bạn chưa có tài khoản, vui lòng <a href="?controller=RegisterController">Đăng ký</a> </p>
             </div>
         </div>
     </form>
 </div>
+<style>
+     .message-done {
+        color: #00b894;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 0;
+        padding: 5px;
+
+    }
+</style>
