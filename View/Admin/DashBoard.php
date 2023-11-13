@@ -12,8 +12,8 @@
                         <div class="inner" style="width: 63%;
                         text-align: center;
                         margin-top: 25px;">
-                            <h3>150</h3>
-                            <p>Sản phẩm đặt mua</p>
+                            <h3 id="tongNhap"></h3>
+                            <p>Tổng sản phẩm nhập kho</p>
                         </div>
                         <div class="icon">
                             <i class="bi bi-bag"></i>
@@ -30,8 +30,8 @@
                         <div class="inner" style="width: 63%;
                         text-align: center;
                         margin-top: 25px;">
-                            <h3>44</h3>
-                            <p>Tài khoản sử dụng</p>
+                            <h3 id="tongBan"></h3>
+                            <p>Tổng sản phẩm đã bán</p>
                         </div>
                         <div class="icon">
                             <i class="bi bi-person-fill-add"></i>
@@ -48,8 +48,8 @@
                         <div class="inner" style="width: 63%;
                         text-align: center;
                         margin-top: 25px;">
-                            <h3>44</h3>
-                            <p>Tài khoản sử dụng</p>
+                            <h3 id="tongUser"></h3>
+                            <p>Tài khoản khách hàng</p>
                         </div>
                         <div class="icon">
                             <i class="bi bi-person-fill-add"></i>
@@ -66,8 +66,8 @@
                         <div class="inner" style="width: 63%;
                         text-align: center;
                         margin-top: 25px;">
-                            <h3>44</h3>
-                            <p>Tài khoản sử dụng</p>
+                            <h3 id="tongDCD"></h3>
+                            <p>Đơn hàng chưa duyệt</p>
                         </div>
                         <div class="icon">
                             <i class="bi bi-person-fill-add"></i>
