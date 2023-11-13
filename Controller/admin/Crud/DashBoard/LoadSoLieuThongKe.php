@@ -7,11 +7,11 @@ $conect = $db->conn;
 
 // Truy vấn SQL để tính tổng số lượng bán
 $sqlBan = " SELECT
-SUM(SUM(SoLuong)) OVER () AS TongTatCaBan
+COUNT(*) AS TongTatCaBan
 FROM
 db_dongho.tbl_chitietdongho
-INNER JOIN 
-db_dongho.tbl_chitietdondat ON tbl_chitietdongho.IdChiTietDonDat = tbl_chitietdondat.IdChiTietDonDat;
+Where
+tbl_chitietdongho.IdChiTietDonDat IS NOT NULL
 ";
 
 $resultBan = $conect->query($sqlBan);
@@ -19,11 +19,11 @@ $dataBan = $resultBan->fetch_all(MYSQLI_ASSOC);
 
 // Truy vấn SQL để tính tổng số lượng nhập
 $sqlNhap = "SELECT
-    SUM(SUM(SoluongNhap)) OVER () AS TongTatCaNhap
+     COUNT(*) AS TongTatCaNhap
 FROM
     db_dongho.tbl_chitietdongho
-INNER JOIN
-    db_dongho.tbl_chitietphieunhap ON tbl_chitietdongho.IdChiTietPhieuNhap = tbl_chitietphieunhap.IdChiTietPhieuNhap
+Where
+tbl_chitietdongho.IdChiTietPhieuNhap IS NOT NULL
 
 ";
 
