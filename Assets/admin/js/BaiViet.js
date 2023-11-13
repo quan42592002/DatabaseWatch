@@ -25,7 +25,9 @@ var myController = {
         $(document).ready(function () {
             CKEDITOR.replace('content', {
                 height: 600,
+                toolbar: 'Full', // Hoặc có thể là 'Standard'
             });
+            
         });
 
         $("#btn_TaoMoi").off("click").on("click", function () {
