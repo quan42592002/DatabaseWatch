@@ -740,7 +740,7 @@ function Anh(e, value, row, index) {
 };
 function ChucNang(e, value, row, index) {
     return [
-        '<div style="85px">',
+        '<div style="width:125px">',
         '<a class="btn btn-primary btn-sm" title="Xem thông tin" style="border-radius: 20px;" href="javascript:myController.LoadDetail(' + value.IdDongHo + ')" ><i class="bi bi-pencil"></i></a>' +
         '<a class="btn btn-success btn-sm" title="Xem thông tin" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.LoadDetailFile(' + value.IdDongHo + ')" ><i class="bi bi-file-earmark-plus"></i></a>' +
         '<a class="btn btn-danger btn-sm" title="Xóa đồng hồ" style="margin-left: 5px;border-radius: 20px;" href="javascript:myController.DeleteData(' + value.IdDongHo + ')"><i class="bi bi-trash"></i></a>' +

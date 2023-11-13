@@ -48,7 +48,7 @@
                             <tr style="background: #b0b0aa;">
                                 <th data-formatter="Anh" data-sort="true    ">Ảnh</th>
                                 <th data-field="TenDongHo">Tên đồng hồ</th>
-                                <th data-field="ThuongHieu">Thương hiệu</th>
+                                <th data-field="MaDongHo">Mã đồng hồ</th>
                                 <th data-field="NamNu">Phân loại</th>
                                 <th data-field="GiaMua" data-formatter="formatCurrency">Giá mua</th>
                                 <th data-field="GiaBan" data-formatter="formatCurrency">Giá bán</th>

@@ -79,6 +79,7 @@ var myController = {
                     if (response.status) {
                         lstTable = response.datax;
                         var tong_tien = 0;
+
                         var tien_fomater = "";
 
                         if (lstTable != null) {
@@ -98,14 +99,6 @@ var myController = {
                         }
 
                         $tfoot.html(
-                            '<tr>' +
-                            '<th colspan="4">Tổng tiền nhập</th>' +
-                            '<th colspan="4">' + tien_fomater + '</th>' +
-                            '</tr>' +
-                            '<tr>' +
-                            '<th colspan="4">Tổng tiền bán</th>' +
-                            '<th colspan="4">' + tien_fomater + '</th>' +
-                            '</tr>' +
                             '<tr>' +
                             '<th colspan="4">Tổng tiền Lãi</th>' +
                             '<th colspan="4">' + tien_fomater + '</th>' +
