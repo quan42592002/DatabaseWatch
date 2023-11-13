@@ -224,85 +224,48 @@
 <h2 style="text-align:center;margin-top: 25px;font-weight: 500;">CHUYÊN MỤC TOP LIST</h2>
 <div class="toplist">
   <!-- left -->
-  <div class="toplist-left">
-    <div class="tl-left-banner"><a href=""><img src="/UpLoad/Banner/banner-toplist.png" alt=""></a> </div>
-
-    <div class="tl-content-left">
-      <a href="">
-        <h3>Tổng hợp những mẫu đồng hồ cơ nam đẹp nhất 2023</h3>
-      </a>
-      <span>
-        Ngày đăng: 13-10-2023 bởi Trần Quân
-        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 7px;" class="home_excerpt">Top 5 mẫu đồng hồ cơ nam đẹp giá rẻ nhất 2023Với tiêu chí vừa đẹp, vừa hợp túi tiền;...</p>
-      </span>
-    </div>
+  <div class="toplist-left" id="lstBaiVietChinh">
+  
   </div>
   <!--end left -->
 
   <!-- right -->
-  <div class="toplist-right">
-    <!-- 1 -->
-    <div class="tl-sub-right">
-      <!-- img -->
-      <div class="tl-sub-right-img">
-        <a href=""><img src="/UpLoad/Banner/banner-toplist-item1.png" alt=""></a>
-      </div>
-      <!-- content -->
-      <div class="tl-content-right">
-        <a href="">
-          <h3 style="margin: 0px;font-size: 15px;">Top 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023</h3>
-        </a>
-        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Điểm danh 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023Thương hiệu Citizen luôn làm người dùng hài...</p>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="tl-sub-right">
-      <!-- img -->
-      <div class="tl-sub-right-img">
-        <a href=""><img src="/UpLoad/Banner/banner-toplist-item2.png" alt=""></a>
-      </div>
-      <!-- content -->
-      <div class="tl-content-right">
-        <a href="">
-          <h3 style="margin: 0px;font-size: 15px;">Top 5 mẫu đồng hồ cơ nam đẹp giá rẻ nhất 2023</h3>
-        </a>
-        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Top 5 mẫu đồng hồ cơ nam đẹp giá rẻ nhất 2023Với tiêu chí vừa đẹp, vừa hợp túi tiền;...</p>
-      </div>
-    </div>
-    <!-- 3 -->
-    <div class="tl-sub-right">
-      <!-- img -->
-      <div class="tl-sub-right-img">
-        <a href=""> <img src="/UpLoad/Banner/banner-toplist-item3.png" alt=""></a>
-      </div>
-      <!-- content -->
-      <div class="tl-content-right">
-        <a href="">
-          <h3 style="margin: 0px;font-size: 15px;">Các loại đồng hồ điện tử đẹp, bán chạy nhất 2023</h3>
-        </a>
-        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Top 13 đồng hồ điện tử hot nhất tại WatchStoreNếu bạn đang cần tìm một cỗ máy điện tử đo thời gian...</p>
-      </div>
-    </div>
-    <!-- 4 -->
-    <div class="tl-sub-right">
-      <!-- img -->
-      <div class="tl-sub-right-img">
-        <a href=""><img src="/UpLoad/Banner/banner-toplist-item4.png" alt=""></a>
-      </div>
-      <!-- content -->
-      <div class="tl-content-right">
-        <a href="">
-          <h3 style="margin: 0px;font-size: 15px;">Top 5 mẫu đồng hồ Tissot nữ đẹp nhất năm 2023</h3>
-        </a>
-        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Các tiêu chí lựa chọn mẫuĐể chọn được chiếc đồng hồ Tissot nữ đẹp, ưng ý thì bạn...</p>
-      </div>
-    </div>
+  <div class="toplist-right" id="lstBaiVietPhu">
+    
   </div>
   <!--end right -->
 
 </div>
 
+<script id="data-bai-viet-chinh" type="x-tmpl-mustache">
+  <div class="tl-left-banner"><a href=""><img src="{{UrlAnh}}" alt=""></a> </div>
+  <div class="tl-content-left">
+    <a href="javascript:myEventHome.DetailBaiViet({{IdTopList}})">
+      <h3>Tổng hợp những mẫu đồng hồ cơ nam đẹp nhất 2023</h3>
+    </a>
+    <span>
+      Ngày đăng: 13-10-2023 bởi Trần Quân
+      <p style="margin: 0px;color: black;font-size: 11px;margin-top: 7px;" class="home_excerpt">Top 5 mẫu đồng hồ cơ nam đẹp giá rẻ nhất 2023Với tiêu chí vừa đẹp, vừa hợp túi tiền;...</p>
+    </span>
+  </div>
+</script>
+
+<script id="data-bai-viet-phu" type="x-tmpl-mustache">
+    <!-- 1 -->
+    <div class="tl-sub-right">
+      <!-- img -->
+      <div class="tl-sub-right-img">
+        <a href=""><img src="{{UrlAnh}}" alt=""></a>
+      </div>
+      <!-- content -->
+      <div class="tl-content-right">
+        <a href="javascript:myEventHome.DetailBaiViet({{IdTopList}})">
+          <h3 style="margin: 0px;font-size: 15px;">Top 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023</h3>
+        </a>
+        <p style="margin: 0px;color: black;font-size: 11px;margin-top: 3px;" class="home_excerpt">Điểm danh 5 mẫu đồng hồ Citizen nữ đẹp nhất 2023Thương hiệu Citizen luôn làm người dùng hài...</p>
+      </div>
+    </div>
+</script>
 <!-- BEGIN TOPLIST -->
 
 <!--BEGIN View-search -->

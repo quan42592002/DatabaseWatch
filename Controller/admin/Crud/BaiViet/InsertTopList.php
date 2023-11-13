@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $uploadDir = '../../../../UpLoad/Admin/TopList/'; 
     $file = $_FILES['duong_dan_tai_lieu'];
+    
     if ($file['error'][0] === UPLOAD_ERR_OK) {
         $fileName = time() . '_' . $file['name'][0];
         $filePath = $uploadDir . $fileName; 

@@ -52,7 +52,7 @@ var myController = {
             success: function (response) {
                 if (response.status) {
                     var lstData = response.lstData;
-
+                    
                     if (lstData != null) {
                         var TenDongHoMain = lstData.NamNu == "Nam" ? lstData.TenDongHo + " 42mm Nam " + lstData.MaDongHo : lstData.TenDongHo + " 38mm Nữ " + lstData.MaDongHo;
                         var GiaGiam = myController.formatCurrency(String(parseInt(((lstData.GiaBan * lstData.GiamGia) / 100)) + parseInt(lstData.GiaBan)));

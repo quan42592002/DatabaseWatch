@@ -44,6 +44,10 @@ var myController = {
         var nameSlider = $("#nameslider").val();
         var createdate = $("#createdate").val();
         var files = $("#duong_dan_tai_lieu")[0].files;
+        if (files.length <= 0 ) {
+            alert("Bạn chưa chọn file ảnh");
+            return;
+        }
         if (nameSlider == "") {
             alert("Bạn chưa nhập tên");
         }
@@ -60,8 +64,9 @@ var myController = {
                 return;
             }
             formData.append('duong_dan_tai_lieu[]', files[x]); // Sử dụng mảng để gửi nhiều tệp
+         
         }
-
+ console.log(formData);
         if (IdSlider == 0) {
             $.ajax({
                 url: 'http://localhost:3000/Controller/admin/Crud/Slider/Insert.php',
@@ -72,7 +77,6 @@ var myController = {
                 success: function (response) {
                     if (response.status == true) {
                         alert("Cập nhập thành công");
-
                         myController.LoadSlider();
                         myController.resetForm();
 

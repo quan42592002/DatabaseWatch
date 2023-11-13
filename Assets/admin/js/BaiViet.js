@@ -87,7 +87,8 @@ var myController = {
                 return;
             }
             formData.append('duong_dan_tai_lieu[]', files[x]); // Sử dụng mảng để gửi nhiều tệp
-        }
+        } 
+
 
         if (IdTopList == 0) {
             $.ajax({
