@@ -20,7 +20,7 @@
                         <p>Ngày tạo: <?php echo date("d/m/Y"); ?></p>
                     </div>
                     <h2>Thông tin hóa đơn:</h2>
-                    <p>Người nhập: <?php echo $_SESSION['HoTen'] ?></p>
+                    <p>Người nhập: <?php echo $_SESSION['TenDayDu'] ?></p>
                     <p>Số hiệu: </p>
 
                     <h2>Chi tiết hóa đơn:</h2>
