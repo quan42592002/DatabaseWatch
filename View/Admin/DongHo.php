@@ -196,7 +196,7 @@
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="http://localhost:3000/Assets/admin/js/plugins/data-table/bootstrap-table.min.js"></script>
-<script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/group-by-v2/bootstrap-table-group-by.min.js"></script>
+<script src="http://localhost:3000/Assets/admin/js/plugins/group.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.css">
 <script src="http://localhost:3000/Assets/admin/js/plugins/Filestyle/jquery-filestyle.min.js"></script>
 <script src="http://localhost:3000/Assets/admin/js/DongHo.js"></script>

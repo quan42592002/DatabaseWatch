@@ -62,7 +62,9 @@ var myController = {
 
     resetForm: function () {
         $("#SoluongNhap").val(0);
+        $("#tbl_DongHoThem").html("");
     },
+
 
     RemoveTableThem: function (checkboxId, data) {
         $("#tbl_DongHoThem").find("td#check_" + data.IdDongHo).closest("tr").remove();
@@ -134,6 +136,7 @@ var myController = {
                     alert("Cập nhập thành công");
                     myController.RegesterEvent();
                     myController.LoadTable();
+                    myController.resetForm();
                 }
             },
         });
